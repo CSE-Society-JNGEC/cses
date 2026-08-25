@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Zone — CSE Society</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-decor" aria-hidden="true">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <nav>
+        <div class="nav-inner">
+            <a class="logo" href="index.html">
+                <img src="logo.png" alt="CSE Society Logo" class="logo-image">
+                <div class="logo-text">
+                    <span>CSE Society</span>
+                    <small>Computer Science Engineering</small>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a class="nav-link" href="index.html">Home</a></li>
+                <li><a class="nav-link" href="events.html">Events</a></li>
+                <li><a class="nav-link" href="about.html">About</a></li>
+                <li><a class="nav-link" href="contact.html">Contact</a></li>
+                <li><a class="nav-link active" href="studentzone.html">Student Zone</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">☀️</button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a class="mobile-link" href="index.html">Home</a>
+        <a class="mobile-link" href="events.html">Events</a>
+        <a class="mobile-link" href="about.html">About</a>
+        <a class="mobile-link" href="contact.html">Contact</a>
+        <a class="mobile-link active" href="studentzone.html">Student Zone</a>
+    </div>
+
+    <section class="page-hero">
+        <h1>Student Resource Zone</h1>
+        <p>Central hub for MST & End Semester papers, notes, study material and feedback.</p>
+    </section>
+
+    <div class="student-zone-grid">
+        <main class="right-column">
+            <section id="features" class="module">
+                <div class="section-tag">// STUDENT ZONE FEATURES</div>
+                <h2 class="section-title">Quick Access</h2>
+                <p class="muted">Choose a feature to browse resources. We'll guide you: Semester → Subject → Paper → Year.</p>
+
+                <div class="search-panel">
+                    <div class="search-controls">
+                        <div class="form-group"><label for="filterSemester">Semester</label>
+                            <select id="filterSemester"><option value="">All</option><option value="1">Semester 1</option><option value="2">Semester 2</option><option value="3">Semester 3</option><option value="4">Semester 4</option><option value="5">Semester 5</option><option value="6">Semester 6</option><option value="7">Semester 7</option></select>
+                        </div>
+                        <div class="form-group"><label for="filterSubject">Subject</label>
+                            <select id="filterSubject"><option value="">All Subjects</option></select>
+                        </div>
+                        <div class="form-group"><label for="filterPaperType">Paper Type</label>
+                            <select id="filterPaperType"><option value="">Any</option><option value="mst">MST</option><option value="endsem">End Semester</option><option value="notes">Subject Notes</option><option value="study">Study Material</option></select>
+                        </div>
+                        <button id="searchButton" class="btn-primary">Find Resource</button>
+                    </div>
+                </div>
+
+                <!-- Inline search results (populated by script) -->
+                <div id="searchResults" style="margin-top:18px;"></div>
+
+                <div class="feature-grid cards-grid" id="featureGrid">
+                    <div class="feature-card event-card" data-feature="mst">
+                        <div class="event-badge">Feature</div>
+                        <h3>MST Papers</h3>
+                        <p class="muted">Mid-semester test papers for all semesters.</p>
+                    </div>
+                    <div class="feature-card event-card" data-feature="endsem">
+                        <div class="event-badge">Feature</div>
+                        <h3>End Semester Papers</h3>
+                        <p class="muted">End semester question papers and archives.</p>
+                    </div>
+                    <div class="feature-card event-card" data-feature="notes">
+                        <div class="event-badge">Feature</div>
+                        <h3>Subject Notes</h3>
+                        <p class="muted">Important topics, PDF notes and handwritten scans.</p>
+                    </div>
+                    <div class="feature-card event-card" data-feature="study">
+                        <div class="event-badge">Feature</div>
+                        <h3>Study Material</h3>
+                        <p class="muted">Books, videos, cheat-sheets and lab manuals.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="suggestions" class="module suggestion-panel">
+                <div class="section-tag">// SUGGESTIONS & FEEDBACK</div>
+                <h2 class="section-title">Suggestions & Feedback</h2>
+                <p class="muted">Report missing files, broken PDFs or request resources.</p>
+                <div class="feedback-form-wrap">
+                    <div class="success-message" id="suggestionSuccessMessage">✓ Suggestion safely logged.</div>
+                   <form 
+    class="suggestion-form" 
+    id="suggestionForm"
+    action="https://formspree.io/f/mljrzole"
+    method="POST"
+>
+    <div class="form-group">
+        <label for="name">Name (optional)</label>
+        <input id="name" name="name" type="text" />
+    </div>
+
+    <div class="form-group">
+        <label for="semester">Semester</label>
+        <select id="semester" name="semester">
+            <option>--</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="branch">Branch</label>
+        <input id="branch" name="branch" type="text" />
+    </div>
+
+    <div class="form-group">
+        <label for="feedback_type">Feedback Type</label>
+        <select id="feedback_type" name="feedback_type">
+            <option>Upload Missing Paper</option>
+            <option>Upload Missing Notes</option>
+            <option>Report Broken PDF</option>
+            <option>Suggest New Feature</option>
+            <option>Study Material Request</option>
+            <option>General Feedback</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="rating">Rating</label>
+        <select id="rating" name="rating">
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+    </div>
+
+    <button class="btn-primary" type="submit">
+        Submit Feedback
+    </button>
+</form>        </div>
+            </section>
+
+            <div class="pdf-modal-overlay" id="pdfModal">
+                <div class="pdf-modal">
+                    <button class="modal-close" id="pdfModalClose">&times;</button>
+                    <h3 id="pdfModalTitle"></h3>
+                    <div style="margin-top:12px;"><iframe id="pdfFrame" src="" style="width:100%;height:520px;border:0;border-radius:8px;"></iframe></div>
+                    <div style="margin-top:12px;"><a id="pdfDownloadLink" href="#" download class="btn-primary">Download PDF</a></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="selectionOverlay" class="selection-overlay">
+        <div class="selection-modal">
+            <button id="selectionClose" class="modal-close" aria-label="Close selection">&times;</button>
+            <div id="selectionArea" class="selection-step"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a class="logo" href="index.html">
+                        <img src="logo.png" alt="CSE Society Logo" class="logo-image">
+                        <div class="logo-text">
+                            <span>CSE Society</span>
+                        </div>
+                    </a>
+                    <p>Congratulations! You've unlocked the footer achievement. 🏆</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <a href="index.html">Home Workspace</a>
+                    <a href="events.html">Events Grid</a>
+                    <a href="about.html">About Hub</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="studentzone.html">Question Papers</a>
+                    <a href="studentzone.html">Suggestion Deck</a>
+                </div>
+                 <div class="footer-col">
+                    <h4>Contact Desk</h4>
+                    <p>
+                        <a href="https://www.instagram.com/cses.jngec/" target="_blank">Instagram</a>
+                    </p>
+                    <p> <a href="mailto:cses.jngec@gmail.com" target="_blank">cses.jngec@gmail.com</a>
+                    </p>
+                    <p>
+                        <a href="https://www.linkedin.com/company/computer-science-engineering-society/" target="_blank">Linked In</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-divider">
+                <p class="footer-copy">© 2026 CSE Society. All rights preserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Hub — CSE Society</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-decor" aria-hidden="true">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <nav>
+        <div class="nav-inner">
+            <a class="logo" href="index.html">
+                <img src="logo.png" alt="CSE Society Logo" class="logo-image">
+                <div class="logo-text">
+                    <span>CSE Society</span>
+                    <small>Computer Science Engineering</small>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a class="nav-link" href="index.html">Home</a></li>
+                <li><a class="nav-link active" href="events.html">Events</a></li>
+                <li><a class="nav-link" href="about.html">About</a></li>
+                <li><a class="nav-link" href="contact.html">Contact</a></li>
+                <li><a class="nav-link" href="studentzone.html">Student Zone</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">☀️</button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a class="mobile-link" href="index.html">Home</a>
+        <a class="mobile-link active" href="events.html">Events</a>
+        <a class="mobile-link" href="about.html">About</a>
+        <a class="mobile-link" href="contact.html">Contact</a>
+        <a class="mobile-link" href="studentzone.html">Student Zone</a>
+    </div>
+
+    <section class="page-hero">
+        <h1>Society Events Hub</h1>
+        <p>Explore upcoming pipelines, technical competitions, and review recorded archives.</p>
+    </section>
+
+    <main class="section">
+        <div class="section-inner">
+            <div class="section-tag">// IMMEDIATE WORKSPACES</div>
+            <h2 class="section-title">🎯 Upcoming Pipelines</h2>
+            <div class="events-grid">
+                    
+                    <div class="event-card interactive" data-event="teachersDay" tabindex="0" role="button" aria-label="Open Teacher's Day Celebration details">
+                        <div class="event-badge">Upcoming</div>
+                        <h3>👩‍🏫 Teacher's Day Celebration</h3>
+                        <div class="event-meta"><span>5 September 2026</span><span>11:00 AM – 2:00 PM</span><span>Cultural Event</span></div>
+                        <p>A special event to honor and appreciate faculty members through performances, speeches, and activities.</p>
+                    </div>
+                </div>
+                    <p>An insightful session conducted by an industry expert on emerging technologies and career opportunities.<br></p>
+                </div>
+                <div class="event-card interactive" data-event="guestLecture">
+                    <div class="event-badge completed">Completed</div>
+                    <h3>🤖 Guest Lecture</h3>
+                    <div class="event-meta"><span>23 February 2026</span><span>2:00 PM – 4:00 PM</span><span>Academic Event</span></div>
+                    <p>An insightful session conducted by an industry expert on emerging technologies and career opportunities.</p>
+                </div>
+                <div class="event-card interactive" data-event="promptEngineering">
+                    <div class="event-badge completed">Completed</div>
+                    <h3>🤖 Prompt Engineering Event</h3>
+                    <div class="event-meta"><span>15 March 2026</span><span>10:00 AM – 1:00 PM</span><span>Technical Event</span></div>
+                    <p>Hands-on workshop introducing AI prompt engineering techniques and practical applications.</p>
+                </div>
+                <div class="event-card interactive" data-event="posterMaking">
+                    <div class="event-badge completed">Completed</div>
+                    <h3>🎨 Poster Making Competition</h3>
+                    <div class="event-meta"><span>22 March 2026</span><span>11:00 AM – 2:00 PM</span><span>Cultural Event</span></div>
+                    <p>Students showcased their creativity through theme-based poster designs.</p>
+                </div>
+                <div class="event-card interactive" data-event="algoverse">
+                    <div class="event-badge completed">Completed</div>
+                    <h3>💻 Algoverse 2.0</h3>
+                    <div class="event-meta"><span>5 April 2026</span><span>9:30 AM – 4:00 PM</span><span>Technical Event</span></div>
+                    <p>Competitive programming and algorithmic problem-solving event for students.</p>
+                </div>
+                <div class="event-card interactive" data-event="dhun">
+                    <div class="event-badge completed">Completed</div>
+                    <h3>🎶 Dhun</h3>
+                    <div class="event-meta"><span>12 April 2026</span><span>5:00 PM – 8:00 PM</span><span>Cultural Event</span></div>
+                    <p>A musical extravaganza featuring solo and group performances by students.</p>
+                </div>
+                <div class="event-card interactive" data-event="sportsEvent">
+                    <div class="event-badge completed">Completed</div>
+                    <h3>🏆 Sports Event</h3>
+                    <div class="event-meta"><span>20 April 2026</span><span>9:00 AM – 5:00 PM</span><span>Sports Event</span></div>
+                    <p>Various indoor and outdoor sports competitions promoting teamwork and fitness.</p>
+                </div>
+                <div class="event-card interactive" data-event="graduation">
+                    <div class="event-badge completed">Completed</div>
+                    <h3>🎓 Graduation Ceremony</h3>
+                    <div class="event-meta"><span>10 May 2026</span><span>11:00 AM – 2:00 PM</span><span>Cultural Event</span></div>
+                    <p>Ceremony celebrating the achievements of graduating students and their academic journey.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="event-modal-overlay" id="eventDetailsModal" role="dialog" aria-modal="true">
+        <div class="event-modal event-modal--wide">
+            <button class="modal-close" id="eventModalClose" aria-label="Close event details">&times;</button>
+            <h3 id="eventModalTitle" class="modal-title"></h3>
+            <p id="eventModalMeta" class="modal-meta"></p>
+            <div class="modal-section">
+                <h4>Event Description</h4>
+                <p id="eventModalDescription"></p>
+            </div>
+            <div class="modal-section modal-grid">
+                <div>
+                    <h4>Organizing Team</h4>
+                    <p id="eventModalTeam"></p>
+                </div>
+                <div>
+                    
+                    <ul id="eventModalWinners"></ul>
+                </div>
+            </div>
+            <div class="modal-section">
+                <h4>Event Photographs</h4>
+                <div class="modal-photos" id="eventModalPhotos">
+                    <img src="https://via.placeholder.com/240x160?text=Photo+1" alt="Event photo placeholder" />
+                    <img src="https://via.placeholder.com/240x160?text=Photo+2" alt="Event photo placeholder" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a class="logo" href="index.html">
+                        <img src="logo.png" alt="CSE Society Logo" class="logo-image">
+                        <div class="logo-text">
+                            <span>CSE Society</span>
+                        </div>
+                    </a>
+                    <p>Congratulations! You've unlocked the footer achievement. 🏆</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <a href="index.html">Home Workspace</a>
+                    <a href="events.html">Events Grid</a>
+                    <a href="about.html">About Hub</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="studentzone.html">Question Papers</a>
+                    <a href="studentzone.html">Suggestion Deck</a>
+                </div>
+                 <div class="footer-col">
+                    <h4>Contact Desk</h4>
+                    <p>
+                        <a href="https://www.instagram.com/cses.jngec/" target="_blank">Instagram</a>
+                    </p>
+                    <p> <a href="mailto:cses.jngec@gmail.com" target="_blank">cses.jngec@gmail.com</a>
+                    </p>
+                    <p>
+                        <a href="https://www.linkedin.com/company/computer-science-engineering-society/" target="_blank">Linked In</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-divider">
+                <p class="footer-copy">© 2026 CSE Society. All rights preserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

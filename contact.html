@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Desk — CSE Society</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-decor" aria-hidden="true">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <nav>
+        <div class="nav-inner">
+            <a class="logo" href="index.html">
+                <img src="logo.png" alt="CSE Society Logo" class="logo-image">
+                <div class="logo-text">
+                    <span>CSE Society</span>
+                    <small>Computer Science Engineering</small>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a class="nav-link" href="index.html">Home</a></li>
+                <li><a class="nav-link" href="events.html">Events</a></li>
+                <li><a class="nav-link" href="about.html">About</a></li>
+                <li><a class="nav-link active" href="contact.html">Contact</a></li>
+                <li><a class="nav-link" href="studentzone.html">Student Zone</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">☀️</button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a class="mobile-link" href="index.html">Home</a>
+        <a class="mobile-link" href="events.html">Events</a>
+        <a class="mobile-link" href="about.html">About</a>
+        <a class="mobile-link active" href="contact.html">Contact</a>
+        <a class="mobile-link" href="studentzone.html">Student Zone</a>
+    </div>
+
+    <section class="page-hero">
+        <h1>Contact Desk</h1>
+        <p>Connect with department coordinators or submit direct administration routing entries.</p>
+    </section>
+
+    <main class="section">
+        <div class="section-inner" style="max-width: 680px;">
+            <div style="background: var(--bg-secondary); padding: 40px; border-radius: var(--border-radius); border: 1px solid var(--card-border); box-shadow: var(--shadow-sm);">
+                <div class="section-tag">// COMMUNICATE HUB</div>
+                <h2 style="font-size: 28px; font-weight: 800; margin-bottom: 12px;">Send Message Packet</h2>
+                
+                <div class="success-message" id="contactSuccessMessage" style="margin-bottom: 20px;">✓ Message pipeline broadcasted successfully.</div>
+                
+                <form 
+    class="contact-form" 
+    id="contactForm"
+    action="https://formspree.io/f/xljrzolq"
+    method="POST"
+>
+    <div class="form-group">
+        <label for="contactName">Full Identity/Name *</label>
+        <input 
+            type="text" 
+            id="contactName"
+            name="name"
+            required 
+            placeholder="Enter name..."
+        >
+    </div>
+
+    <div class="form-group">
+        <label for="contactEmail">Network Email Address *</label>
+        <input 
+            type="email" 
+            id="contactEmail"
+            name="email"
+            required 
+            placeholder="username@college.edu"
+        >
+    </div>
+
+    <div class="form-group">
+        <label for="contactMessage">Packet Context Payload *</label>
+        <textarea 
+            id="contactMessage"
+            name="message"
+            rows="5" 
+            required 
+            placeholder="Write message in detail..."
+        ></textarea>
+    </div>
+
+    <button 
+        class="btn-primary" 
+        type="submit" 
+        style="width: 100%; margin-top: 10px;"
+    >
+        Transmit Secure Packet
+    </button>
+</form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a class="logo" href="index.html">
+                        <img src="logo.png" alt="CSE Society Logo" class="logo-image">
+                        <div class="logo-text">
+                            <span>CSE Society</span>
+                        </div>
+                    </a>
+                    <p>Congratulations! You've unlocked the footer achievement. 🏆</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <a href="index.html">Home Workspace</a>
+                    <a href="events.html">Events Grid</a>
+                    <a href="about.html">About Hub</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="studentzone.html">Question Papers</a>
+                    <a href="studentzone.html">Suggestion Deck</a>
+                </div>
+                 <div class="footer-col">
+                    <h4>Contact Desk</h4>
+                    <p>
+                        <a href="https://www.instagram.com/cses.jngec/" target="_blank">Instagram</a>
+                    </p>
+                    <p> <a href="mailto:cses.jngec@gmail.com" target="_blank">cses.jngec@gmail.com</a>
+                    </p>
+                    <p>
+                        <a href="https://www.linkedin.com/company/computer-science-engineering-society/" target="_blank">Linked In</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-divider">
+                <p class="footer-copy">© 2026 CSE Society. All rights preserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

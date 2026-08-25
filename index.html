@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE Society — Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Splash overlay shown on page load; removed by script after animation -->
+    <div id="splashOverlay" class="splash-overlay" aria-hidden="false">
+        <div class="splash-inner">
+            <img src="logo.png" alt="CSE Society Logo" class="splash-logo">
+        </div>
+    </div>
+    <div class="bg-decor" aria-hidden="true">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <nav>
+        <div class="nav-inner">
+            <a class="logo" href="index.html">
+                <img src="logo.png" alt="CSE Society Logo" class="logo-image">
+                <div class="logo-text">
+                    <span>CSE Society</span>
+                    <small>Computer Science Engineering</small>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a class="nav-link active" href="index.html">Home</a></li>
+                <li><a class="nav-link" href="events.html">Events</a></li>
+                <li><a class="nav-link" href="about.html">About</a></li>
+                <li><a class="nav-link" href="contact.html">Contact</a></li>
+                <li><a class="nav-link" href="studentzone.html">Student Zone</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">☀️</button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a class="mobile-link active" href="index.html">Home</a>
+        <a class="mobile-link" href="events.html">Events</a>
+        <a class="mobile-link" href="about.html">About</a>
+        <a class="mobile-link" href="contact.html">Contact</a>
+        <a class="mobile-link" href="studentzone.html">Student Zone</a>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">● CODE · YOUR · FUTURE ●</div>
+            <h1>Where Code Meets <span>Innovation</span></h1>
+            <p class="hero-sub">Welcome to the central platform of the CSE Society.<br>Our one-stop platform for academic resources, technical events, student opportunities, and departmental updates. Access notes, previous year question papers, announcements, workshops, hackathons, and much more—all in one place.</p>
+            <div class="hero-btns">
+                <a class="btn-primary" href="events.html">Explore Events →</a>
+                <a class="btn-outline" href="studentzone.html">Student Portal</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat"><div class="stat-num">20+</div><div class="stat-label">Active Members</div></div>
+                <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Events Hosted</div></div>
+            </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+            <div class="hero-visual-glow"></div>
+            <div class="hero-orbit-ring ring-1"></div>
+            <div class="hero-orbit-ring ring-2"></div>
+
+            <div class="hero-photo-frame">
+                <div class="hero-photo-stack">
+                    <div class="hero-photo-slide"><img src="Photos/Hero-Section//0.jpeg" alt=""></div>
+                    <div class="hero-photo-slide"><img src="Photos/Hero-Section//1.jpeg" alt=""></div>
+                    <div class="hero-photo-slide"><img src="Photos/Hero-Section//2.jpeg" alt=""></div>
+                    <div class="hero-photo-slide"><img src="Photos/Hero-Section//3.jpeg" alt=""></div>
+                </div>
+                <div class="hero-photo-scanline"></div>
+                <div class="hero-photo-live"><span class="pulse-dot"></span>LIVE FEED</div>
+            </div>
+
+            <div class="hero-float-card card-code">
+                <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
+                <div class="code-line">const society = "CSE";</div>
+                <div class="code-line">society.<span>build()</span>;</div>
+            </div>
+
+            <div class="hero-float-card card-stat">
+                <div class="card-stat-icon">🚀</div>
+                <div>
+                    <div class="card-stat-num">CSES JNGEC</div>
+                    <div class="card-stat-label">Registrations Open</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+        <div class="section-inner">
+            <div class="section-tag">// SOCIETY IN ACTION</div>
+            <h2 class="section-title">Campus Life Gallery</h2>
+            <div class="gallery-track-wrap">
+                <div class="gallery-track">
+                    <img class="gallery-img" src="Photos/Gallery/0.png" alt="CSES">
+                    <img class="gallery-img" src="Photos/Gallery/7.jpg" alt="Batch 2022-2026">
+                    <img class="gallery-img" src="Photos/Gallery/1.jpg" alt="Cricket">
+                    <img class="gallery-img" src="Photos/Gallery/3.jpg" alt="CSE Department">
+                    <img class="gallery-img" src="Photos/Events/Sports/1.jpg" alt="Cricket">
+                    <img class="gallery-img" src="Photos/Events/Guest_Lecture/1.jpg" alt="Workshop">
+                    <img class="gallery-img" src="Photos/Events/Graduation_Ceremony/1.jpg" alt="Graduation Ceremony">
+                    <img class="gallery-img" src="Photos/Events/Prompt/1.jpg" alt="Prompt Engineering">
+                    <img class="gallery-img" src="Photos/Events/Algoverse_2.0/1.jpg" alt="Algoverse">
+                    <img class="gallery-img" src="Photos/Gallery/8.jpg" alt="Algoverse">
+                    <img class="gallery-img" src="Photos/Gallery/9.jpg" alt="CSE Society Team">
+                    <img class="gallery-img" src="Photos/Gallery/CSES.jpg" alt="CSES">
+                    <img class="gallery-img" src="Photos/Gallery/6.jpg" alt="Dhun Event">
+                    <img class="gallery-img" src="Photos/Gallery/5.jpg" alt="Badminton Tournament">
+                    <img class="gallery-img" src="Photos/Events/Sports/3.jpg" alt="Chess">
+                    <img class="gallery-img" src="Photos/Events/Poster Making/4.jpg" alt="Poster Making">
+                </div>
+            </div>
+            <p class="gallery-note">Hover over items inside track workspace to pause active alignment</p>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+        <div class="section-inner">
+            <div class="section-tag">// OPERATIONS HUBS</div>
+            <h2 class="section-title">What We Offer</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <h3>Expert Guidance</h3>
+                    <p>Expert lectures, career guidance, and industry insights to help CSE students build the right skills and make informed career decisions.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💻</div>
+                    <h3>Technical Events</h3>
+                    <p>Technical workshops, coding activities, competitions, and hands-on events that encourage students to learn, innovate, and grow together.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Connect & Celebrate</h3>
+                    <p>A welcoming community through cultural and sports events, fostering interaction, teamwork, and a strong sense of belonging among CSE students.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+        <div class="section-inner">
+            <div class="section-tag">// NOTIFICATIONS BULLETIN</div>
+            <h2 class="section-title">Latest Announcements</h2>
+            <div class="notif-grid">
+                <div class="notif-card">
+                    <div class="notif-date">September 5, 2026</div>
+                    <h3>🎯 Teacher's Day Event 2026</h3>
+                    <p>Join us in celebrating the dedication and impact of our educators with special activities and recognition.</p>
+                    <a class="read-more" href="events.html">Learn More →</a>
+                </div>
+                <div class="notif-card">
+                    <div class="notif-date">August 22, 2026</div>
+                    <h3>📚 Previous Year Exam Repositories Updated</h3>
+                    <p>Previous MST exam papers for the first six semesters have been added.</p>
+                    <a class="read-more" href="studentzone.html">Access Repositories →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-inner">
+            <div class="cta-banner">
+                <h2>Ready to Build the Future?</h2>
+                <p>Connect with peers, access modern study repos, and keep tracking code milestones seamlessly.</p>
+                <a class="btn-primary" href="contact.html">Join The Workspace →</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a class="logo" href="index.html">
+                        <img src="logo.png" alt="CSE Society Logo" class="logo-image">
+                        <div class="logo-text">
+                            <span>CSE Society</span>
+                        </div>
+                    </a>
+                    <p>Congratulations! You've unlocked the footer achievement. 🏆</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <a href="index.html">Home Workspace</a>
+                    <a href="events.html">Events Grid</a>
+                    <a href="about.html">About Hub</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="studentzone.html">Question Papers</a>
+                    <a href="studentzone.html">Suggestion Deck</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Desk</h4>
+                    <p>
+                        <a href="https://www.instagram.com/cses.jngec/" target="_blank">Instagram</a>
+                    </p>
+                    <p> <a href="mailto:cses.jngec@gmail.com" target="_blank">cses.jngec@gmail.com</a>
+                    </p>
+                    <p>
+                        <a href="https://www.linkedin.com/company/computer-science-engineering-society/" target="_blank">Linked In</a>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-divider">
+                <p class="footer-copy">© 2026 CSE Society. All rights preserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

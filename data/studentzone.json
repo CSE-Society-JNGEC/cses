@@ -1,0 +1,1565 @@
+{
+  "subjects_by_semester": {
+    "1": [
+      "Applied Mathematics-I",
+      "Communication Skills",
+      "Applied Physics",
+      "EVS",
+      "Basic Electrical Engineering"
+    ],
+    "2": [
+      "Applied Mathematics-II",
+      "Applied Chemistry",
+      "Universal Human Values",
+      "Electronics",
+      "C++"
+    ],
+    "3": [
+      "Mathematics-III (Probability & Statistics)",
+      "Data Structures & Algorithms (DSA)",
+      "Python",
+      "Economics",
+      "Digital System Design (DSD)",
+      "Indian Knowledge System (IKS)",
+      "Computer Organization & Architecture (COA)"
+    ],
+    "4": [
+      "Discrete Mathematics",
+      "Data Structures (DS)",
+      "Design & Analysis of Algorithms (DAA)",
+      "Artificial Intelligence (AI)",
+      "DBMS",
+      "Microcontrollers"
+    ],
+    "5": [
+      "Computer Networks (CN)",
+      "Machine Learning (ML)",
+      "Theory of Computation (TOC)",
+      "Software Engineering (SE)",
+      "Data Warehousing & Mining (DWM)"
+    ],
+    "6": [
+      "Soft Computing",
+      "Advanced Machine Learning",
+      "Compiler Design",
+      "Deep Learning",
+      "Startup & Innovation"
+    ],
+    "7": [
+      "Cloud Computing",
+      "Natural Language Processing (NLP)"
+    ]
+  },
+  "mst_papers": [
+    {
+      "type": "MST-I",
+      "semester": 1,
+      "subject": "Applied Mathematics-I",
+      "year": 2023,
+      "pdf_url": "papers/MST/Semester 1/Applied_Maths/MST_1/2023.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 1,
+      "subject": "Applied Mathematics-I",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 1/Applied_Maths/MST_1/2024.pdf"
+    },
+     {
+      "type": "MST-I",
+      "semester": 1,
+      "subject": "Applied Mathematics-I",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 1/Applied_Maths/MST_1/2025.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 1,
+      "subject": "Applied Mathematics-I",
+      "year": 2023,
+      "pdf_url": "papers/MST/Semester 1/Applied_Maths/MST_2/2023.pdf"
+    },
+     {
+      "type": "MST-II",
+      "semester": 1,
+      "subject": "Applied Mathematics-I",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 1/Applied_Maths/MST_2/2024.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 1,
+      "subject": "Applied Mathematics-I",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 1/Applied_Maths/MST_2/2025.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 1,
+      "subject": "Communication Skills",
+      "year": 2023,
+      "pdf_url": "papers/MST/Semester 1/Communication_Skills/MST_1/2023.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 1,
+      "subject": "Communication Skills",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 1/Communication_Skills/MST_1/2024.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 1,
+      "subject": "Communication Skills",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 1/Communication_Skills/MST_1/2025.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 1,
+      "subject": "Communication Skills",
+      "year": 2023,
+      "pdf_url": "papers/MST/Semester 1/Communication_Skills/MST_2/2023.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 1,
+      "subject": "Communication Skills",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 1/Communication_Skills/MST_2/2024.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 1,
+      "subject": "Communication Skills",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 1/Communication_Skills/MST_2/2025.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 1,
+      "subject": "Applied Physics",
+      "year": 2023,
+      "pdf_url": "papers/MST/Semester 1/Applied_Physics/MST_1/2023.pdf"
+    },
+     {
+      "type": "MST-I",
+      "semester": 1,
+      "subject": "Applied Physics",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 1/Applied_Physics/MST_1/2024.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 1,
+      "subject": "Applied Physics",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 1/Applied_Physics/MST_1/2025.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 1,
+      "subject": "Applied Physics",
+      "year": 2023,
+      "pdf_url": "papers/MST/Semester 1/Applied_Physics/MST_2/2023.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 1,
+      "subject": "Applied Physics",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 1/Applied_Physics/MST_2/2024.pdf"
+    },
+     {
+      "type": "MST-II",
+      "semester": 1,
+      "subject": "Applied Physics",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 1/Applied_Physics/MST_2/2025.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 1,
+      "subject": "EVS",
+      "year": 2023,
+      "pdf_url": "papers/MST/Semester 1/Energy_and_Environment/MST_1/2023.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 1,
+      "subject": "EVS",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 1/Energy_and_Environment/MST_1/2024.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 1,
+      "subject": "EVS",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 1/Energy_and_Environment/MST_1/2025.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 1,
+      "subject": "EVS",
+      "year": 2023,
+      "pdf_url": "papers/MST/Semester 1/Energy_and_Environment/MST_2/2023.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 1,
+      "subject": "EVS",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 1/Energy_and_Environment/MST_2/2024.pdf"
+    },
+     {
+      "type": "MST-II",
+      "semester": 1,
+      "subject": "EVS",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 1/Energy_and_Environment/MST_2/2025.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 1,
+      "subject": "Basic Electrical Engineering",
+      "year": 2023,
+      "pdf_url": "papers/MST/Semester 1/Basic_Electrical_Engineering/MST_1/2023.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 1,
+      "subject": "Basic Electrical Engineering",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 1/Basic_Electrical_Engineering/MST_1/2024.pdf"
+    },
+     {
+      "type": "MST-I",
+      "semester": 1,
+      "subject": "Basic Electrical Engineering",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 1/Basic_Electrical_Engineering/MST_1/2025.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 1,
+      "subject": "Basic Electrical Engineering",
+      "year": 2023,
+      "pdf_url": "papers/MST/Semester 1/Basic_Electrical_Engineering/MST_2/2023.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 1,
+      "subject": "Basic Electrical Engineering",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 1/Basic_Electrical_Engineering/MST_2/2024.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 1,
+      "subject": "Basic Electrical Engineering",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 1/Basic_Electrical_Engineering/MST_2/2025.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 2,
+      "subject": "Applied Mathematics-II",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 2/Applied_Mathematics-II/MST_1/2024.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 2,
+      "subject": "Applied Mathematics-II",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 2/Applied_Mathematics-II/MST_1/2025.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 2,
+      "subject": "Applied Mathematics-II",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 2/Applied_Mathematics-II/MST_1/2026.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 2,
+      "subject": "Applied Mathematics-II",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 2/Applied_Mathematics-II/MST_2/2024.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 2,
+      "subject": "Applied Mathematics-II",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 2/Applied_Mathematics-II/MST_2/2025.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 2,
+      "subject": "Applied Mathematics-II",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 2/Applied_Mathematics-II/MST_2/2026.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 2,
+      "subject": "Applied Chemistry",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 2/Applied_Chemistry/MST_1/2024.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 2,
+      "subject": "Applied Chemistry",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 2/Applied_Chemistry/MST_1/2025.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 2,
+      "subject": "Applied Chemistry",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 2/Applied_Chemistry/MST_1/2026.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 2,
+      "subject": "Applied Chemistry",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 2/Applied_Chemistry/MST_2/2024.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 2,
+      "subject": "Applied Chemistry",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 2/Applied_Chemistry/MST_2/2025.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 2,
+      "subject": "Applied Chemistry",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 2/Applied_Chemistry/MST_2/2026.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 2,
+      "subject": "Universal Human Values",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 2/Universal_Human_Values/MST_1/2024.pdf"
+    },
+     {
+      "type": "MST-I",
+      "semester": 2,
+      "subject": "Universal Human Values",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 2/Universal_Human_Values/MST_1/2025.pdf"
+    },
+     {
+      "type": "MST-I",
+      "semester": 2,
+      "subject": "Universal Human Values",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 2/Universal_Human_Values/MST_1/2026.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 2,
+      "subject": "Universal Human Values",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 2/Universal_Human_Values/MST_2/2024.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 2,
+      "subject": "Universal Human Values",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 2/Universal_Human_Values/MST_2/2025.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 2,
+      "subject": "Universal Human Values",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 2/Universal_Human_Values/MST_2/2026.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 2,
+      "subject": "Electronics",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 2/Electronics/MST_1/2024.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 2,
+      "subject": "Electronics",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 2/Electronics/MST_1/2025.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 2,
+      "subject": "Electronics",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 2/Electronics/MST_1/2026.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 2,
+      "subject": "Electronics",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 2/Electronics/MST_2/2024.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 2,
+      "subject": "Electronics",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 2/Electronics/MST_2/2025.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 2,
+      "subject": "Electronics",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 2/Electronics/MST_2/2026.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 2,
+      "subject": "C++",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 2/Cpp/MST_1/2024.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 2,
+      "subject": "C++",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 2/Cpp/MST_1/2025.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 2,
+      "subject": "C++",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 2/Cpp/MST_1/2026.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 2,
+      "subject": "C++",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 2/Cpp/MST_2/2024.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 2,
+      "subject": "C++",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 2/Cpp/MST_2/2025.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 2,
+      "subject": "C++",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 2/Cpp/MST_2/2026.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 3,
+      "subject": "Mathematics-III (Probability & Statistics)",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 3/Mathematics-III/MST_1/2024.pdf"
+    },
+     {
+      "type": "MST-I",
+      "semester": 3,
+      "subject": "Mathematics-III (Probability & Statistics)",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 3/Mathematics-III/MST_1/2025.pdf"
+    },
+     {
+      "type": "MST-I",
+      "semester": 3,
+      "subject": "Mathematics-III (Probability & Statistics)",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 3/Mathematics-III/MST_1/2026.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 3,
+      "subject": "Mathematics-III (Probability & Statistics)",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 3/Mathematics-III/MST_2/2024.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 3,
+      "subject": "Mathematics-III (Probability & Statistics)",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 3/Mathematics-III/MST_2/2025.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 3,
+      "subject": "Mathematics-III (Probability & Statistics)",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 3/Mathematics-III/MST_2/2026.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 3,
+      "subject": "Data Structures & Algorithms (DSA)",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 3/DSA/MST_1/2024.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 3,
+      "subject": "Data Structures & Algorithms (DSA)",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 3/DSA/MST_1/2025.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 3,
+      "subject": "Data Structures & Algorithms (DSA)",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 3/DSA/MST_1/2026.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 3,
+      "subject": "Data Structures & Algorithms (DSA)",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 3/DSA/MST_2/2024.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 3,
+      "subject": "Data Structures & Algorithms (DSA)",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 3/DSA/MST_2/2025.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 3,
+      "subject": "Data Structures & Algorithms (DSA)",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 3/DSA/MST_2/2026.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 3,
+      "subject": "Python",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 3/Python/MST_1/2024.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 3,
+      "subject": "Python",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 3/Python/MST_1/2025.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 3,
+      "subject": "Python",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 3/Python/MST_1/2026.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 3,
+      "subject": "Python",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 3/Python/MST_2/2024.pdf"
+    },
+     {
+      "type": "MST-II",
+      "semester": 3,
+      "subject": "Python",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 3/Python/MST_2/2025.pdf"
+    },
+     {
+      "type": "MST-II",
+      "semester": 3,
+      "subject": "Python",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 3/Python/MST_2/2026.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 3,
+      "subject": "Economics",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 3/Economics/MST_1/2024.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 3,
+      "subject": "Economics",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 3/Economics/MST_1/2025.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 3,
+      "subject": "Economics",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 3/Economics/MST_1/2026.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 3,
+      "subject": "Economics",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 3/Economics/MST_2/2024.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 3,
+      "subject": "Economics",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 3/Economics/MST_2/2025.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 3,
+      "subject": "Economics",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 3/Economics/MST_2/2026.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 3,
+      "subject": "Digital System Design (DSD)",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 3/DSD/MST_1/2024.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 3,
+      "subject": "Digital System Design (DSD)",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 3/DSD/MST_1/2025.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 3,
+      "subject": "Digital System Design (DSD)",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 3/DSD/MST_1/2026.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 3,
+      "subject": "Digital System Design (DSD)",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 3/DSD/MST_2/2024.pdf"
+    },
+     {
+      "type": "MST-II",
+      "semester": 3,
+      "subject": "Digital System Design (DSD)",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 3/DSD/MST_2/2025.pdf"
+    },
+     {
+      "type": "MST-II",
+      "semester": 3,
+      "subject": "Digital System Design (DSD)",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 3/DSD/MST_2/2026.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 3,
+      "subject": "Indian Knowledge System (IKS)",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 3/IKS/MST_1/2024.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 3,
+      "subject": "Indian Knowledge System (IKS)",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 3/IKS/MST_1/2025.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 3,
+      "subject": "Indian Knowledge System (IKS)",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 3/IKS/MST_1/2026.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 3,
+      "subject": "Indian Knowledge System (IKS)",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 3/IKS/MST_2/2024.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 3,
+      "subject": "Indian Knowledge System (IKS)",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 3/IKS/MST_2/2025.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 3,
+      "subject": "Indian Knowledge System (IKS)",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 3/IKS/MST_2/2026.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 3,
+      "subject": "Computer Organization & Architecture (COA)",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 3/COA/MST_1/2024.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 3,
+      "subject": "Computer Organization & Architecture (COA)",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 3/COA/MST_1/2025.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 3,
+      "subject": "Computer Organization & Architecture (COA)",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 3/COA/MST_1/2026.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 3,
+      "subject": "Computer Organization & Architecture (COA)",
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester 3/COA/MST_2/2024.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 3,
+      "subject": "Computer Organization & Architecture (COA)",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 3/COA/MST_2/2025.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 3,
+      "subject": "Computer Organization & Architecture (COA)",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 3/COA/MST_2/2026.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 4,
+      "subject": "Discrete Mathematics",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 4/Discrete_Mathematics/MST_1/2025.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 4,
+      "subject": "Discrete Mathematics",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 4/Discrete_Mathematics/MST_1/2026.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 4,
+      "subject": "Discrete Mathematics",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 4/Discrete_Mathematics/MST_2/2025.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 4,
+      "subject": "Discrete Mathematics",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 4/Discrete_Mathematics/MST_2/2026.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 4,
+      "subject": "Operating System (OS)",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 4/OS/MST_1/2025.pdf"
+    },
+     {
+      "type": "MST-I",
+      "semester": 4,
+      "subject": "Operating System (OS)",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 4/OS/MST_1/2026.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 4,
+      "subject": "Operating System (OS)",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 4/OS/MST_2/2025.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 4,
+      "subject": "Operating System (OS)",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 4/OS/MST_2/2026.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 4,
+      "subject": "Design & Analysis of Algorithms (DAA)",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 4/DAA/MST_1/2025.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 4,
+      "subject": "Design & Analysis of Algorithms (DAA)",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 4/DAA/MST_1/2026.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 4,
+      "subject": "Design & Analysis of Algorithms (DAA)",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 4/DAA/MST_2/2025.pdf"
+    },
+     {
+      "type": "MST-II",
+      "semester": 4,
+      "subject": "Design & Analysis of Algorithms (DAA)",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 4/DAA/MST_2/2026.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 4,
+      "subject": "Artificial Intelligence (AI)",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 4/AI/MST_1/2025.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 4,
+      "subject": "Artificial Intelligence (AI)",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 4/AI/MST_1/2026.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 4,
+      "subject": "Artificial Intelligence (AI)",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 4/AI/MST_2/2025.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 4,
+      "subject": "Artificial Intelligence (AI)",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 4/AI/MST_2/2026.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 4,
+      "subject": "DBMS",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 4/DBMS/MST_1/2025.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 4,
+      "subject": "DBMS",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 4/DBMS/MST_1/2026.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 4,
+      "subject": "DBMS",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 4/DBMS/MST_2/2025.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 4,
+      "subject": "DBMS",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 4/DBMS/MST_2/2026.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 4,
+      "subject": "Microcontrollers",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 4/Microcontrollers/MST_1/2025.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 4,
+      "subject": "Microcontrollers",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 4/Microcontrollers/MST_1/2026.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 4,
+      "subject": "Microcontrollers",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 4/Microcontrollers/MST_2/2025.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 4,
+      "subject": "Microcontrollers",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 4/Microcontrollers/MST_2/2026.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 5,
+      "subject": "Computer Networks (CN)",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 5/CN/MST_1/2025.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 5,
+      "subject": "Computer Networks (CN)",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 5/CN/MST_2/2025.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 5,
+      "subject": "Machine Learning (ML)",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 5/ML/MST_1/2025.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 5,
+      "subject": "Machine Learning (ML)",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 5/ML/MST_2/2025.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 5,
+      "subject": "Theory of Computation (TOC)",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 5/TOC/MST_1/2025.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 5,
+      "subject": "Theory of Computation (TOC)",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 5/TOC/MST_2/2025.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 5,
+      "subject": "Software Engineering (SE)",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 5/SE/MST_1/2025.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 5,
+      "subject": "Software Engineering (SE)",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 5/SE/MST_2/2025.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 5,
+      "subject": "Data Warehousing & Mining (DWM)",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 5/DWM/MST_1/2025.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 5,
+      "subject": "Data Warehousing & Mining (DWM)",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester 5/DWM/MST_2/2025.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 6,
+      "subject": "Soft Computing",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 6/Soft_Computing/MST_1/2026.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 6,
+      "subject": "Soft Computing",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 6/Soft_Computing/MST_2/2026.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 6,
+      "subject": "Advanced Machine Learning",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 6/Advanced_Machine_Learning/MST_1/2026.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 6,
+      "subject": "Advanced Machine Learning",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 6/Advanced_Machine_Learning/MST_2/2026.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 6,
+      "subject": "Compiler Design",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 6/Compiler_Design/MST_1/2026.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 6,
+      "subject": "Compiler Design",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 6/Compiler_Design/MST_2/2026.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 6,
+      "subject": "Deep Learning",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 6/Deep_Learning/MST_1/2026.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 6,
+      "subject": "Deep Learning",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 6/Deep_Learning/MST_2/2026.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 6,
+      "subject": "Startup & Innovation",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 6/Startup_and_Innovation/MST_1/2026.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 6,
+      "subject": "Startup & Innovation",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 6/Startup_and_Innovation/MST_2/2026.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 7,
+      "subject": "Cloud Computing",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 7/Cloud_Computing/MST_1/2026.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 7,
+      "subject": "Cloud Computing",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 7/Cloud_Computing/MST_2/2026.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 7,
+      "subject": "Natural Language Processing (NLP)",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 7/NLP/MST_1/2026.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 7,
+      "subject": "Natural Language Processing (NLP)",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester 7/NLP/MST_2/2026.pdf"
+    }
+  ],
+  "end_sem_papers": [
+    {
+      "semester": 1,
+      "subject": "Applied Mathematics-I",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 1/Applied_Mathematics-I/2024.pdf"
+    },
+    {
+      "semester": 1,
+      "subject": "Communication Skills",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 1/Communication_Skills/2024.pdf"
+    },
+    {
+      "semester": 1,
+      "subject": "Applied Physics",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 1/Applied_Physics/2024.pdf"
+    },
+    {
+      "semester": 1,
+      "subject": "EVS",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 1/EVS/2024.pdf"
+    },
+    {
+      "semester": 1,
+      "subject": "Basic Electrical Engineering",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 1/Basic_Electrical_Engineering/2024.pdf"
+    },
+    {
+      "semester": 2,
+      "subject": "Applied Mathematics-II",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 2/Applied_Mathematics-II/2024.pdf"
+    },
+    {
+      "semester": 2,
+      "subject": "Applied Chemistry",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 2/Applied_Chemistry/2024.pdf"
+    },
+    {
+      "semester": 2,
+      "subject": "Universal Human Values",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 2/Universal_Human_Values/2024.pdf"
+    },
+    {
+      "semester": 2,
+      "subject": "Electronics",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 2/Electronics/2024.pdf"
+    },
+    {
+      "semester": 2,
+      "subject": "C++",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 2/Cpp/2024.pdf"
+    },
+    {
+      "semester": 3,
+      "subject": "Mathematics-III (Probability & Statistics)",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 3/Mathematics-III/2024.pdf"
+    },
+    {
+      "semester": 3,
+      "subject": "Data Structures & Algorithms (DSA)",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 3/DSA/2024.pdf"
+    },
+    {
+      "semester": 3,
+      "subject": "Python",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 3/Python/2024.pdf"
+    },
+    {
+      "semester": 3,
+      "subject": "Economics",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 3/Economics/2024.pdf"
+    },
+    {
+      "semester": 3,
+      "subject": "Digital System Design (DSD)",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 3/DSD/2024.pdf"
+    },
+    {
+      "semester": 3,
+      "subject": "Indian Knowledge System (IKS)",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 3/IKS/2024.pdf"
+    },
+    {
+      "semester": 3,
+      "subject": "Computer Organization & Architecture (COA)",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 3/COA/2024.pdf"
+    },
+    {
+      "semester": 4,
+      "subject": "Discrete Mathematics",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 4/Discrete_Mathematics/2024.pdf"
+    },
+    {
+      "semester": 4,
+      "subject": "Data Structures (DS)",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 4/DS/2024.pdf"
+    },
+    {
+      "semester": 4,
+      "subject": "Design & Analysis of Algorithms (DAA)",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 4/DAA/2024.pdf"
+    },
+    {
+      "semester": 4,
+      "subject": "Artificial Intelligence (AI)",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 4/AI/2024.pdf"
+    },
+    {
+      "semester": 4,
+      "subject": "DBMS",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 4/DBMS/2024.pdf"
+    },
+    {
+      "semester": 4,
+      "subject": "Microcontrollers",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 4/Microcontrollers/2024.pdf"
+    },
+    {
+      "semester": 5,
+      "subject": "Computer Networks (CN)",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 5/CN/2024.pdf"
+    },
+    {
+      "semester": 5,
+      "subject": "Machine Learning (ML)",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 5/ML/2024.pdf"
+    },
+    {
+      "semester": 5,
+      "subject": "Theory of Computation (TOC)",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 5/TOC/2024.pdf"
+    },
+    {
+      "semester": 5,
+      "subject": "Software Engineering (SE)",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 5/SE/2024.pdf"
+    },
+    {
+      "semester": 5,
+      "subject": "Data Warehousing & Mining (DWM)",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 5/DWM/2024.pdf"
+    },
+    {
+      "semester": 6,
+      "subject": "Soft Computing",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 6/Soft_Computing/2024.pdf"
+    },
+    {
+      "semester": 6,
+      "subject": "Advanced Machine Learning",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 6/Advanced_Machine_Learning/2024.pdf"
+    },
+    {
+      "semester": 6,
+      "subject": "Compiler Design",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 6/Compiler_Design/2024.pdf"
+    },
+    {
+      "semester": 6,
+      "subject": "Deep Learning",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 6/Deep_Learning/2024.pdf"
+    },
+    {
+      "semester": 6,
+      "subject": "Startup & Innovation",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 6/Startup_and_Innovation/2024.pdf"
+    },
+    {
+      "semester": 7,
+      "subject": "Cloud Computing",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 7/Cloud_Computing/2024.pdf"
+    },
+    {
+      "semester": 7,
+      "subject": "Natural Language Processing (NLP)",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester 7/NLP/2024.pdf"
+    }
+  ],
+  "subject_notes": [
+    {
+      "semester": 1,
+      "subject": "Applied Mathematics-I",
+      "unit": "Unit 1",
+      "title": "Applied Mathematics-I - Unit 1 Notes",
+      "pdf_url": "notes/Semester 1/Applied_Mathematics-I/Unit1.pdf"
+    },
+    {
+      "semester": 1,
+      "subject": "Communication Skills",
+      "unit": "Unit 1",
+      "title": "Communication Skills - Unit 1 Notes",
+      "pdf_url": "notes/Semester 1/Communication_Skills/Unit1.pdf"
+    },
+    {
+      "semester": 1,
+      "subject": "Applied Physics",
+      "unit": "Unit 1",
+      "title": "Applied Physics - Unit 1 Notes",
+      "pdf_url": "notes/Semester 1/Applied_Physics/Unit1.pdf"
+    },
+    {
+      "semester": 1,
+      "subject": "EVS",
+      "unit": "Unit 1",
+      "title": "EVS - Unit 1 Notes",
+      "pdf_url": "notes/Semester 1/EVS/Unit1.pdf"
+    },
+    {
+      "semester": 1,
+      "subject": "Basic Electrical Engineering",
+      "unit": "Unit 1",
+      "title": "Basic Electrical Engineering - Unit 1 Notes",
+      "pdf_url": "notes/Semester 1/Basic_Electrical_Engineering/Unit1.pdf"
+    },
+    {
+      "semester": 2,
+      "subject": "Applied Mathematics-II",
+      "unit": "Unit 1",
+      "title": "Applied Mathematics-II - Unit 1 Notes",
+      "pdf_url": "notes/Semester 2/Applied_Mathematics-II/Unit1.pdf"
+    },
+    {
+      "semester": 2,
+      "subject": "Applied Chemistry",
+      "unit": "Unit 1",
+      "title": "Applied Chemistry - Unit 1 Notes",
+      "pdf_url": "notes/Semester 2/Applied_Chemistry/Unit1.pdf"
+    },
+    {
+      "semester": 2,
+      "subject": "Universal Human Values",
+      "unit": "Unit 1",
+      "title": "Universal Human Values - Unit 1 Notes",
+      "pdf_url": "notes/Semester 2/Universal_Human_Values/Unit1.pdf"
+    },
+    {
+      "semester": 2,
+      "subject": "Electronics",
+      "unit": "Unit 1",
+      "title": "Electronics - Unit 1 Notes",
+      "pdf_url": "notes/Semester 2/Electronics/Unit1.pdf"
+    },
+    {
+      "semester": 2,
+      "subject": "C++",
+      "unit": "Unit 1",
+      "title": "C++ - Unit 1 Notes",
+      "pdf_url": "notes/Semester 2/Cpp/Unit1.pdf"
+    },
+    {
+      "semester": 3,
+      "subject": "Mathematics-III (Probability & Statistics)",
+      "unit": "Unit 1",
+      "title": "Mathematics-III (Probability & Statistics) - Unit 1 Notes",
+      "pdf_url": "notes/Semester 3/Mathematics-III/Unit1.pdf"
+    },
+    {
+      "semester": 3,
+      "subject": "Data Structures & Algorithms (DSA)",
+      "unit": "Unit 1",
+      "title": "Data Structures & Algorithms (DSA) - Unit 1 Notes",
+      "pdf_url": "notes/Semester 3/DSA/Unit1.pdf"
+    },
+    {
+      "semester": 3,
+      "subject": "Python",
+      "unit": "Unit 1",
+      "title": "Python - Unit 1 Notes",
+      "pdf_url": "notes/Semester 3/Python/Unit1.pdf"
+    },
+    {
+      "semester": 3,
+      "subject": "Economics",
+      "unit": "Unit 1",
+      "title": "Economics - Unit 1 Notes",
+      "pdf_url": "notes/Semester 3/Economics/Unit1.pdf"
+    },
+    {
+      "semester": 3,
+      "subject": "Digital System Design (DSD)",
+      "unit": "Unit 1",
+      "title": "Digital System Design (DSD) - Unit 1 Notes",
+      "pdf_url": "notes/Semester 3/DSD/Unit1.pdf"
+    },
+    {
+      "semester": 3,
+      "subject": "Indian Knowledge System (IKS)",
+      "unit": "Unit 1",
+      "title": "Indian Knowledge System (IKS) - Unit 1 Notes",
+      "pdf_url": "notes/Semester 3/IKS/Unit1.pdf"
+    },
+    {
+      "semester": 3,
+      "subject": "Computer Organization & Architecture (COA)",
+      "unit": "Unit 1",
+      "title": "Computer Organization & Architecture (COA) - Unit 1 Notes",
+      "pdf_url": "notes/Semester 3/COA/Unit1.pdf"
+    },
+    {
+      "semester": 4,
+      "subject": "Discrete Mathematics",
+      "unit": "Unit 1",
+      "title": "Discrete Mathematics - Unit 1 Notes",
+      "pdf_url": "notes/Semester 4/Discrete_Mathematics/Unit1.pdf"
+    },
+    {
+      "semester": 4,
+      "subject": "Data Structures (DS)",
+      "unit": "Unit 1",
+      "title": "Data Structures (DS) - Unit 1 Notes",
+      "pdf_url": "notes/Semester 4/DS/Unit1.pdf"
+    },
+    {
+      "semester": 4,
+      "subject": "Design & Analysis of Algorithms (DAA)",
+      "unit": "Unit 1",
+      "title": "Design & Analysis of Algorithms (DAA) - Unit 1 Notes",
+      "pdf_url": "notes/Semester 4/DAA/Unit1.pdf"
+    },
+    {
+      "semester": 4,
+      "subject": "Artificial Intelligence (AI)",
+      "unit": "Unit 1",
+      "title": "Artificial Intelligence (AI) - Unit 1 Notes",
+      "pdf_url": "notes/Semester 4/AI/Unit1.pdf"
+    },
+    {
+      "semester": 4,
+      "subject": "DBMS",
+      "unit": "Unit 1",
+      "title": "DBMS - Unit 1 Notes",
+      "pdf_url": "notes/Semester 4/DBMS/Unit1.pdf"
+    },
+    {
+      "semester": 4,
+      "subject": "Microcontrollers",
+      "unit": "Unit 1",
+      "title": "Microcontrollers - Unit 1 Notes",
+      "pdf_url": "notes/Semester 4/Microcontrollers/Unit1.pdf"
+    },
+    {
+      "semester": 5,
+      "subject": "Computer Networks (CN)",
+      "unit": "Unit 1",
+      "title": "Computer Networks (CN) - Unit 1 Notes",
+      "pdf_url": "notes/Semester 5/CN/Unit1.pdf"
+    },
+    {
+      "semester": 5,
+      "subject": "Machine Learning (ML)",
+      "unit": "Unit 1",
+      "title": "Machine Learning (ML) - Unit 1 Notes",
+      "pdf_url": "notes/Semester 5/ML/Unit1.pdf"
+    },
+    {
+      "semester": 5,
+      "subject": "Theory of Computation (TOC)",
+      "unit": "Unit 1",
+      "title": "Theory of Computation (TOC) - Unit 1 Notes",
+      "pdf_url": "notes/Semester 5/TOC/Unit1.pdf"
+    },
+    {
+      "semester": 5,
+      "subject": "Software Engineering (SE)",
+      "unit": "Unit 1",
+      "title": "Software Engineering (SE) - Unit 1 Notes",
+      "pdf_url": "notes/Semester 5/SE/Unit1.pdf"
+    },
+    {
+      "semester": 5,
+      "subject": "Data Warehousing & Mining (DWM)",
+      "unit": "Unit 1",
+      "title": "Data Warehousing & Mining (DWM) - Unit 1 Notes",
+      "pdf_url": "notes/Semester 5/DWM/Unit1.pdf"
+    },
+    {
+      "semester": 6,
+      "subject": "Soft Computing",
+      "unit": "Unit 1",
+      "title": "Soft Computing - Unit 1 Notes",
+      "pdf_url": "notes/Semester 6/Soft_Computing/Unit1.pdf"
+    },
+    {
+      "semester": 6,
+      "subject": "Advanced Machine Learning",
+      "unit": "Unit 1",
+      "title": "Advanced Machine Learning - Unit 1 Notes",
+      "pdf_url": "notes/Semester 6/Advanced_Machine_Learning/Unit1.pdf"
+    },
+    {
+      "semester": 6,
+      "subject": "Compiler Design",
+      "unit": "Unit 1",
+      "title": "Compiler Design - Unit 1 Notes",
+      "pdf_url": "notes/Semester 6/Compiler_Design/Unit1.pdf"
+    },
+    {
+      "semester": 6,
+      "subject": "Deep Learning",
+      "unit": "Unit 1",
+      "title": "Deep Learning - Unit 1 Notes",
+      "pdf_url": "notes/Semester 6/Deep_Learning/Unit1.pdf"
+    },
+    {
+      "semester": 6,
+      "subject": "Startup & Innovation",
+      "unit": "Unit 1",
+      "title": "Startup & Innovation - Unit 1 Notes",
+      "pdf_url": "notes/Semester 6/Startup_and_Innovation/Unit1.pdf"
+    },
+    {
+      "semester": 7,
+      "subject": "Cloud Computing",
+      "unit": "Unit 1",
+      "title": "Cloud Computing - Unit 1 Notes",
+      "pdf_url": "notes/Semester 7/Cloud_Computing/Unit1.pdf"
+    },
+    {
+      "semester": 7,
+      "subject": "Natural Language Processing (NLP)",
+      "unit": "Unit 1",
+      "title": "Natural Language Processing (NLP) - Unit 1 Notes",
+      "pdf_url": "notes/Semester 7/NLP/Unit1.pdf"
+    }
+  ],
+  "study_material": []
+}
