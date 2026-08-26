@@ -35,9 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
         initThemeEngine();
         initAccordions();
         initModalSystem();
+        initGalleryModal();
         initFormHandlers();
         initStudentZone();
         initScrollReveal();
+        initHeroTypingAnimation();
     });
 });
 
@@ -95,6 +97,117 @@ function initScrollReveal() {
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
     targets.forEach((el) => observer.observe(el));
+}
+
+// 1c. Hero Typing Animation for Main H1
+function initHeroTypingAnimation() {
+    const heroH1 = document.querySelector('.hero h1');
+    if (!heroH1) return;
+
+    // Prevent running animation twice
+    if (heroH1.classList.contains('typing-animation')) return;
+
+    // Store original HTML to preserve the <span> element
+    const originalHTML = heroH1.innerHTML;
+    const fullText = heroH1.textContent.trim();
+    
+    // Duration settings
+    const typingDuration = 3500; // milliseconds
+    const charsToType = fullText.length;
+    const delayPerChar = typingDuration / charsToType;
+    
+    let currentIndex = 0;
+    
+    // Add typing class to show cursor
+    heroH1.classList.add('typing-animation');
+    
+    // Clear the content temporarily
+    heroH1.textContent = '';
+    
+    // Typing animation loop
+    const typingInterval = setInterval(() => {
+        if (currentIndex <= charsToType) {
+            const displayText = fullText.substring(0, currentIndex);
+            heroH1.textContent = displayText;
+            currentIndex++;
+        } else {
+            // Animation complete
+            clearInterval(typingInterval);
+            heroH1.innerHTML = originalHTML; // Restore original HTML with span formatting
+            heroH1.classList.remove('typing-animation');
+            heroH1.classList.add('typing-complete');
+        }
+    }, delayPerChar);
+}
+
+// 1d. Gallery Lightbox Modal
+function initGalleryModal() {
+    const galleryImages = document.querySelectorAll('.gallery-img');
+    const modalOverlay = document.getElementById('galleryModalOverlay');
+    const modalImg = document.getElementById('galleryModalImg');
+    const modalCaption = document.getElementById('galleryModalCaption');
+    const closeBtn = document.getElementById('galleryModalClose');
+    const prevBtn = document.getElementById('galleryPrevBtn');
+    const nextBtn = document.getElementById('galleryNextBtn');
+
+    let currentImageIndex = 0;
+    const allImages = Array.from(galleryImages);
+
+    if (!modalOverlay || !modalImg || !modalCaption || !closeBtn || !prevBtn || !nextBtn || !allImages.length) {
+        return;
+    }
+
+    // Open modal with image
+    function openModal(index) {
+        if (index < 0 || index >= allImages.length) return;
+        currentImageIndex = index;
+        const img = allImages[index];
+        modalImg.src = img.src;
+        modalImg.fetchPriority = 'high';
+        modalImg.decoding = 'async';
+        modalCaption.textContent = img.alt || 'Gallery image';
+        modalOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Close modal
+    function closeModal() {
+        modalOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Navigate to next image
+    function nextImage() {
+        openModal((currentImageIndex + 1) % allImages.length);
+    }
+
+    // Navigate to previous image
+    function prevImage() {
+        openModal((currentImageIndex - 1 + allImages.length) % allImages.length);
+    }
+
+    // Attach click handlers to all gallery images
+    galleryImages.forEach((img, index) => {
+        img.addEventListener('click', () => openModal(index));
+    });
+
+    // Modal controls
+    closeBtn.addEventListener('click', closeModal);
+    prevBtn.addEventListener('click', prevImage);
+    nextBtn.addEventListener('click', nextImage);
+
+    // Close modal when clicking outside the modal content
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) closeModal();
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (!modalOverlay.classList.contains('active')) return;
+        if (e.key === 'ArrowRight') nextImage();
+        if (e.key === 'ArrowLeft') prevImage();
+        if (e.key === 'Escape') closeModal();
+    });
 }
 
 // 2. Light / Dark Mode Engine Initialization
@@ -161,17 +274,19 @@ function initModalSystem() {
     const eventDatabase = {
         teachersDay: {
             title: "Teacher's Day Celebration",
-            meta: "5 September 2026 | 11:00 AM – 2:00 PM | Cultural Event",
-            desc: "A special event to honor and appreciate faculty members through performances, speeches, and activities.",
-            team: "Cultural Committee |Shivangi Ranout |Sheetal Bisht |Mannat",
+            meta: "5 September 2026 | 12:30 PM | Cultural Event",
+            desc: "A heartfelt celebration dedicated to honoring our faculty for their guidance, dedication, and invaluable contribution, featuring performances, speeches, and engaging activities.",
+            poster: "Photos/Events/Teacher_Day/0.png",
+            team: "Cultural Committee | Shivangi Ranout |Sheetal Bisht |Mannat",
             photos: [
-                "Photos/Events/Teacher_Day/0.jpeg",
+                
             ]
         },
         guestLecture: {
             title: "Guest Lecture",
             meta: "23 February 2026 | 2:00 PM – 4:00 PM | Academic Event",
             desc: "An insightful session conducted by an industry expert on emerging technologies and career opportunities.",
+            poster: "Photos/Events/Guest_Lecture/3.jpg",
             team: "Training Cell, Department Faculty",
             photos: [
                 "Photos/Events/Guest_Lecture/1.jpg",
@@ -182,11 +297,13 @@ function initModalSystem() {
         promptEngineering: {
             title: "Prompt Engineering Event",
             meta: "24 February 2026 | 3:00 PM – 4:00 PM | Technical Event",
-            desc: "Hands-on workshop introducing AI prompt engineering techniques and practical applications.",
+            desc: "An interactive prompt engineering event designed to enhance students’ AI prompting skills through creative challenges and practical problem-solving.",
+            poster: "Photos/Events/Prompt/Poster.png",
             team: "Technical Committee | Jigyasu | Saniya Dhiman | Sweta",
             winners: "<li>Elite Promptian: Rrizul Saini & Nikhil Patiyal</li><li>Elite Promptian: Sejal Pathania & Monika</li>",
             photos: [
                 "Photos/Events/Prompt/4.jpeg",
+                "Photos/Events/Prompt/5.jpeg",
                 "Photos/Events/Prompt/2.jpg",
                 "Photos/Events/Prompt/3.jpg",
                 "Photos/Events/Prompt/1.jpg"
@@ -196,6 +313,7 @@ function initModalSystem() {
             title: "Poster Making Competition",
             meta: "22 March 2026 | 11:00 AM – 2:00 PM | Cultural Event",
             desc: "Students showcased their creativity through theme-based poster designs.",
+            poster: "Photos/Events/Poster_Making/Poster.png",
             team: "Cultural Committee |Shivangi Ranout |Sheetal Bisht |Mannat ",
             winners: "<li>First Prize: Arsita</li><li>Second Prize: Dhroov</li><li>Third Prize: Purnima</li>",
             photos: [
@@ -209,6 +327,7 @@ function initModalSystem() {
             title: "Algoverse 2.0",
             meta: "26 February 2026 | 2:00 PM – 4:00 PM | Technical Event",
             desc: "Competitive programming and algorithmic problem-solving event for students.",
+            poster: "Photos/Events/Algoverse_2.0/1.jpg",
             team: " Technical Committee | Jigyasu | Saniya Dhiman | Sweta",
             winners: "<li>Champion: Complexity Crew</li><li>Runner-Up: Team CodeStorm</li>",
             photos: [
@@ -222,19 +341,21 @@ function initModalSystem() {
             title: "Dhun",
             meta: "12 April 2026 | 5:00 PM – 8:00 PM | Cultural Event",
             desc: "A musical extravaganza featuring solo and group performances by students.",
-            team: "Cultural Committee |Shivangi Ranout |Sheetal Bisht |Mannat",
-            winners: "<li>Best Solo Performer: Aarav Singh</li><li>Best Band: Rhythm Riders</li>",
+            poster: "Photos/Events/Dhun/4.jpeg",
+            team: "Cultural Committee | Shivangi Ranout | Sheetal Bisht | Mannat",
             photos: [
-                "https://via.placeholder.com/320x220?text=Dhun+1",
-                "https://via.placeholder.com/320x220?text=Dhun+2"
+                "Photos/Events/Dhun/0.jpeg",
+                "Photos/Events/Dhun/1.jpeg",
+                "Photos/Events/Dhun/3.jpeg",
+                "Photos/Events/Dhun/2.jpeg"
             ]
         },
         sportsEvent: {
             title: "Sports Event",
-            meta: "20 April 2026 | 9:00 AM – 5:00 PM | Sports Event",
+            meta: "2-4 April 2026 | 9:00 AM – 5:00 PM | Sports Event",
             desc: "Various indoor and outdoor sports competitions promoting teamwork and fitness.",
+            poster: "Photos/Events/Sports/Poster.jpeg",
             team: "Sports Committee, CSES",
-            winners: "<li>Overall Champions: Team Phoenix</li><li>Best Athlete: Karan Mehta</li>",
             photos: [
                 "Photos/Events/Sports/1.jpg",
                 "Photos/Events/Sports/2.jpg",
@@ -248,8 +369,8 @@ function initModalSystem() {
             title: "Graduation Ceremony",
             meta: "10 May 2026 | 11:00 AM – 2:00 PM | Cultural Event",
             desc: "Ceremony celebrating the achievements of graduating students and their academic journey.",
+            poster: "Photos/Events/Graduation_Ceremony/Poster.png",
             team: "CSE Society",
-            winners: "<li>Best Graduate Speaker: Anjali Verma</li><li>Best Class Project: Project Nexus</li>",
             photos: [
                 "Photos/Events/Graduation_Ceremony/1.jpg",
                 "Photos/Events/Graduation_Ceremony/2.jpg",
@@ -258,12 +379,11 @@ function initModalSystem() {
         }
     };
 
-    // Build a right-side slideshow for each event card using the registry photos
+    // Build a static right-side poster for each event card.
     function setEventSlides() {
         interactiveCards.forEach(card => {
             const key = card.getAttribute('data-event');
             const record = eventDatabase[key] || {};
-            const photos = (record.photos && record.photos.length) ? record.photos.slice() : [`images/events/${key}-1.jpg`];
 
             // Ensure textual content is wrapped in `.event-content` so slideshow can sit on the right
             if (!card.querySelector('.event-content')) {
@@ -282,54 +402,21 @@ function initModalSystem() {
                 existing.remove();
             }
 
-            // Create slideshow container
+            // Create a portrait poster placeholder. Replace the `poster` URL
+            // in eventDatabase above when the original poster is available.
             const wrap = document.createElement('div');
-            wrap.className = 'event-slideshow';
+            wrap.className = 'event-poster';
 
             const img = document.createElement('img');
-            img.className = 'event-slide';
+            img.className = 'event-poster-image';
+            img.src = record.poster || 'https://placehold.co/360x540/172554/ffffff?text=Event+Poster';
             img.alt = record.title ? `${record.title} photo` : 'Event photo';
+            img.loading = 'lazy';
+            img.decoding = 'async';
             wrap.appendChild(img);
 
-            // Controls
-            const controls = document.createElement('div');
-            controls.className = 'slide-controls';
-            const prev = document.createElement('button'); prev.innerHTML = '&#10094;';
-            const next = document.createElement('button'); next.innerHTML = '&#10095;';
-            controls.appendChild(prev); controls.appendChild(next);
-            wrap.appendChild(controls);
-
-            // Ensure clicks on controls do not trigger the card click
-            [prev, next].forEach(btn => btn.addEventListener('click', (e) => { e.stopPropagation(); }));
-
-            // Append slideshow to the card (right side due to flex layout)
+            // Append poster to the right side of the card.
             card.appendChild(wrap);
-
-            let idx = 0;
-            function show(i) {
-                idx = (i + photos.length) % photos.length;
-                img.src = photos[idx];
-                img.onerror = function() { this.onerror = null; this.src = 'https://via.placeholder.com/320x160?text=Event+Photo'; };
-            }
-
-            prev.addEventListener('click', (e) => { e.preventDefault(); show(idx - 1); resetAuto(); });
-            next.addEventListener('click', (e) => { e.preventDefault(); show(idx + 1); resetAuto(); });
-
-            // Auto-advance
-            function startAuto() {
-                stopAuto();
-                wrap._interval = setInterval(() => { show(idx + 1); }, 3000);
-            }
-            function stopAuto() { if (wrap._interval) clearInterval(wrap._interval); }
-            function resetAuto() { startAuto(); }
-
-            // Pause on hover to allow manual control
-            wrap.addEventListener('mouseenter', () => stopAuto());
-            wrap.addEventListener('mouseleave', () => startAuto());
-
-            // Initialize
-            show(0);
-            startAuto();
         });
     }
 
@@ -359,6 +446,9 @@ function initModalSystem() {
                 img.src = src;
                 img.alt = `${records.title} photo`;
                 img.className = 'photo-thumb';
+                img.loading = 'lazy';
+                img.decoding = 'async';
+                img.fetchPriority = 'high';
                 img.addEventListener('click', () => {
                     window.open(src, '_blank');
                 });
@@ -436,6 +526,10 @@ function initFormHandlers() {
 
             if (response.ok) {
 
+                const successMessage = document.getElementById('suggestionSuccessMessage');
+                if (successMessage) {
+                    successMessage.textContent = '✓ Message sent successfully. Thank you for your suggestion.';
+                }
                 showSuccessAlert('suggestionSuccessMessage');
 
                 suggestionForm.reset();
@@ -574,7 +668,20 @@ function initStudentZone() {
             if (featureGrid) featureGrid.classList.remove('disabled');
         });
 
-    function clearSelection() { selectionArea.innerHTML = ''; }
+    function clearSelection() {
+        if (selectionArea) selectionArea.innerHTML = '';
+    }
+
+    function resetStudentZoneView() {
+        if (filterSemester) filterSemester.value = '';
+        if (filterPaperType) filterPaperType.value = '';
+        populateSubjectOptions();
+        if (filterSubject) filterSubject.value = '';
+
+        const inlineResults = document.getElementById('searchResults');
+        if (inlineResults) inlineResults.innerHTML = '';
+        clearSelection();
+    }
 
     function initFilters() {
         populateSubjectOptions();
@@ -818,7 +925,7 @@ function initStudentZone() {
         selectionClose.addEventListener('click', () => {
             selectionOverlay.classList.remove('active');
             document.body.classList.remove('dialog-open');
-            clearSelection();
+            resetStudentZoneView();
         });
     }
 
@@ -827,7 +934,7 @@ function initStudentZone() {
             if (e.target === selectionOverlay) {
                 selectionOverlay.classList.remove('active');
                 document.body.classList.remove('dialog-open');
-                clearSelection();
+                resetStudentZoneView();
             }
         });
     }
