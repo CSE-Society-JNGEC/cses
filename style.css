@@ -1708,9 +1708,41 @@ body {
     flex: 0 0 auto;
 }
 
-@media(max-width:700px){
-    .dept-grid { grid-template-columns: 1fr; }
-    .council-card .card-photo img{ width:72px; height:72px; }
+@media(max-width:768px){
+    .dept-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .council-card {
+        width: 100%;
+        min-width: 0;
+        flex-direction: row;
+        align-items: center;
+        padding: 16px;
+        gap: 14px;
+    }
+
+    .council-card .card-content {
+        min-width: 0;
+        flex: 1 1 auto;
+        display: grid;
+        grid-template-columns: minmax(104px, 0.85fr) minmax(0, 1fr);
+        align-items: center;
+        gap: 10px;
+    }
+
+    .council-card .position,
+    .council-card .person {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .council-card .card-photo img {
+        width: 72px;
+        height: 72px;
+        object-fit: cover;
+    }
 }
 
 @media (max-width: 1060px) {
