@@ -339,7 +339,7 @@ function initModalSystem() {
         },
         dhun: {
             title: "Dhun",
-            meta: "12 April 2026 | 5:00 PM – 8:00 PM | Cultural Event",
+            meta: "28 February 2026 | 2:00 PM – 5:00 PM | Cultural Event",
             desc: "A musical extravaganza featuring solo and group performances by students.",
             poster: "Photos/Events/Dhun/4.jpeg",
             team: "Cultural Committee | Shivangi Ranout | Sheetal Bisht | Mannat",
@@ -367,7 +367,7 @@ function initModalSystem() {
         },
         graduation: {
             title: "Graduation Ceremony",
-            meta: "10 May 2026 | 11:00 AM – 2:00 PM | Cultural Event",
+            meta: "23 May 2026 | 11:00 AM – 2:00 PM | Cultural Event",
             desc: "Ceremony celebrating the achievements of graduating students and their academic journey.",
             poster: "Photos/Events/Graduation_Ceremony/Poster.png",
             team: "CSE Society",
