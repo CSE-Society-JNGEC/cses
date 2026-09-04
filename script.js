@@ -276,7 +276,7 @@ function initModalSystem() {
             title: "Teacher's Day Celebration",
             meta: "5 September 2026 | 12:30 PM | Cultural Event",
             desc: "A heartfelt celebration dedicated to honoring our faculty for their guidance, dedication, and invaluable contribution, featuring performances, speeches, and engaging activities.",
-            poster: "Photos/Events/Teacher_Day/0.png",
+            poster: "Photos/Events/Teacher_Day/0.jpg",
             team: "Cultural Committee | Shivangi Ranout |Sheetal Bisht |Mannat",
             photos: [
                 
