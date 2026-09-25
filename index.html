@@ -3,42 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSE Society — Official Portal</title>
+    <title>CSE Society — Home</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* SPA Page View Toggle Styles */
-        .page-view {
-            display: none;
-        }
-        .page-view.active {
-            display: block;
-        }
-        /* No Results Empty State Styling */
-        .no-results-box {
-            grid-column: 1 / -1;
-            text-align: center;
-            padding: 48px 20px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px dashed rgba(255, 255, 255, 0.15);
-            border-radius: 12px;
-            color: #a0aec0;
-        }
-        .no-results-box h4 {
-            font-size: 1.2rem;
-            color: #fff;
-            margin-bottom: 8px;
-        }
-    </style>
 </head>
 <body>
-    <!-- Splash Overlay -->
+    <!-- Splash overlay shown on page load; removed by script after animation -->
     <div id="splashOverlay" class="splash-overlay" aria-hidden="false">
         <div class="splash-inner">
             <img src="logo.png" alt="CSE Society Logo" class="splash-logo">
         </div>
     </div>
-
-    <!-- Background Decor -->
     <div class="bg-decor" aria-hidden="true">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
@@ -46,10 +20,9 @@
         <div class="grid-overlay"></div>
     </div>
 
-    <!-- Navigation Bar -->
     <nav>
         <div class="nav-inner">
-            <a class="logo" href="#home" onclick="switchView('home')">
+            <a class="logo" href="index.html">
                 <img src="logo.png" alt="CSE Society Logo" class="logo-image">
                 <div class="logo-text">
                     <span>CSE Society</span>
@@ -57,11 +30,11 @@
                 </div>
             </a>
             <ul class="nav-links">
-                <li><a class="nav-link active" id="nav-home" href="#home" onclick="switchView('home')">Home</a></li>
+                <li><a class="nav-link active" href="index.html">Home</a></li>
                 <li><a class="nav-link" href="events.html">Events</a></li>
                 <li><a class="nav-link" href="about.html">About</a></li>
                 <li><a class="nav-link" href="contact.html">Contact</a></li>
-                <li><a class="nav-link" id="nav-studentzone" href="#studentzone" onclick="switchView('studentzone')">Student Zone</a></li>
+                <li><a class="nav-link" href="studentzone.html">Student Zone</a></li>
             </ul>
             <div class="nav-actions">
                 <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">☀️</button>
@@ -72,374 +45,183 @@
         </div>
     </nav>
 
-    <!-- Mobile Drawer Menu -->
     <div class="mobile-menu" id="mobileMenu">
-        <a class="mobile-link active" id="mob-nav-home" href="#home" onclick="switchView('home')">Home</a>
+        <a class="mobile-link active" href="index.html">Home</a>
         <a class="mobile-link" href="events.html">Events</a>
         <a class="mobile-link" href="about.html">About</a>
         <a class="mobile-link" href="contact.html">Contact</a>
-        <a class="mobile-link" id="mob-nav-studentzone" href="#studentzone" onclick="switchView('studentzone')">Student Zone</a>
+        <a class="mobile-link" href="studentzone.html">Student Zone</a>
     </div>
 
-    <!-- MAIN CONTAINER WITH TOGGLABLE VIEWS -->
-    <main id="main-content">
-
-        <!-- VIEW 1: HOME PAGE SECTION (DEFAULT LANDING) -->
-        <div id="view-home" class="page-view active">
-            <!-- Hero Section -->
-            <section class="hero">
-                <div class="hero-content">
-                    <div class="hero-badge">● CODE · YOUR · FUTURE ●</div>
-                    <h1>Where Code Meets <span>Innovation</span></h1>
-                    <p class="hero-sub">Welcome to the central platform of the CSE Society.<br>Our one-stop platform for academic resources, technical events, student opportunities, and departmental updates.</p>
-                    <div class="hero-btns">
-                        <a class="btn-primary" href="events.html">Explore Events →</a>
-                        <button class="btn-outline" onclick="switchView('studentzone')">Student Portal</button>
-                    </div>
-                    <div class="hero-stats">
-                        <div class="stat"><div class="stat-num">20+</div><div class="stat-label">Active Members</div></div>
-                        <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Events Hosted</div></div>
-                    </div>
-                </div>
-
-                <div class="hero-visual" aria-hidden="true">
-                    <div class="hero-visual-glow"></div>
-                    <div class="hero-orbit-ring ring-1"></div>
-                    <div class="hero-orbit-ring ring-2"></div>
-
-                    <div class="hero-photo-frame">
-                        <div class="hero-photo-stack">
-                            <div class="hero-photo-slide"><img src="Photos/Events/Teacher_Day/0.jpg" alt="" width="600" height="600" loading="eager" fetchpriority="high" decoding="async"></div>
-                            <div class="hero-photo-slide"><img src="Photos/Gallery/Magazine.jpeg" alt="" width="600" height="600" loading="eager" decoding="async"></div>
-                            <div class="hero-photo-slide"><img src="Photos/Gallery/Vision.jpeg" alt="" width="900" height="600" loading="eager" decoding="async"></div>
-                            <div class="hero-photo-slide"><img src="Photos/Hero-Section/0.jpeg" alt="" width="900" loading="eager" decoding="async"></div>
-                            <div class="hero-photo-slide"><img src="Photos/Hero-Section/1.jpeg" alt="" width="900" loading="eager" decoding="async"></div>
-                            <div class="hero-photo-slide"><img src="Photos/Hero-Section/2.jpeg" alt="" width="900" loading="eager" decoding="async"></div>
-                            <div class="hero-photo-slide"><img src="Photos/Hero-Section/3.jpeg" alt="" width="900" loading="eager" decoding="async"></div>
-                        </div>
-                        <div class="hero-photo-scanline"></div>
-                        <div class="hero-photo-live"><span class="pulse-dot"></span>LIVE FEED</div>
-                    </div>
-
-                    <div class="hero-float-card card-code">
-                        <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
-                        <div class="code-line">const society = "CSE";</div>
-                        <div class="code-line">society.<span>build()</span>;</div>
-                    </div>
-
-                    <div class="hero-float-card card-stat">
-                        <div class="card-stat-icon">🚀</div>
-                        <div>
-                            <div class="card-stat-num">CSES JNGEC</div>
-                            <div class="card-stat-label">Registrations Open</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Bulletin Section -->
-            <section class="section" style="padding-top:0;">
-                <div class="section-inner">
-                    <div class="section-tag">// NOTIFICATIONS BULLETIN</div>
-                    <h2 class="section-title">Latest Announcements</h2>
-                    <div class="notif-grid">
-                        <div class="notif-card">
-                            <div class="notif-date">September 5, 2026</div>
-                            <h3>🎯 Teacher's Day Event 2026</h3>
-                            <p>Join us in celebrating the dedication and impact of our educators with special activities and recognition.</p>
-                            <a class="read-more" href="events.html">Learn More →</a>
-                        </div>
-                        <div class="notif-card">
-                            <div class="notif-date">August 25, 2026</div>
-                            <h3>🤖 CSE Society Magazine - Innoverse</h3>
-                            <p>Explore Innoverse, the official magazine of CSE Society featuring technology, student achievements, and ideas.</p>
-                            <a class="read-more" href="https://drive.google.com/file/d/18msRWkxz-2FRT6UfplJoR1PwycmsNVw4/view?usp=drivesdk" target="_blank">Learn More →</a>
-                        </div>
-                        <div class="notif-card">
-                            <div class="notif-date">August 22, 2026</div>
-                            <h3>📚 Exam Repositories Updated</h3>
-                            <p>Previous MST & End-Semester exam papers for all six semesters have been updated.</p>
-                            <button class="read-more" style="background:none; border:none; padding:0; cursor:pointer;" onclick="switchView('studentzone')">Access Repositories →</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Gallery Section -->
-            <section class="section" style="padding-top:0;">
-                <div class="section-inner">
-                    <div class="section-tag">// SOCIETY IN ACTION</div>
-                    <h2 class="section-title">Campus Life Gallery</h2>
-                    <div class="gallery-track-wrap">
-                        <div class="gallery-track">
-                            <img class="gallery-img" src="Photos/Gallery/Vision.jpeg" alt="Vision of Society" width="320" height="220" loading="lazy">
-                            <img class="gallery-img" src="Photos/Gallery/7.jpg" alt="Batch 2022-2026" width="320" height="220" loading="lazy">
-                            <img class="gallery-img" src="Photos/Gallery/1.jpg" alt="Cricket" width="320" height="220" loading="lazy">
-                            <img class="gallery-img" src="Photos/Gallery/3.jpg" alt="CSE Department" width="320" height="220" loading="lazy">
-                            <img class="gallery-img" src="Photos/Events/Sports/1.jpg" alt="Cricket" width="320" height="220" loading="lazy">
-                            <img class="gallery-img" src="Photos/Events/Guest_Lecture/1.jpg" alt="Workshop" width="320" height="220" loading="lazy">
-                        </div>
-                    </div>
-                    <p class="gallery-note">✨ Hover to pause • Swipe on mobile to scroll • Click to expand</p>
-                </div>
-            </section>
-
-            <!-- CTA Section -->
-            <section class="section">
-                <div class="section-inner">
-                    <div class="cta-banner">
-                        <h2>Ready to Build the Future?</h2>
-                        <p>Connect with peers, access modern study repos, and keep tracking code milestones seamlessly.</p>
-                        <a class="btn-primary" href="contact.html">Join The Workspace →</a>
-                    </div>
-                </div>
-            </section>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">● CODE · YOUR · FUTURE ●</div>
+            <h1>Where Code Meets <span>Innovation</span></h1>
+            <p class="hero-sub">Welcome to the central platform of the CSE Society.<br>Our one-stop platform for academic resources, technical events, student opportunities, and departmental updates. Access notes, previous year question papers, announcements, workshops, hackathons, and much more—all in one place.</p>
+            <div class="hero-btns">
+                <a class="btn-primary" href="events.html">Explore Events →</a>
+                <a class="btn-outline" href="studentzone.html">Student Portal</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat"><div class="stat-num">20+</div><div class="stat-label">Active Members</div></div>
+                <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Events Hosted</div></div>
+            </div>
         </div>
 
+        <div class="hero-visual" aria-hidden="true">
+            <div class="hero-visual-glow"></div>
+            <div class="hero-orbit-ring ring-1"></div>
+            <div class="hero-orbit-ring ring-2"></div>
 
-        <!-- VIEW 2: STUDENT ZONE PORTAL SECTION -->
-        <div id="view-studentzone" class="page-view">
-            <section class="section portal-section">
-                <div class="section-inner">
-                    
-                    <!-- Header Section with Back to Home Button -->
-                    <div class="portal-header">
-                        <div class="header-top-row" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                            <div class="section-tag">// STUDENT RESOURCE ZONE</div>
-                            <button onclick="switchView('home')" class="btn-outline" style="font-size: 0.85rem; padding: 6px 14px; cursor: pointer;">← Back to Home</button>
-                        </div>
-                        <h1 class="section-title">Academic Portal & Repositories</h1>
-                        <p class="section-sub">Select your semester and subject below to filter download papers, notes, and study material.</p>
-                    </div>
-
-                    <!-- SEARCH & FILTER CARD -->
-                    <section class="portal-card">
-                        <div class="card-tape"></div>
-                        <h2 class="card-title">🔍 Resource Search & Filter</h2>
-                        <p class="card-desc mb-24">Choose your parameters to view matching study materials and download files directly.</p>
-
-                        <form class="portal-filter-form" id="portalFilterForm" onsubmit="return false;">
-                            <div class="form-grid-3">
-                                <div class="form-group">
-                                    <label for="semester-select">Semester</label>
-                                    <select id="semester-select">
-                                        <option value="">All Semesters</option>
-                                        <option value="1">Semester 1</option>
-                                        <option value="2">Semester 2</option>
-                                        <option value="3">Semester 3</option>
-                                        <option value="4">Semester 4</option>
-                                        <option value="5">Semester 5</option>
-                                        <option value="6">Semester 6</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="subject-select">Subject</label>
-                                    <select id="subject-select">
-                                        <option value="">All Subjects</option>
-                                        <option value="math1">Applied Mathematics-I</option>
-                                        <option value="physics">Engineering Physics</option>
-                                        <option value="math2">Applied Mathematics-II</option>
-                                        <option value="cprog">C Programming</option>
-                                        <option value="dsa">Data Structures & Algo</option>
-                                        <option value="de">Digital Electronics</option>
-                                        <option value="dbms">Database Systems</option>
-                                        <option value="os">Operating Systems</option>
-                                        <option value="cn">Computer Networks</option>
-                                        <option value="toc">Theory of Computation</option>
-                                        <option value="se">Software Engineering</option>
-                                        <option value="ai">Artificial Intelligence</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="paper-select">Resource Type</label>
-                                    <select id="paper-select">
-                                        <option value="">All Resource Types</option>
-                                        <option value="mst">MST Papers</option>
-                                        <option value="endsem">End Semester Papers</option>
-                                        <option value="notes">Subject Notes</option>
-                                        <option value="study">Study Material</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="form-actions">
-                                <button type="button" class="btn-primary" id="filterBtn">Find Resources →</button>
-                                <button type="reset" class="btn-outline" id="resetBtn">Reset Filters</button>
-                            </div>
-                        </form>
-                    </section>
-
-                    <!-- SEARCH RESULTS GRID -->
-                    <section class="portal-results-wrapper">
-                        <div class="results-header">
-                            <h3>Available Downloads & Repositories</h3>
-                            <span class="results-count" id="resultsCount">Showing 8 resources</span>
-                        </div>
-
-                        <div class="results-grid" id="resultsGrid">
-                            <!-- Semester 1 -->
-                            <div class="result-card" data-semester="1" data-subject="math1" data-type="mst">
-                                <span class="paper-tag">MST Paper</span>
-                                <h4>Applied Mathematics-I</h4>
-                                <p class="paper-meta">Semester 1 • Year 2024</p>
-                                <a href="#" class="btn-secondary">Download PDF ↓</a>
-                            </div>
-
-                            <div class="result-card" data-semester="1" data-subject="physics" data-type="notes">
-                                <span class="paper-tag">Notes</span>
-                                <h4>Engineering Physics Notes</h4>
-                                <p class="paper-meta">Semester 1 • Unit 1-5</p>
-                                <a href="#" class="btn-secondary">Download PDF ↓</a>
-                            </div>
-
-                            <!-- Semester 2 -->
-                            <div class="result-card" data-semester="2" data-subject="math2" data-type="mst">
-                                <span class="paper-tag">MST Paper</span>
-                                <h4>Applied Mathematics-II</h4>
-                                <p class="paper-meta">Semester 2 • Year 2024</p>
-                                <a href="#" class="btn-secondary">Download PDF ↓</a>
-                            </div>
-
-                            <div class="result-card" data-semester="2" data-subject="cprog" data-type="endsem">
-                                <span class="paper-tag">End Sem</span>
-                                <h4>C Programming Question Bank</h4>
-                                <p class="paper-meta">Semester 2 • Year 2023</p>
-                                <a href="#" class="btn-secondary">Download PDF ↓</a>
-                            </div>
-
-                            <!-- Semester 3 -->
-                            <div class="result-card" data-semester="3" data-subject="dsa" data-type="endsem">
-                                <span class="paper-tag">End Sem</span>
-                                <h4>Data Structures & Algorithms</h4>
-                                <p class="paper-meta">Semester 3 • Year 2023</p>
-                                <a href="#" class="btn-secondary">Download PDF ↓</a>
-                            </div>
-
-                            <!-- Semester 4 -->
-                            <div class="result-card" data-semester="4" data-subject="os" data-type="notes">
-                                <span class="paper-tag">Notes</span>
-                                <h4>Operating Systems Unit 1-4</h4>
-                                <p class="paper-meta">Semester 4 • Lecture Deck</p>
-                                <a href="#" class="btn-secondary">Download PDF ↓</a>
-                            </div>
-
-                            <div class="result-card" data-semester="4" data-subject="dbms" data-type="mst">
-                                <span class="paper-tag">MST Paper</span>
-                                <h4>Database Management Systems</h4>
-                                <p class="paper-meta">Semester 4 • Year 2024</p>
-                                <a href="#" class="btn-secondary">Download PDF ↓</a>
-                            </div>
-
-                            <!-- Semester 5 -->
-                            <div class="result-card" data-semester="5" data-subject="cn" data-type="study">
-                                <span class="paper-tag">Study Material</span>
-                                <h4>Computer Networks Lab Manual</h4>
-                                <p class="paper-meta">Semester 5 • Practical Guide</p>
-                                <a href="#" class="btn-secondary">Download PDF ↓</a>
-                            </div>
-
-                            <div class="result-card" data-semester="5" data-subject="toc" data-type="endsem">
-                                <span class="paper-tag">End Sem</span>
-                                <h4>Theory of Computation</h4>
-                                <p class="paper-meta">Semester 5 • Year 2023</p>
-                                <a href="#" class="btn-secondary">Download PDF ↓</a>
-                            </div>
-
-                            <!-- Semester 6 -->
-                            <div class="result-card" data-semester="6" data-subject="ai" data-type="notes">
-                                <span class="paper-tag">Notes</span>
-                                <h4>Artificial Intelligence Deck</h4>
-                                <p class="paper-meta">Semester 6 • Lecture Notes</p>
-                                <a href="#" class="btn-secondary">Download PDF ↓</a>
-                            </div>
-
-                            <!-- No Results Message (Hidden by default) -->
-                            <div id="noResultsMsg" class="no-results-box" style="display: none;">
-                                <h4>No Matching Resources Found 🔍</h4>
-                                <p>Try clearing filters or selecting a different semester or subject.</p>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- SUGGESTIONS & FEEDBACK CARD -->
-                    <section class="portal-card feedback-card">
-                        <div class="card-tape"></div>
-                        <h2 class="card-title">✍️ Resource Request & Feedback</h2>
-                        <p class="card-desc mb-24">Missing a question paper or note? Send us a request below.</p>
-
-                        <form class="portal-feedback-form">
-                            <div class="form-grid-2">
-                                <div class="form-group">
-                                    <label for="user-name">Your Name (Optional)</label>
-                                    <input type="text" id="user-name" placeholder="e.g. Alex Sharma">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="fb-semester">Semester</label>
-                                    <select id="fb-semester">
-                                        <option value="">Select Semester</option>
-                                        <option value="1">Semester 1</option>
-                                        <option value="2">Semester 2</option>
-                                        <option value="3">Semester 3</option>
-                                        <option value="4">Semester 4</option>
-                                        <option value="5">Semester 5</option>
-                                        <option value="6">Semester 6</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="fb-subject">Subject</label>
-                                    <input type="text" id="fb-subject" placeholder="e.g. Applied Mathematics-II">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="fb-type">Request / Feedback Type</label>
-                                    <select id="fb-type">
-                                        <option value="missing">Upload Missing Paper</option>
-                                        <option value="suggestion">General Suggestion</option>
-                                        <option value="bug">Report Error in PDF</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="form-group full-width">
-                                <label for="fb-message">Message / Details</label>
-                                <textarea id="fb-message" rows="3" placeholder="Specify which exam year or topic resources you need..."></textarea>
-                            </div>
-
-                            <div class="form-grid-2 align-center">
-                                <div class="form-group">
-                                    <label for="fb-rating">Portal Rating</label>
-                                    <select id="fb-rating">
-                                        <option value="5">⭐⭐⭐⭐⭐ (5/5)</option>
-                                        <option value="4">⭐⭐⭐⭐ (4/5)</option>
-                                        <option value="3">⭐⭐⭐ (3/5)</option>
-                                        <option value="2">⭐⭐ (2/5)</option>
-                                        <option value="1">⭐ (1/5)</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-actions-right">
-                                    <button type="submit" class="btn-primary">Submit Feedback →</button>
-                                </div>
-                            </div>
-                        </form>
-                    </section>
-
+            <div class="hero-photo-frame">
+                <div class="hero-photo-stack">
+                    <div class="hero-photo-slide"><img src="Photos/Events/Teacher_Day/0.jpg" alt="" width="600" height="600" loading="eager" fetchpriority="high" decoding="async"></div>
+                    <div class="hero-photo-slide"><img src="Photos/Gallery/Magazine.jpeg" alt="" width="600" height="600" loading="eager" decoding="async"></div>
+                    <div class="hero-photo-slide"><img src="Photos/Gallery/Vision.jpeg" alt="" width="900" height="600" loading="eager" decoding="async"></div>
+                    <div class="hero-photo-slide"><img src="Photos/Hero-Section/0.jpeg" alt="" width="900" height="loading="eager" decoding="async"></div>
+                    <div class="hero-photo-slide"><img src="Photos/Hero-Section/1.jpeg" alt="" width="900" height="loading="eager" decoding="async"></div>
+                    <div class="hero-photo-slide"><img src="Photos/Hero-Section/2.jpeg" alt="" width="900" height="loading="eager" decoding="async"></div>
+                    <div class="hero-photo-slide"><img src="Photos/Hero-Section/3.jpeg" alt="" width="900" height="loading="eager" decoding="async"></div>
+                  
                 </div>
-            </section>
+                <div class="hero-photo-scanline"></div>
+                <div class="hero-photo-live"><span class="pulse-dot"></span>LIVE FEED</div>
+            </div>
+
+            <div class="hero-float-card card-code">
+                <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
+                <div class="code-line">const society = "CSE";</div>
+                <div class="code-line">society.<span>build()</span>;</div>
+            </div>
+
+            <div class="hero-float-card card-stat">
+                <div class="card-stat-icon">🚀</div>
+                <div>
+                    <div class="card-stat-num">CSES JNGEC</div>
+                    <div class="card-stat-label">Registrations Open</div>
+                </div>
+            </div>
         </div>
+    </section>
+    <section class="section" style="padding-top:0;">
+        <div class="section-inner">
+            <div class="section-tag">// NOTIFICATIONS BULLETIN</div>
+            <h2 class="section-title">Latest Announcements</h2>
+            <div class="notif-grid">
+                <div class="notif-card">
+                    <div class="notif-date">September 5, 2026</div>
+                    <h3>🎯 Teacher's Day Event 2026</h3>
+                    <p>Join us in celebrating the dedication and impact of our educators with special activities and recognition.</p>
+                    <a class="read-more" href="events.html">Learn More →</a>
+                </div>
+                <div class="notif-card">
+                    <div class="notif-date">August 25, 2026</div>
+                    <h3>🤖 CSE Society Magazine - Innoverse</h3>
+                    <p>Explore Innoverse, the official magazine of CSE Society — featuring
+                    innovation, technology, student achievements, ideas and highlights
+                    from our CSE community.</p>
+                    <a class="read-more" href="https://drive.google.com/file/d/18msRWkxz-2FRT6UfplJoR1PwycmsNVw4/view?usp=drivesdk">Learn More →</a>
+                </div>
+                <div class="notif-card">
+                    <div class="notif-date">August 22, 2026</div>
+                    <h3>📚 Previous Year Exam Repositories Updated</h3>
+                    <p>Previous MST exam papers for the first six semesters have been added.</p>
+                    <a class="read-more" href="studentzone.html">Access Repositories →</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    </main>
+    <section class="section" style="padding-top:0;">
+        <div class="section-inner">
+            <div class="section-tag">// SOCIETY IN ACTION</div>
+            <h2 class="section-title">Campus Life Gallery</h2>
+            <div class="gallery-track-wrap">
+                <div class="gallery-track">
+                     <img class="gallery-img" src="Photos/Gallery/Vision.jpeg" alt="Vision of Society" width="320" height="220" loading="lazy" decoding="async">
+                    <img class="gallery-img" src="Photos/Gallery/7.jpg" alt="Batch 2022-2026" width="320" height="220" loading="lazy" decoding="async">
+                    <img class="gallery-img" src="Photos/Gallery/1.jpg" alt="Cricket" width="320" height="220" loading="lazy" decoding="async">
+                    <img class="gallery-img" src="Photos/Gallery/3.jpg" alt="CSE Department" width="320" height="220" loading="lazy" decoding="async">
+                    <img class="gallery-img" src="Photos/Events/Sports/1.jpg" alt="Cricket" width="320" height="220" loading="lazy" decoding="async">
+                    <img class="gallery-img" src="Photos/Events/Guest_Lecture/1.jpg" alt="Workshop" width="320" height="220" loading="lazy" decoding="async">
+                    <img class="gallery-img" src="Photos/Events/Graduation_Ceremony/1.jpg" alt="Graduation Ceremony" width="320" height="220" loading="lazy" decoding="async">
+                    <img class="gallery-img" src="Photos/Gallery/Magazine.jpeg" alt="Magazine" width="320" height="220" loading="lazy" decoding="async">
+                    <img class="gallery-img" src="Photos/Events/Prompt/1.jpg" alt="Prompt Engineering" width="320" height="220" loading="lazy" decoding="async">
+                    <img class="gallery-img" src="Photos/Events/Dhun/1.jpeg" alt="Dhun Event" width="320" height="220" loading="lazy" decoding="async">
+                    <img class="gallery-img" src="Photos/Events/Poster_Making/4.jpg" alt="Poster Making" width="320" height="220" loading="lazy" decoding="async">
+                    <img class="gallery-img" src="Photos/Events/Algoverse_2.0/1.jpg" alt="Algoverse" width="320" height="220" loading="lazy" decoding="async">
+                    <img class="gallery-img" src="Photos/Events/Algoverse_2.0/3.jpg" alt="Algoverse" width="320" height="220" loading="lazy" decoding="async">
+                    <img class="gallery-img" src="Photos/Gallery/8.jpg" alt="Algoverse" width="320" height="220" loading="lazy" decoding="async">
+                    <img class="gallery-img" src="Photos/Gallery/9.jpg" alt="CSE Society Team" width="320" height="220" loading="lazy" decoding="async">
+                    <img class="gallery-img" src="Photos/Gallery/Structure.jpeg" alt="CSES" width="320" height="220" loading="lazy" decoding="async">
+                    <img class="gallery-img" src="Photos/Gallery/6.jpg" alt="Dhun Event" width="320" height="220" loading="lazy" decoding="async">
+                    <img class="gallery-img" src="Photos/Gallery/5.jpg" alt="Badminton Tournament" width="320" height="220" loading="lazy" decoding="async">
+                    <img class="gallery-img" src="Photos/Events/Sports/3.jpg" alt="Chess" width="320" height="220" loading="lazy" decoding="async">
+                    <img class="gallery-img" src="Photos/Events/Poster Making/4.jpg" alt="Poster Making" width="320" height="220" loading="lazy" decoding="async">
+                </div>
+            </div>
+            <p class="gallery-note">✨ Hover to pause • Swipe on mobile to scroll • Click to expand</p>
+        </div>
+    </section>
 
-    <!-- FOOTER -->
+    <!-- Gallery Lightbox Modal -->
+    <div class="gallery-modal-overlay" id="galleryModalOverlay" role="dialog" aria-modal="true">
+        <div class="gallery-modal">
+            <button class="gallery-modal-close" id="galleryModalClose" aria-label="Close gallery">&times;</button>
+            <div class="gallery-modal-content">
+                <img id="galleryModalImg" src="" alt="Gallery image" class="gallery-modal-img">
+                <div class="gallery-modal-nav">
+                    <button class="gallery-nav-btn gallery-nav-prev" id="galleryPrevBtn" aria-label="Previous image">&#10094;</button>
+                    <button class="gallery-nav-btn gallery-nav-next" id="galleryNextBtn" aria-label="Next image">&#10095;</button>
+                </div>
+                <p class="gallery-modal-caption" id="galleryModalCaption"></p>
+            </div>
+        </div>
+    </div>
+
+    <section class="section" style="padding-top: 0;">
+        <div class="section-inner">
+            <div class="section-tag">// OPERATIONS HUBS</div>
+            <h2 class="section-title">What We Offer</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎓</div>
+                    <h3>Expert Guidance</h3>
+                    <p>Expert lectures, career guidance, and industry insights to help CSE students build the right skills and make informed career decisions.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💻</div>
+                    <h3>Technical Events</h3>
+                    <p>Technical workshops, coding activities, competitions, and hands-on events that encourage students to learn, innovate, and grow together.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Connect & Celebrate</h3>
+                    <p>A welcoming community through cultural and sports events, fostering interaction, teamwork, and a strong sense of belonging among CSE students.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section class="section">
+        <div class="section-inner">
+            <div class="cta-banner">
+                <h2>Ready to Build the Future?</h2>
+                <p>Connect with peers, access modern study repos, and keep tracking code milestones seamlessly.</p>
+                <a class="btn-primary" href="contact.html">Join The Workspace →</a>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-inner">
             <div class="footer-top">
                 <div class="footer-brand">
-                    <a class="logo" href="#home" onclick="switchView('home')">
+                    <a class="logo" href="index.html">
                         <img src="logo.png" alt="CSE Society Logo" class="logo-image">
                         <div class="logo-text">
                             <span>CSE Society</span>
@@ -449,20 +231,25 @@
                 </div>
                 <div class="footer-col">
                     <h4>Navigation</h4>
-                    <a href="#home" onclick="switchView('home')">Home Workspace</a>
+                    <a href="index.html">Home Workspace</a>
                     <a href="events.html">Events Grid</a>
                     <a href="about.html">About Hub</a>
                 </div>
                 <div class="footer-col">
                     <h4>Resources</h4>
-                    <a href="#studentzone" onclick="switchView('studentzone')">Question Papers</a>
-                    <a href="#studentzone" onclick="switchView('studentzone')">Suggestion Deck</a>
+                    <a href="studentzone.html">Question Papers</a>
+                    <a href="studentzone.html">Suggestion Deck</a>
                 </div>
                 <div class="footer-col">
                     <h4>Contact Desk</h4>
-                    <p><a href="https://www.instagram.com/cses.jngec/" target="_blank">Instagram</a></p>
-                    <p><a href="mailto:cses.jngec@gmail.com" target="_blank">cses.jngec@gmail.com</a></p>
-                    <p><a href="https://www.linkedin.com/company/computer-science-engineering-society/" target="_blank">LinkedIn</a></p>
+                    <p>
+                        <a href="https://www.instagram.com/cses.jngec/" target="_blank">Instagram</a>
+                    </p>
+                    <p> <a href="mailto:cses.jngec@gmail.com" target="_blank">cses.jngec@gmail.com</a>
+                    </p>
+                    <p>
+                        <a href="https://www.linkedin.com/company/computer-science-engineering-society/" target="_blank">Linked In</a>
+                    </p>
                 </div>
             </div>
             <div class="footer-divider">
@@ -471,103 +258,6 @@
         </div>
     </footer>
 
-    <!-- INTERACTIVE SCRIPTS -->
-    <script>
-        // --- 1. SPA VIEW SWITCHER ---
-        function switchView(targetView) {
-            document.querySelectorAll('.page-view').forEach(view => {
-                view.classList.remove('active');
-            });
-
-            document.querySelectorAll('.nav-link, .mobile-link').forEach(link => {
-                link.classList.remove('active');
-            });
-
-            if (targetView === 'studentzone') {
-                document.getElementById('view-studentzone').classList.add('active');
-                document.getElementById('nav-studentzone')?.classList.add('active');
-                document.getElementById('mob-nav-studentzone')?.classList.add('active');
-            } else {
-                document.getElementById('view-home').classList.add('active');
-                document.getElementById('nav-home')?.classList.add('active');
-                document.getElementById('mob-nav-home')?.classList.add('active');
-            }
-
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-
-            const mobileMenu = document.getElementById('mobileMenu');
-            if (mobileMenu && mobileMenu.classList.contains('active')) {
-                mobileMenu.classList.remove('active');
-            }
-        }
-
-        // --- 2. DYNAMIC RESOURCE FILTERING LOGIC ---
-        document.addEventListener('DOMContentLoaded', () => {
-            // Check Hash navigation on load
-            if (window.location.hash === '#studentzone') {
-                switchView('studentzone');
-            } else {
-                switchView('home');
-            }
-
-            const filterBtn = document.getElementById('filterBtn');
-            const resetBtn = document.getElementById('resetBtn');
-            const semSelect = document.getElementById('semester-select');
-            const subjSelect = document.getElementById('subject-select');
-            const paperSelect = document.getElementById('paper-select');
-            const resultCards = document.querySelectorAll('.results-grid .result-card');
-            const resultsCount = document.getElementById('resultsCount');
-            const noResultsMsg = document.getElementById('noResultsMsg');
-
-            function applyFilters() {
-                const semVal = semSelect.value;
-                const subjVal = subjSelect.value;
-                const paperVal = paperSelect.value;
-
-                let visibleCount = 0;
-
-                resultCards.forEach(card => {
-                    const cardSem = card.getAttribute('data-semester');
-                    const cardSubj = card.getAttribute('data-subject');
-                    const cardType = card.getAttribute('data-type');
-
-                    const matchSem = !semVal || cardSem === semVal;
-                    const matchSubj = !subjVal || cardSubj === subjVal;
-                    const matchType = !paperVal || cardType === paperVal;
-
-                    if (matchSem && matchSubj && matchType) {
-                        card.style.display = 'block';
-                        visibleCount++;
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-
-                // Update counter badge
-                resultsCount.textContent = `Showing ${visibleCount} resource${visibleCount === 1 ? '' : 's'}`;
-
-                // Toggle empty state box
-                if (visibleCount === 0) {
-                    noResultsMsg.style.display = 'block';
-                } else {
-                    noResultsMsg.style.display = 'none';
-                }
-            }
-
-            // Event Listeners
-            filterBtn?.addEventListener('click', applyFilters);
-            semSelect?.addEventListener('change', applyFilters);
-            subjSelect?.addEventListener('change', applyFilters);
-            paperSelect?.addEventListener('change', applyFilters);
-
-            resetBtn?.addEventListener('click', () => {
-                setTimeout(applyFilters, 50);
-            });
-
-            // Initial call to set correct count
-            applyFilters();
-        });
-    </script>
     <script src="script.js"></script>
 </body>
 </html>
