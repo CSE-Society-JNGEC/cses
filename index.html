@@ -13,6 +13,21 @@
         .page-view.active {
             display: block;
         }
+        /* No Results Empty State Styling */
+        .no-results-box {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 48px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px dashed rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            color: #a0aec0;
+        }
+        .no-results-box h4 {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 8px;
+        }
     </style>
 </head>
 <body>
@@ -69,9 +84,7 @@
     <!-- MAIN CONTAINER WITH TOGGLABLE VIEWS -->
     <main id="main-content">
 
-        <!-- ========================================== -->
         <!-- VIEW 1: HOME PAGE SECTION (DEFAULT LANDING) -->
-        <!-- ========================================== -->
         <div id="view-home" class="page-view active">
             <!-- Hero Section -->
             <section class="hero">
@@ -145,7 +158,7 @@
                         <div class="notif-card">
                             <div class="notif-date">August 22, 2026</div>
                             <h3>📚 Exam Repositories Updated</h3>
-                            <p>Previous MST & End-Semester exam papers for the first six semesters have been updated.</p>
+                            <p>Previous MST & End-Semester exam papers for all six semesters have been updated.</p>
                             <button class="read-more" style="background:none; border:none; padding:0; cursor:pointer;" onclick="switchView('studentzone')">Access Repositories →</button>
                         </div>
                     </div>
@@ -171,21 +184,6 @@
                 </div>
             </section>
 
-            <!-- Gallery Modal -->
-            <div class="gallery-modal-overlay" id="galleryModalOverlay" role="dialog" aria-modal="true">
-                <div class="gallery-modal">
-                    <button class="gallery-modal-close" id="galleryModalClose" aria-label="Close gallery">&times;</button>
-                    <div class="gallery-modal-content">
-                        <img id="galleryModalImg" src="" alt="Gallery image" class="gallery-modal-img">
-                        <div class="gallery-modal-nav">
-                            <button class="gallery-nav-btn gallery-nav-prev" id="galleryPrevBtn" aria-label="Previous image">&#10094;</button>
-                            <button class="gallery-nav-btn gallery-nav-next" id="galleryNextBtn" aria-label="Next image">&#10095;</button>
-                        </div>
-                        <p class="gallery-modal-caption" id="galleryModalCaption"></p>
-                    </div>
-                </div>
-            </div>
-
             <!-- CTA Section -->
             <section class="section">
                 <div class="section-inner">
@@ -199,9 +197,7 @@
         </div>
 
 
-        <!-- ========================================== -->
-        <!-- VIEW 2: STUDENT ZONE PORTAL SECTION        -->
-        <!-- ========================================== -->
+        <!-- VIEW 2: STUDENT ZONE PORTAL SECTION -->
         <div id="view-studentzone" class="page-view">
             <section class="section portal-section">
                 <div class="section-inner">
@@ -216,13 +212,13 @@
                         <p class="section-sub">Select your semester and subject below to filter download papers, notes, and study material.</p>
                     </div>
 
-                    <!-- QUICK ACCESS FILTER CARD -->
+                    <!-- SEARCH & FILTER CARD -->
                     <section class="portal-card">
                         <div class="card-tape"></div>
                         <h2 class="card-title">🔍 Resource Search & Filter</h2>
                         <p class="card-desc mb-24">Choose your parameters to view matching study materials and download files directly.</p>
 
-                        <form class="portal-filter-form" id="portalFilterForm">
+                        <form class="portal-filter-form" id="portalFilterForm" onsubmit="return false;">
                             <div class="form-grid-3">
                                 <div class="form-group">
                                     <label for="semester-select">Semester</label>
@@ -241,12 +237,18 @@
                                     <label for="subject-select">Subject</label>
                                     <select id="subject-select">
                                         <option value="">All Subjects</option>
+                                        <option value="math1">Applied Mathematics-I</option>
+                                        <option value="physics">Engineering Physics</option>
                                         <option value="math2">Applied Mathematics-II</option>
+                                        <option value="cprog">C Programming</option>
                                         <option value="dsa">Data Structures & Algo</option>
+                                        <option value="de">Digital Electronics</option>
                                         <option value="dbms">Database Systems</option>
                                         <option value="os">Operating Systems</option>
                                         <option value="cn">Computer Networks</option>
                                         <option value="toc">Theory of Computation</option>
+                                        <option value="se">Software Engineering</option>
+                                        <option value="ai">Artificial Intelligence</option>
                                     </select>
                                 </div>
 
@@ -269,14 +271,30 @@
                         </form>
                     </section>
 
-                    <!-- SINGLE UNIFIED SEARCH RESULTS GRID (No Duplicate Tile Section Above) -->
+                    <!-- SEARCH RESULTS GRID -->
                     <section class="portal-results-wrapper">
                         <div class="results-header">
                             <h3>Available Downloads & Repositories</h3>
-                            <span class="results-count" id="resultsCount">Showing 6 resources</span>
+                            <span class="results-count" id="resultsCount">Showing 8 resources</span>
                         </div>
 
                         <div class="results-grid" id="resultsGrid">
+                            <!-- Semester 1 -->
+                            <div class="result-card" data-semester="1" data-subject="math1" data-type="mst">
+                                <span class="paper-tag">MST Paper</span>
+                                <h4>Applied Mathematics-I</h4>
+                                <p class="paper-meta">Semester 1 • Year 2024</p>
+                                <a href="#" class="btn-secondary">Download PDF ↓</a>
+                            </div>
+
+                            <div class="result-card" data-semester="1" data-subject="physics" data-type="notes">
+                                <span class="paper-tag">Notes</span>
+                                <h4>Engineering Physics Notes</h4>
+                                <p class="paper-meta">Semester 1 • Unit 1-5</p>
+                                <a href="#" class="btn-secondary">Download PDF ↓</a>
+                            </div>
+
+                            <!-- Semester 2 -->
                             <div class="result-card" data-semester="2" data-subject="math2" data-type="mst">
                                 <span class="paper-tag">MST Paper</span>
                                 <h4>Applied Mathematics-II</h4>
@@ -284,6 +302,14 @@
                                 <a href="#" class="btn-secondary">Download PDF ↓</a>
                             </div>
 
+                            <div class="result-card" data-semester="2" data-subject="cprog" data-type="endsem">
+                                <span class="paper-tag">End Sem</span>
+                                <h4>C Programming Question Bank</h4>
+                                <p class="paper-meta">Semester 2 • Year 2023</p>
+                                <a href="#" class="btn-secondary">Download PDF ↓</a>
+                            </div>
+
+                            <!-- Semester 3 -->
                             <div class="result-card" data-semester="3" data-subject="dsa" data-type="endsem">
                                 <span class="paper-tag">End Sem</span>
                                 <h4>Data Structures & Algorithms</h4>
@@ -291,6 +317,7 @@
                                 <a href="#" class="btn-secondary">Download PDF ↓</a>
                             </div>
 
+                            <!-- Semester 4 -->
                             <div class="result-card" data-semester="4" data-subject="os" data-type="notes">
                                 <span class="paper-tag">Notes</span>
                                 <h4>Operating Systems Unit 1-4</h4>
@@ -305,6 +332,7 @@
                                 <a href="#" class="btn-secondary">Download PDF ↓</a>
                             </div>
 
+                            <!-- Semester 5 -->
                             <div class="result-card" data-semester="5" data-subject="cn" data-type="study">
                                 <span class="paper-tag">Study Material</span>
                                 <h4>Computer Networks Lab Manual</h4>
@@ -317,6 +345,20 @@
                                 <h4>Theory of Computation</h4>
                                 <p class="paper-meta">Semester 5 • Year 2023</p>
                                 <a href="#" class="btn-secondary">Download PDF ↓</a>
+                            </div>
+
+                            <!-- Semester 6 -->
+                            <div class="result-card" data-semester="6" data-subject="ai" data-type="notes">
+                                <span class="paper-tag">Notes</span>
+                                <h4>Artificial Intelligence Deck</h4>
+                                <p class="paper-meta">Semester 6 • Lecture Notes</p>
+                                <a href="#" class="btn-secondary">Download PDF ↓</a>
+                            </div>
+
+                            <!-- No Results Message (Hidden by default) -->
+                            <div id="noResultsMsg" class="no-results-box" style="display: none;">
+                                <h4>No Matching Resources Found 🔍</h4>
+                                <p>Try clearing filters or selecting a different semester or subject.</p>
                             </div>
                         </div>
                     </section>
@@ -429,20 +471,18 @@
         </div>
     </footer>
 
-    <!-- VIEW SWITCHER SCRIPT -->
+    <!-- INTERACTIVE SCRIPTS -->
     <script>
+        // --- 1. SPA VIEW SWITCHER ---
         function switchView(targetView) {
-            // Hide all view sections
             document.querySelectorAll('.page-view').forEach(view => {
                 view.classList.remove('active');
             });
 
-            // Deactivate all nav state
             document.querySelectorAll('.nav-link, .mobile-link').forEach(link => {
                 link.classList.remove('active');
             });
 
-            // Show selected view and activate nav item
             if (targetView === 'studentzone') {
                 document.getElementById('view-studentzone').classList.add('active');
                 document.getElementById('nav-studentzone')?.classList.add('active');
@@ -453,23 +493,79 @@
                 document.getElementById('mob-nav-home')?.classList.add('active');
             }
 
-            // Scroll top smoothly
             window.scrollTo({ top: 0, behavior: 'smooth' });
 
-            // Close mobile menu if open
             const mobileMenu = document.getElementById('mobileMenu');
             if (mobileMenu && mobileMenu.classList.contains('active')) {
                 mobileMenu.classList.remove('active');
             }
         }
 
-        // Handle URL hash navigation on direct page load
-        window.addEventListener('DOMContentLoaded', () => {
+        // --- 2. DYNAMIC RESOURCE FILTERING LOGIC ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check Hash navigation on load
             if (window.location.hash === '#studentzone') {
                 switchView('studentzone');
             } else {
-                switchView('home'); // Default landing on Home page
+                switchView('home');
             }
+
+            const filterBtn = document.getElementById('filterBtn');
+            const resetBtn = document.getElementById('resetBtn');
+            const semSelect = document.getElementById('semester-select');
+            const subjSelect = document.getElementById('subject-select');
+            const paperSelect = document.getElementById('paper-select');
+            const resultCards = document.querySelectorAll('.results-grid .result-card');
+            const resultsCount = document.getElementById('resultsCount');
+            const noResultsMsg = document.getElementById('noResultsMsg');
+
+            function applyFilters() {
+                const semVal = semSelect.value;
+                const subjVal = subjSelect.value;
+                const paperVal = paperSelect.value;
+
+                let visibleCount = 0;
+
+                resultCards.forEach(card => {
+                    const cardSem = card.getAttribute('data-semester');
+                    const cardSubj = card.getAttribute('data-subject');
+                    const cardType = card.getAttribute('data-type');
+
+                    const matchSem = !semVal || cardSem === semVal;
+                    const matchSubj = !subjVal || cardSubj === subjVal;
+                    const matchType = !paperVal || cardType === paperVal;
+
+                    if (matchSem && matchSubj && matchType) {
+                        card.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Update counter badge
+                resultsCount.textContent = `Showing ${visibleCount} resource${visibleCount === 1 ? '' : 's'}`;
+
+                // Toggle empty state box
+                if (visibleCount === 0) {
+                    noResultsMsg.style.display = 'block';
+                } else {
+                    noResultsMsg.style.display = 'none';
+                }
+            }
+
+            // Event Listeners
+            filterBtn?.addEventListener('click', applyFilters);
+            semSelect?.addEventListener('change', applyFilters);
+            subjSelect?.addEventListener('change', applyFilters);
+            paperSelect?.addEventListener('change', applyFilters);
+
+            resetBtn?.addEventListener('click', () => {
+                setTimeout(applyFilters, 50);
+            });
+
+            // Initial call to set correct count
+            applyFilters();
         });
     </script>
     <script src="script.js"></script>
