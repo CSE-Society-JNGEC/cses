@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SKETCHY HAND-DRAWN DESIGN SYSTEM
+   CSE SOCIETY — COMPLETE SKETCHY HAND-DRAWN DESIGN SYSTEM
    ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Patrick+Hand:wght@400&display=swap');
 
@@ -45,7 +45,7 @@ body {
 }
 
 /* ==========================================================================
-   AESTHETIC HYPERLINKS & INTERACTIVE TEXT ENHANCEMENTS
+   AESTHETIC HYPERLINKS & INTERACTIVE TEXT
    ========================================================================== */
 a {
     color: var(--accent-blue);
@@ -54,7 +54,6 @@ a {
     transition: var(--transition);
 }
 
-/* Global sketchy link hover effect (Hand-drawn squiggly underline feeling) */
 a:not(.btn-primary):not(.btn-outline):not(.btn-secondary):not(.logo):not(.nav-link):not(.mobile-link) {
     display: inline-flex;
     align-items: center;
@@ -83,7 +82,6 @@ a:not(.btn-primary):not(.btn-outline):not(.btn-secondary):not(.logo):not(.nav-li
     transform-origin: bottom left;
 }
 
-/* Announcement "Read More" Special Hyperlinks */
 .read-more {
     font-size: 15px;
     font-weight: 700;
@@ -113,7 +111,6 @@ a:not(.btn-primary):not(.btn-outline):not(.btn-secondary):not(.logo):not(.nav-li
     background-color: var(--accent-red) !important;
 }
 
-/* Footer Hyperlinks */
 .footer-link {
     display: block !important;
     color: var(--text-muted);
@@ -132,7 +129,7 @@ a:not(.btn-primary):not(.btn-outline):not(.btn-secondary):not(.logo):not(.nav-li
 }
 
 /* ==========================================================================
-   SPLASH / LOADING
+   SPLASH OVERLAY
    ========================================================================== */
 .splash-overlay {
     position: fixed;
@@ -601,7 +598,6 @@ nav {
     50% { opacity: 0.3; }
 }
 
-/* Float cards */
 .hero-float-card {
     position: absolute;
     background: var(--bg-secondary);
@@ -732,7 +728,7 @@ nav {
 }
 
 /* ==========================================================================
-   RESTRUCTURED & RESPONSIVE GALLERY SECTION
+   RESTRUCTURED & RESPONSIVE GALLERY GRID
    ========================================================================== */
 .gallery-container {
     width: 100%;
@@ -759,7 +755,6 @@ nav {
     flex-direction: column;
 }
 
-/* Dynamic Sketchy Alternating Rotations */
 .gallery-card:nth-child(4n+1) { transform: rotate(-1.5deg); }
 .gallery-card:nth-child(4n+2) { transform: rotate(1.8deg); }
 .gallery-card:nth-child(4n+3) { transform: rotate(-1deg); }
@@ -771,7 +766,6 @@ nav {
     z-index: 10;
 }
 
-/* Polaroid Masking Tape Detail */
 .gallery-tape {
     position: absolute;
     top: -6px;
@@ -939,6 +933,53 @@ nav {
 }
 
 /* ==========================================================================
+   STUDENT PORTAL & ACCORDION STYLES
+   ========================================================================== */
+.semester-content, .accordion-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease, padding 0.3s ease;
+    padding: 0 16px;
+}
+
+.semester-content.active, .accordion-content.active {
+    display: block;
+    opacity: 1;
+    padding: 16px;
+}
+
+.toggle-icon, .accordion-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+/* Toast Feedback Banner */
+.site-toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--text-main);
+    color: var(--bg-primary);
+    padding: 14px 24px;
+    border: 3px solid var(--border-color);
+    border-radius: var(--wobbly-sm);
+    box-shadow: 4px 4px 0px 0px var(--border-color);
+    font-family: 'Kalam', cursive;
+    font-weight: 700;
+    font-size: 16px;
+    z-index: 4000;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+.site-toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
    CTA BANNER & FOOTER
    ========================================================================== */
 .cta-banner {
@@ -1005,6 +1046,19 @@ footer {
 .footer-copy {
     font-size: 14px;
     color: var(--text-muted);
+}
+
+/* ==========================================================================
+   DARK MODE OVERRIDES
+   ========================================================================== */
+.dark-mode {
+    --bg-primary: #1e1e1e;
+    --bg-secondary: #2a2a2a;
+    --text-main: #f5f1e8;
+    --text-muted: #b8b8b8;
+    --border-color: #f5f1e8;
+    --muted-bg: #383838;
+    --accent-yellow: #4a4210;
 }
 
 /* ==========================================================================
@@ -1090,15 +1144,4 @@ footer {
     .hero-stats {
         grid-template-columns: 1fr;
     }
-}
-
-/* Dark Mode Minimal Overrides */
-.dark-mode {
-    --bg-primary: #1e1e1e;
-    --bg-secondary: #2a2a2a;
-    --text-main: #f5f1e8;
-    --text-muted: #b8b8b8;
-    --border-color: #f5f1e8;
-    --muted-bg: #383838;
-    --accent-yellow: #4a4210;
 }
