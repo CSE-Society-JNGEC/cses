@@ -75,13 +75,12 @@
 
             <div class="hero-photo-frame">
                 <div class="hero-photo-stack">
-                    <div class="hero-photo-slide"><img src="Photos/Events/Teacher_Day/0.jpg" alt="" width="600" height="600" loading="eager" fetchpriority="high" decoding="async"></div>
-                    <div class="hero-photo-slide"><img src="Photos/Gallery/Magazine.jpeg" alt="" width="600" height="600" loading="eager" decoding="async"></div>
-                    <div class="hero-photo-slide"><img src="Photos/Gallery/Vision.jpeg" alt="" width="900" height="600" loading="eager" decoding="async"></div>
-                    <div class="hero-photo-slide"><img src="Photos/Hero-Section/0.jpeg" alt="" width="900" height="loading="eager" decoding="async"></div>
-                    <div class="hero-photo-slide"><img src="Photos/Hero-Section/1.jpeg" alt="" width="900" height="loading="eager" decoding="async"></div>
-                    <div class="hero-photo-slide"><img src="Photos/Hero-Section/2.jpeg" alt="" width="900" height="loading="eager" decoding="async"></div>
-                    <div class="hero-photo-slide"><img src="Photos/Hero-Section/3.jpeg" alt="" width="900" height="loading="eager" decoding="async"></div>
+                    <div class="hero-photo-slide"><img src="Photos/Gallery/Magazine.jpeg" alt="" width="600" height="600" loading="lazy" decoding="async"></div>
+                    <div class="hero-photo-slide"><img src="Photos/Gallery/Vision.jpeg" alt="" width="900" height="600" loading="lazy" decoding="async"></div>
+                    <div class="hero-photo-slide"><img src="Photos/Hero-Section/0.jpeg" alt="" width="900" height="600" loading="lazy" decoding="async"></div>
+                    <div class="hero-photo-slide"><img src="Photos/Hero-Section/1.jpeg" alt="" width="900" height="600" loading="lazy" decoding="async"></div>
+                    <div class="hero-photo-slide"><img src="Photos/Hero-Section/2.jpeg" alt="" width="900" height="600" loading="lazy" decoding="async"></div>
+                    <div class="hero-photo-slide"><img src="Photos/Hero-Section/3.jpeg" alt="" width="900" height="600" loading="lazy" decoding="async"></div>
                   
                 </div>
                 <div class="hero-photo-scanline"></div>
@@ -137,6 +136,7 @@
             <div class="section-tag">// SOCIETY IN ACTION</div>
             <h2 class="section-title">Campus Life Gallery</h2>
             <div class="gallery-track-wrap">
+                <button class="gallery-open-all" id="openFullGallery" type="button">Open full gallery</button>
                 <div class="gallery-track">
                      <img class="gallery-img" src="Photos/Gallery/Vision.jpeg" alt="Vision of Society" width="320" height="220" loading="lazy" decoding="async">
                     <img class="gallery-img" src="Photos/Gallery/7.jpg" alt="Batch 2022-2026" width="320" height="220" loading="lazy" decoding="async">
@@ -158,6 +158,11 @@
                     <img class="gallery-img" src="Photos/Gallery/5.jpg" alt="Badminton Tournament" width="320" height="220" loading="lazy" decoding="async">
                     <img class="gallery-img" src="Photos/Events/Sports/3.jpg" alt="Chess" width="320" height="220" loading="lazy" decoding="async">
                     <img class="gallery-img" src="Photos/Events/Poster Making/4.jpg" alt="Poster Making" width="320" height="220" loading="lazy" decoding="async">
+                    <img class="gallery-img" src="Photos/Events/Teacher_Day/1.jpeg" alt="Teacher's Day" width="320" height="220" loading="lazy" decoding="async">
+                    <img class="gallery-img" src="Photos/Events/Teacher_Day/2.jpeg" alt="Teacher's Day" width="320" height="220" loading="lazy" decoding="async">
+                    <img class="gallery-img" src="Photos/Events/Teacher_Day/3.jpeg" alt="Teacher's Day" width="320" height="220" loading="lazy" decoding="async">
+                    <img class="gallery-img" src="Photos/Gallery/Sarvam.jpeg" alt="Team Sarvam" width="320" height="220" loading="lazy" decoding="async">
+                    <img class="gallery-img" src="Photos/Gallery/Hackathon 2026.jpeg" alt="Hackathon" width="320" height="220" loading="lazy" decoding="async">
                 </div>
             </div>
             <p class="gallery-note">✨ Hover to pause • Swipe on mobile to scroll • Click to expand</p>
@@ -176,6 +181,17 @@
                 </div>
                 <p class="gallery-modal-caption" id="galleryModalCaption"></p>
             </div>
+        </div>
+    </div>
+
+    <div class="full-gallery-overlay" id="fullGalleryOverlay" role="dialog" aria-modal="true" aria-labelledby="fullGalleryTitle">
+        <div class="full-gallery-modal">
+            <button class="full-gallery-close" id="fullGalleryClose" type="button" aria-label="Close full gallery">&times;</button>
+            <div class="full-gallery-header">
+                <div class="section-tag">// CAMPUS LIFE</div>
+                <h2 class="full-gallery-title" id="fullGalleryTitle">Full Gallery</h2>
+            </div>
+            <div class="full-gallery-grid" id="fullGalleryGrid"></div>
         </div>
     </div>
 

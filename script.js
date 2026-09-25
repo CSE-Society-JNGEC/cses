@@ -14,8 +14,7 @@ function runSplash() {
         document.documentElement.style.overflow = 'hidden';
         document.body.style.overflow = 'hidden';
 
-        // Hold duration (ms) before fading out — adjust between 2000-3000ms
-        const holdMs = 2300;
+        const holdMs = 700;
         setTimeout(() => {
             overlay.classList.add('splash-hide');
             // Allow CSS fade to finish before removing overlay and restoring scroll
@@ -30,17 +29,15 @@ function runSplash() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    runSplash().then(() => {
-        initNavigation();
-        initThemeEngine();
-        initAccordions();
-        initModalSystem();
-        initGalleryModal();
-        initFormHandlers();
-        initStudentZone();
-        initScrollReveal();
-        initHeroTypingAnimation();
-    });
+    initNavigation();
+    initThemeEngine();
+    initAccordions();
+    initModalSystem();
+    initGalleryModal();
+    initFormHandlers();
+    initStudentZone();
+    initScrollReveal();
+    runSplash().then(initHeroTypingAnimation);
 });
 
 // 1. Navigation and Mobile Hamburger Operations
@@ -149,12 +146,59 @@ function initGalleryModal() {
     const closeBtn = document.getElementById('galleryModalClose');
     const prevBtn = document.getElementById('galleryPrevBtn');
     const nextBtn = document.getElementById('galleryNextBtn');
+    const openFullGalleryBtn = document.getElementById('openFullGallery');
+    const fullGalleryOverlay = document.getElementById('fullGalleryOverlay');
+    const fullGalleryGrid = document.getElementById('fullGalleryGrid');
+    const fullGalleryClose = document.getElementById('fullGalleryClose');
 
     let currentImageIndex = 0;
     const allImages = Array.from(galleryImages);
 
     if (!modalOverlay || !modalImg || !modalCaption || !closeBtn || !prevBtn || !nextBtn || !allImages.length) {
         return;
+    }
+
+    if (openFullGalleryBtn && fullGalleryOverlay && fullGalleryGrid && fullGalleryClose) {
+        allImages.forEach((sourceImage) => {
+            const item = document.createElement('article');
+            const image = document.createElement('img');
+            const caption = document.createElement('p');
+            const download = document.createElement('a');
+            const imageUrl = sourceImage.currentSrc || sourceImage.src;
+
+            item.className = 'full-gallery-item';
+            image.src = imageUrl;
+            image.alt = sourceImage.alt || 'Gallery image';
+            image.loading = 'lazy';
+            caption.className = 'full-gallery-caption';
+            caption.textContent = sourceImage.alt || decodeURIComponent(new URL(imageUrl).pathname.split('/').pop());
+            download.className = 'full-gallery-download';
+            download.href = imageUrl;
+            download.download = decodeURIComponent(new URL(imageUrl).pathname.split('/').pop());
+            download.textContent = 'Download';
+
+            item.append(image, caption, download);
+            fullGalleryGrid.appendChild(item);
+        });
+
+        function closeFullGallery() {
+            fullGalleryOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+            openFullGalleryBtn.focus();
+        }
+
+        openFullGalleryBtn.addEventListener('click', () => {
+            fullGalleryOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            fullGalleryClose.focus();
+        });
+        fullGalleryClose.addEventListener('click', closeFullGallery);
+        fullGalleryOverlay.addEventListener('click', (event) => {
+            if (event.target === fullGalleryOverlay) closeFullGallery();
+        });
+        fullGalleryOverlay.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') closeFullGallery();
+        });
     }
 
     // Open modal with image
@@ -279,7 +323,9 @@ function initModalSystem() {
             poster: "Photos/Events/Teacher_Day/0.jpg",
             team: "Cultural Committee | Shivangi Ranout |Sheetal Bisht |Mannat",
             photos: [
-                
+                "Photos/Events/Teacher_Day/1.jpeg",
+                "Photos/Events/Teacher_Day/2.jpeg",
+                "Photos/Events/Teacher_Day/3.jpeg",
             ]
         },
         guestLecture: {
