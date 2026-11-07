@@ -79,13 +79,6 @@
       "year": 2023,
       "pdf_url": "papers/MST/Semester_1/Applied_Maths/MST_2/2023.pdf"
     },
-     {
-      "type": "MST-II",
-      "semester": 1,
-      "subject": "Applied Mathematics-I",
-      "year": 2024,
-      "pdf_url": "papers/MST/Semester_1/Applied_Maths/MST_2/2024.pdf"
-    },
     {
       "type": "MST-II",
       "semester": 1,
@@ -129,13 +122,6 @@
       "pdf_url": "papers/MST/Semester_1/Communication_Skills/MST_2/2024.pdf"
     },
     {
-      "type": "MST-II",
-      "semester": 1,
-      "subject": "Communication Skills",
-      "year": 2025,
-      "pdf_url": "papers/MST/Semester_1/Communication_Skills/MST_2/2025.pdf"
-    },
-    {
       "type": "MST-I",
       "semester": 1,
       "subject": "Applied Physics",
@@ -155,20 +141,6 @@
       "subject": "Applied Physics",
       "year": 2025,
       "pdf_url": "papers/MST/Semester_1/Applied_Physics/MST_1/2025.pdf"
-    },
-    {
-      "type": "MST-II",
-      "semester": 1,
-      "subject": "Applied Physics",
-      "year": 2023,
-      "pdf_url": "papers/MST/Semester_1/Applied_Physics/MST_2/2023.pdf"
-    },
-    {
-      "type": "MST-II",
-      "semester": 1,
-      "subject": "Applied Physics",
-      "year": 2024,
-      "pdf_url": "papers/MST/Semester_1/Applied_Physics/MST_2/2024.pdf"
     },
      {
       "type": "MST-II",
@@ -205,13 +177,6 @@
       "year": 2023,
       "pdf_url": "papers/MST/Semester_1/Energy_and_Environment/MST_2/2023.pdf"
     },
-    {
-      "type": "MST-II",
-      "semester": 1,
-      "subject": "EVS",
-      "year": 2024,
-      "pdf_url": "papers/MST/Semester_1/Energy_and_Environment/MST_2/2024.pdf"
-    },
      {
       "type": "MST-II",
       "semester": 1,
@@ -246,13 +211,6 @@
       "subject": "Basic Electrical Engineering",
       "year": 2023,
       "pdf_url": "papers/MST/Semester_1/Basic_Electrical_Engineering/MST_2/2023.pdf"
-    },
-    {
-      "type": "MST-II",
-      "semester": 1,
-      "subject": "Basic Electrical Engineering",
-      "year": 2024,
-      "pdf_url": "papers/MST/Semester_1/Basic_Electrical_Engineering/MST_2/2024.pdf"
     },
     {
       "type": "MST-II",
