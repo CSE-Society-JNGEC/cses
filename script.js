@@ -686,6 +686,8 @@ function initStudentZone() {
     const pdfFrame = document.getElementById('pdfFrame');
     const pdfModalTitle = document.getElementById('pdfModalTitle');
     const pdfDownloadLink = document.getElementById('pdfDownloadLink');
+    const paperImagePreview = document.getElementById('paperImagePreview');
+    const resourceStatus = document.getElementById('resourceStatus');
 
     function normalizeAssetPath(path) {
         if (!path) return path;
@@ -698,21 +700,52 @@ function initStudentZone() {
             .replace(/\/Algoverse 2\.0(?=\/)/g, '/Algoverse_2.0');
     }
 
-    // Data will be loaded from `data/studentzone.json`. Disable feature clicks until loaded.
-    let data = {};
+    let data = { mst_papers: [], end_sem_papers: [], subject_notes: [], study_material: [], subjects_by_semester: {} };
     if (featureGrid) featureGrid.classList.add('disabled');
     fetch('data/studentzone.json')
-        .then(resp => resp.json())
+        .then(resp => {
+            if (!resp.ok) throw new Error(`Local resource index returned ${resp.status}`);
+            return resp.json();
+        })
         .then(json => {
             data = json;
             if (featureGrid) featureGrid.classList.remove('disabled');
             initFilters();
+            setResourceStatus('Showing local resources.', 'success');
         })
         .catch(err => {
             console.warn('Unable to load data/studentzone.json', err);
-            data = { mst_papers: [], end_sem_papers: [], subject_notes: [], study_material: [], subjects_by_semester: {} };
             if (featureGrid) featureGrid.classList.remove('disabled');
+            initFilters();
+            setResourceStatus('Local resources could not be loaded.', 'error');
         });
+
+    function setResourceStatus(message, state) {
+        if (!resourceStatus) return;
+        resourceStatus.textContent = message;
+        resourceStatus.dataset.state = state;
+    }
+
+    function escapeHtml(value) {
+        return String(value ?? '').replace(/[&<>"']/g, character => ({
+            '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+        })[character]);
+    }
+
+    function downloadUrlFor(url) {
+        if (!url || url === '#') return '#';
+        const target = new URL(url, window.location.href);
+        if (target.origin !== window.location.origin) {
+            target.searchParams.set('download', target.pathname.split('/').pop());
+        }
+        return target.href;
+    }
+
+    function closeResourcePreview() {
+        if (pdfFrame) pdfFrame.src = '';
+        if (paperImagePreview) paperImagePreview.src = '';
+        if (pdfModal) pdfModal.style.display = 'none';
+    }
 
     function clearSelection() {
         if (selectionArea) selectionArea.innerHTML = '';
@@ -803,9 +836,11 @@ function initStudentZone() {
                     const year = item.year ? `Year: ${item.year}` : item.unit ? item.unit : '';
                     const resourceLabel = item.resourceType === 'mst' ? item.type : item.resourceType === 'endsem' ? 'EndSem' : item.resourceType === 'notes' ? 'Notes' : 'Resource';
                     const resourceUrl = normalizeAssetPath(item.pdf_url || item.file_url || item.link || '#');
-                    card.innerHTML = `<h4>${title}</h4><p class="muted">Semester ${item.semester} · ${item.subject} · ${resourceLabel}</p><p>${year}</p><p><a href="#" class="view-link">View</a> · <a href="${resourceUrl}" class="download-link" download>Download</a></p>`;
+                    const downloadUrl = downloadUrlFor(resourceUrl);
+                    const fileName = resourceUrl.split('/').pop();
+                    card.innerHTML = `<h4>${escapeHtml(title)}</h4><p class="muted">Semester ${escapeHtml(item.semester)} · ${escapeHtml(item.subject)} · ${escapeHtml(resourceLabel)}</p><p>${escapeHtml(year)}</p><p><a href="#" class="view-link">View</a> · <a href="${escapeHtml(downloadUrl)}" class="download-link" download="${escapeHtml(fileName)}">Download</a></p>`;
                     const view = card.querySelector('.view-link');
-                    view.addEventListener('click', (e) => { e.preventDefault(); showPdf(resourceUrl, title); });
+                    view.addEventListener('click', (e) => { e.preventDefault(); showPdf(resourceUrl, title, downloadUrl, item.file_type); });
                     gridLocal.appendChild(card);
                 });
             }
@@ -847,7 +882,7 @@ function initStudentZone() {
         } else {
             subjects.forEach(sub => {
                 const card = document.createElement('div'); card.className='resource-card event-card';
-                card.innerHTML = `<h4>${sub}</h4><p class="muted">Click to view available papers</p>`;
+                card.innerHTML = `<h4>${escapeHtml(sub)}</h4><p class="muted">Click to view available papers</p>`;
                 card.addEventListener('click', () => renderPaperTypes(feature, semester, sub));
                 grid.appendChild(card);
             });
@@ -858,7 +893,7 @@ function initStudentZone() {
     function renderPaperTypes(feature, semester, subject) {
         clearSelection();
         const header = document.createElement('div'); header.className = 'step-header';
-        header.innerHTML = `<div class="step-title">${subject} — Choose Paper Type</div><button class="back-btn">Back</button>`;
+        header.innerHTML = `<div class="step-title">${escapeHtml(subject)} — Choose Paper Type</div><button class="back-btn">Back</button>`;
         selectionArea.appendChild(header);
         header.querySelector('.back-btn').addEventListener('click', () => renderSubjects(feature, semester));
 
@@ -893,7 +928,7 @@ function initStudentZone() {
     function renderYears(feature, semester, subject, paperType) {
         clearSelection();
         const header = document.createElement('div'); header.className = 'step-header';
-        header.innerHTML = `<div class="step-title">${subject} — ${paperType} — Years</div><button class="back-btn">Back</button>`;
+        header.innerHTML = `<div class="step-title">${escapeHtml(subject)} — ${escapeHtml(paperType)} — Years</div><button class="back-btn">Back</button>`;
         selectionArea.appendChild(header);
         header.querySelector('.back-btn').addEventListener('click', () => renderPaperTypes(feature, semester, subject));
 
@@ -913,9 +948,11 @@ function initStudentZone() {
                 const year = rec.year || rec.unit || '';
                 const title = rec.title || `${subject} ${paperType}`;
                 const resourceUrl = normalizeAssetPath(rec.pdf_url || rec.file_url || rec.link || '#');
-                card.innerHTML = `<h4>${title}</h4><p class="muted">${year}</p><p><a href="#" class="view-link">View</a> · <a href="${resourceUrl}" class="download-link" download>Download</a></p>`;
+                const downloadUrl = downloadUrlFor(resourceUrl);
+                const fileName = resourceUrl.split('/').pop();
+                card.innerHTML = `<h4>${escapeHtml(title)}</h4><p class="muted">${escapeHtml(year)}</p><p><a href="#" class="view-link">View</a> · <a href="${escapeHtml(downloadUrl)}" class="download-link" download="${escapeHtml(fileName)}">Download</a></p>`;
                 const view = card.querySelector('.view-link');
-                view.addEventListener('click', (e) => { e.preventDefault(); showPdf(resourceUrl, title); });
+                view.addEventListener('click', (e) => { e.preventDefault(); showPdf(resourceUrl, title, downloadUrl, rec.file_type); });
                 grid.appendChild(card);
             });
         }
@@ -923,12 +960,23 @@ function initStudentZone() {
         selectionArea.appendChild(grid);
     }
 
-    function showPdf(url, title) {
+    function showPdf(url, title, downloadUrl, contentType) {
         if (!url) { alert('No PDF available yet for this resource.'); return; }
         url = normalizeAssetPath(url);
-        pdfFrame.src = url;
+        const isImage = (contentType || '').startsWith('image/') || /\.(jpe?g|png|webp)(?:[?#]|$)/i.test(url);
+        if (pdfFrame) {
+            pdfFrame.hidden = isImage;
+            pdfFrame.src = isImage ? '' : url;
+        }
+        if (paperImagePreview) {
+            paperImagePreview.hidden = !isImage;
+            paperImagePreview.src = isImage ? url : '';
+            paperImagePreview.alt = title || 'Scanned paper preview';
+        }
         pdfModalTitle.textContent = title;
-        pdfDownloadLink.href = url;
+        pdfDownloadLink.href = downloadUrl || downloadUrlFor(url);
+        pdfDownloadLink.download = url.split('/').pop().split('?')[0];
+        pdfDownloadLink.textContent = isImage ? 'Download image' : 'Download PDF';
         pdfModal.style.display = 'flex';
     }
 
@@ -985,6 +1033,6 @@ function initStudentZone() {
         });
     }
 
-    if (pdfModalClose) pdfModalClose.addEventListener('click', () => { document.getElementById('pdfFrame').src=''; pdfModal.style.display='none'; });
-    if (pdfModal) pdfModal.addEventListener('click', (e) => { if (e.target===pdfModal) { document.getElementById('pdfFrame').src=''; pdfModal.style.display='none'; } });
+    if (pdfModalClose) pdfModalClose.addEventListener('click', closeResourcePreview);
+    if (pdfModal) pdfModal.addEventListener('click', (e) => { if (e.target === pdfModal) closeResourcePreview(); });
 }

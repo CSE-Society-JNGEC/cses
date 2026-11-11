@@ -73,6 +73,7 @@
                         <button id="searchButton" class="btn-primary">Find Resource</button>
                     </div>
                 </div>
+                <p id="resourceStatus" class="muted" role="status" aria-live="polite">Loading resources...</p>
 
                 <!-- Inline search results (populated by script) -->
                 <div id="searchResults" style="margin-top:18px;"></div>
@@ -176,7 +177,10 @@
                 <div class="pdf-modal">
                     <button class="modal-close" id="pdfModalClose">&times;</button>
                     <h3 id="pdfModalTitle"></h3>
-                    <div style="margin-top:12px;"><iframe id="pdfFrame" src="" style="width:100%;height:520px;border:0;border-radius:8px;"></iframe></div>
+                    <div style="margin-top:12px;">
+                        <iframe id="pdfFrame" src="" title="Resource preview" style="width:100%;height:520px;border:0;border-radius:8px;"></iframe>
+                        <img id="paperImagePreview" class="paper-image-preview" src="" alt="Scanned paper preview" hidden>
+                    </div>
                     <div style="margin-top:12px;"><a id="pdfDownloadLink" href="#" download class="btn-primary">Download PDF</a></div>
                 </div>
             </div>

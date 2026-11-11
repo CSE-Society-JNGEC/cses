@@ -450,33 +450,12 @@
       "year": 2025,
       "pdf_url": "papers/MST/Semester_3/Mathematics-III/MST_1/2025.pdf"
     },
-     {
-      "type": "MST-I",
-      "semester": 3,
-      "subject": "Mathematics-III (Probability & Statistics)",
-      "year": 2026,
-      "pdf_url": "papers/MST/Semester_3/Mathematics-III/MST_1/2026.pdf"
-    },
-    {
-      "type": "MST-II",
-      "semester": 3,
-      "subject": "Mathematics-III (Probability & Statistics)",
-      "year": 2024,
-      "pdf_url": "papers/MST/Semester_3/Mathematics-III/MST_2/2024.pdf"
-    },
     {
       "type": "MST-II",
       "semester": 3,
       "subject": "Mathematics-III (Probability & Statistics)",
       "year": 2025,
       "pdf_url": "papers/MST/Semester_3/Mathematics-III/MST_2/2025.pdf"
-    },
-    {
-      "type": "MST-II",
-      "semester": 3,
-      "subject": "Mathematics-III (Probability & Statistics)",
-      "year": 2026,
-      "pdf_url": "papers/MST/Semester_3/Mathematics-III/MST_2/2026.pdf"
     },
     {
       "type": "MST-I",
@@ -493,13 +472,6 @@
       "pdf_url": "papers/MST/Semester_3/DSA/MST_1/2025.pdf"
     },
     {
-      "type": "MST-I",
-      "semester": 3,
-      "subject": "Data Structures & Algorithms (DSA)",
-      "year": 2026,
-      "pdf_url": "papers/MST/Semester_3/DSA/MST_1/2026.pdf"
-    },
-    {
       "type": "MST-II",
       "semester": 3,
       "subject": "Data Structures & Algorithms (DSA)",
@@ -512,13 +484,6 @@
       "subject": "Data Structures & Algorithms (DSA)",
       "year": 2025,
       "pdf_url": "papers/MST/Semester_3/DSA/MST_2/2025.pdf"
-    },
-    {
-      "type": "MST-II",
-      "semester": 3,
-      "subject": "Data Structures & Algorithms (DSA)",
-      "year": 2026,
-      "pdf_url": "papers/MST/Semester_3/DSA/MST_2/2026.pdf"
     },
     {
       "type": "MST-I",
@@ -535,13 +500,6 @@
       "pdf_url": "papers/MST/Semester_3/Python/MST_1/2025.pdf"
     },
     {
-      "type": "MST-I",
-      "semester": 3,
-      "subject": "Python",
-      "year": 2026,
-      "pdf_url": "papers/MST/Semester_3/Python/MST_1/2026.pdf"
-    },
-    {
       "type": "MST-II",
       "semester": 3,
       "subject": "Python",
@@ -554,13 +512,6 @@
       "subject": "Python",
       "year": 2025,
       "pdf_url": "papers/MST/Semester_3/Python/MST_2/2025.pdf"
-    },
-     {
-      "type": "MST-II",
-      "semester": 3,
-      "subject": "Python",
-      "year": 2026,
-      "pdf_url": "papers/MST/Semester_3/Python/MST_2/2026.pdf"
     },
     {
       "type": "MST-I",
@@ -577,13 +528,6 @@
       "pdf_url": "papers/MST/Semester_3/Economics/MST_1/2025.pdf"
     },
     {
-      "type": "MST-I",
-      "semester": 3,
-      "subject": "Economics",
-      "year": 2026,
-      "pdf_url": "papers/MST/Semester_3/Economics/MST_1/2026.pdf"
-    },
-    {
       "type": "MST-II",
       "semester": 3,
       "subject": "Economics",
@@ -596,13 +540,6 @@
       "subject": "Economics",
       "year": 2025,
       "pdf_url": "papers/MST/Semester_3/Economics/MST_2/2025.pdf"
-    },
-    {
-      "type": "MST-II",
-      "semester": 3,
-      "subject": "Economics",
-      "year": 2026,
-      "pdf_url": "papers/MST/Semester_3/Economics/MST_2/2026.pdf"
     },
     {
       "type": "MST-I",
@@ -619,13 +556,6 @@
       "pdf_url": "papers/MST/Semester_3/DSD/MST_1/2025.pdf"
     },
     {
-      "type": "MST-I",
-      "semester": 3,
-      "subject": "Digital System Design (DSD)",
-      "year": 2026,
-      "pdf_url": "papers/MST/Semester_3/DSD/MST_1/2026.pdf"
-    },
-    {
       "type": "MST-II",
       "semester": 3,
       "subject": "Digital System Design (DSD)",
@@ -638,13 +568,6 @@
       "subject": "Digital System Design (DSD)",
       "year": 2025,
       "pdf_url": "papers/MST/Semester_3/DSD/MST_2/2025.pdf"
-    },
-     {
-      "type": "MST-II",
-      "semester": 3,
-      "subject": "Digital System Design (DSD)",
-      "year": 2026,
-      "pdf_url": "papers/MST/Semester_3/DSD/MST_2/2026.pdf"
     },
     {
       "type": "MST-I",
@@ -661,32 +584,11 @@
       "pdf_url": "papers/MST/Semester_3/IKS/MST_1/2025.pdf"
     },
     {
-      "type": "MST-I",
-      "semester": 3,
-      "subject": "Indian Knowledge System (IKS)",
-      "year": 2026,
-      "pdf_url": "papers/MST/Semester_3/IKS/MST_1/2026.pdf"
-    },
-    {
-      "type": "MST-II",
-      "semester": 3,
-      "subject": "Indian Knowledge System (IKS)",
-      "year": 2024,
-      "pdf_url": "papers/MST/Semester_3/IKS/MST_2/2024.pdf"
-    },
-    {
       "type": "MST-II",
       "semester": 3,
       "subject": "Indian Knowledge System (IKS)",
       "year": 2025,
       "pdf_url": "papers/MST/Semester_3/IKS/MST_2/2025.pdf"
-    },
-    {
-      "type": "MST-II",
-      "semester": 3,
-      "subject": "Indian Knowledge System (IKS)",
-      "year": 2026,
-      "pdf_url": "papers/MST/Semester_3/IKS/MST_2/2026.pdf"
     },
     {
       "type": "MST-I",
@@ -703,13 +605,6 @@
       "pdf_url": "papers/MST/Semester_3/COA/MST_1/2025.pdf"
     },
     {
-      "type": "MST-I",
-      "semester": 3,
-      "subject": "Computer Organization & Architecture (COA)",
-      "year": 2026,
-      "pdf_url": "papers/MST/Semester_3/COA/MST_1/2026.pdf"
-    },
-    {
       "type": "MST-II",
       "semester": 3,
       "subject": "Computer Organization & Architecture (COA)",
@@ -722,13 +617,6 @@
       "subject": "Computer Organization & Architecture (COA)",
       "year": 2025,
       "pdf_url": "papers/MST/Semester_3/COA/MST_2/2025.pdf"
-    },
-    {
-      "type": "MST-II",
-      "semester": 3,
-      "subject": "Computer Organization & Architecture (COA)",
-      "year": 2026,
-      "pdf_url": "papers/MST/Semester_3/COA/MST_2/2026.pdf"
     },
     {
       "type": "MST-I",
@@ -909,8 +797,8 @@
       "type": "MST-II",
       "semester": 5,
       "subject": "Computer Networks (CN)",
-      "year": 2025,
-      "pdf_url": "papers/MST/Semester_5/CN/MST_2/2025.pdf"
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester_5/CN/MST_2/2024.pdf"
     },
     {
       "type": "MST-I",
@@ -918,13 +806,6 @@
       "subject": "Machine Learning (ML)",
       "year": 2025,
       "pdf_url": "papers/MST/Semester_5/ML/MST_1/2025.pdf"
-    },
-    {
-      "type": "MST-II",
-      "semester": 5,
-      "subject": "Machine Learning (ML)",
-      "year": 2025,
-      "pdf_url": "papers/MST/Semester_5/ML/MST_2/2025.pdf"
     },
     {
       "type": "MST-I",
@@ -937,8 +818,8 @@
       "type": "MST-II",
       "semester": 5,
       "subject": "Theory of Computation (TOC)",
-      "year": 2025,
-      "pdf_url": "papers/MST/Semester_5/TOC/MST_2/2025.pdf"
+      "year": 2024,
+      "pdf_url": "papers/MST/Semester_5/TOC/MST_2/2024.pdf"
     },
     {
       "type": "MST-I",
@@ -948,25 +829,11 @@
       "pdf_url": "papers/MST/Semester_5/SE/MST_1/2025.pdf"
     },
     {
-      "type": "MST-II",
-      "semester": 5,
-      "subject": "Software Engineering (SE)",
-      "year": 2025,
-      "pdf_url": "papers/MST/Semester_5/SE/MST_2/2025.pdf"
-    },
-    {
       "type": "MST-I",
       "semester": 5,
       "subject": "Data Warehousing & Mining (DWM)",
       "year": 2025,
       "pdf_url": "papers/MST/Semester_5/DWM/MST_1/2025.pdf"
-    },
-    {
-      "type": "MST-II",
-      "semester": 5,
-      "subject": "Data Warehousing & Mining (DWM)",
-      "year": 2025,
-      "pdf_url": "papers/MST/Semester_5/DWM/MST_2/2025.pdf"
     },
     {
       "type": "MST-I",
