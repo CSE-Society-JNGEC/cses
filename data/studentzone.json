@@ -46,8 +46,10 @@
       "Startup & Innovation"
     ],
     "7": [
-      "Cloud Computing",
-      "Natural Language Processing (NLP)"
+      "Generative AI",
+      "Natural Language Processing (NLP)",
+      "AI in Healthcare",
+      "Electronics for Engineers"
     ]
   },
   "mst_papers": [
@@ -797,8 +799,22 @@
       "type": "MST-II",
       "semester": 5,
       "subject": "Computer Networks (CN)",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester_5/CN/MST_2/2025.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 5,
+      "subject": "Computer Networks (CN)",
       "year": 2024,
       "pdf_url": "papers/MST/Semester_5/CN/MST_2/2024.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 5,
+      "subject": "Computer Networks (CN)",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester_5/CN/MST_1/2026.pdf"
     },
     {
       "type": "MST-I",
@@ -806,6 +822,20 @@
       "subject": "Machine Learning (ML)",
       "year": 2025,
       "pdf_url": "papers/MST/Semester_5/ML/MST_1/2025.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 5,
+      "subject": "Machine Learning (ML)",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester_5/ML/MST_2/2025.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 5,
+      "subject": "Machine Learning (ML)",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester_5/ML/MST_1/2026.pdf"
     },
     {
       "type": "MST-I",
@@ -822,6 +852,20 @@
       "pdf_url": "papers/MST/Semester_5/TOC/MST_2/2024.pdf"
     },
     {
+      "type": "MST-II",
+      "semester": 5,
+      "subject": "Theory of Computation (TOC)",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester_5/TOC/MST_2/2025.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 5,
+      "subject": "Theory of Computation (TOC)",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester_5/TOC/MST_1/2026.pdf"
+    },
+    {
       "type": "MST-I",
       "semester": 5,
       "subject": "Software Engineering (SE)",
@@ -829,11 +873,39 @@
       "pdf_url": "papers/MST/Semester_5/SE/MST_1/2025.pdf"
     },
     {
+      "type": "MST-II",
+      "semester": 5,
+      "subject": "Software Engineering (SE)",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester_5/SE/MST_2/2025.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 5,
+      "subject": "Software Engineering (SE)",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester_5/SE/MST_1/2026.pdf"
+    },
+    {
       "type": "MST-I",
       "semester": 5,
       "subject": "Data Warehousing & Mining (DWM)",
       "year": 2025,
       "pdf_url": "papers/MST/Semester_5/DWM/MST_1/2025.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 5,
+      "subject": "Data Warehousing & Mining (DWM)",
+      "year": 2025,
+      "pdf_url": "papers/MST/Semester_5/DWM/MST_2/2025.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 5,
+      "subject": "Data Warehousing & Mining (DWM)",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester_5/DWM/MST_1/2026.pdf"
     },
     {
       "type": "MST-I",
@@ -908,16 +980,16 @@
     {
       "type": "MST-I",
       "semester": 7,
-      "subject": "Cloud Computing",
+      "subject": "Generative AI",
       "year": 2026,
-      "pdf_url": "papers/MST/Semester_7/Cloud_Computing/MST_1/2026.pdf"
+      "pdf_url": "papers/MST/Semester_7/Generative_AI/MST_1/2026.pdf"
     },
     {
       "type": "MST-II",
       "semester": 7,
-      "subject": "Cloud Computing",
+      "subject": "Generative AI",
       "year": 2026,
-      "pdf_url": "papers/MST/Semester_7/Cloud_Computing/MST_2/2026.pdf"
+      "pdf_url": "papers/MST/Semester_7/Generative_AI/MST_2/2026.pdf"
     },
     {
       "type": "MST-I",
@@ -932,9 +1004,43 @@
       "subject": "Natural Language Processing (NLP)",
       "year": 2026,
       "pdf_url": "papers/MST/Semester_7/NLP/MST_2/2026.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 7,
+      "subject": "AI in Healthcare",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester_7/AI_Healthcare/MST_1/2026.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 7,
+      "subject": "AI in Healthcare",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester_7/AI_Healthcare/MST_2/2026.pdf"
+    },
+    {
+      "type": "MST-I",
+      "semester": 7,
+      "subject": "Electronics for Engineers",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester_7/Electronics_for_Engineers/MST_1/2026.pdf"
+    },
+    {
+      "type": "MST-II",
+      "semester": 7,
+      "subject": "Electronics for Engineers",
+      "year": 2026,
+      "pdf_url": "papers/MST/Semester_7/Electronics_for_Engineers/MST_2/2026.pdf"
     }
   ],
   "end_sem_papers": [
+    {
+      "semester": 1,
+      "subject": "Applied Mathematics-I",
+      "year": 2023,
+      "pdf_url": "papers/End_Sem/Semester_1/Applied_Mathematics-I/2023.pdf"
+    },
     {
       "semester": 1,
       "subject": "Applied Mathematics-I",
@@ -1015,6 +1121,12 @@
     },
     {
       "semester": 3,
+      "subject": "Mathematics-III (Probability & Statistics)",
+      "year": 2024,
+      "pdf_url": "papers/End_Sem/Semester_3/Mathematics-III/2024_Reappear.pdf"
+    },
+    {
+      "semester": 3,
       "subject": "Data Structures & Algorithms (DSA)",
       "year": 2024,
       "pdf_url": "papers/End_Sem/Semester_3/DSA/2024.pdf"
@@ -1088,74 +1200,86 @@
     {
       "semester": 5,
       "subject": "Computer Networks (CN)",
-      "year": 2024,
+      "year": 2025,
       "pdf_url": "papers/End_Sem/Semester_5/CN/2024.pdf"
     },
     {
       "semester": 5,
       "subject": "Machine Learning (ML)",
-      "year": 2024,
-      "pdf_url": "papers/End_Sem/Semester_5/ML/2024.pdf"
+      "year": 2025,
+      "pdf_url": "papers/End_Sem/Semester_5/ML/2025.pdf"
     },
     {
       "semester": 5,
       "subject": "Theory of Computation (TOC)",
-      "year": 2024,
-      "pdf_url": "papers/End_Sem/Semester_5/TOC/2024.pdf"
+      "year": 2025,
+      "pdf_url": "papers/End_Sem/Semester_5/TOC/2025.pdf"
     },
     {
       "semester": 5,
       "subject": "Software Engineering (SE)",
-      "year": 2024,
-      "pdf_url": "papers/End_Sem/Semester_5/SE/2024.pdf"
+      "year": 2025,
+      "pdf_url": "papers/End_Sem/Semester_5/SE/2025.pdf"
     },
     {
       "semester": 5,
       "subject": "Data Warehousing & Mining (DWM)",
-      "year": 2024,
-      "pdf_url": "papers/End_Sem/Semester_5/DWM/2024.pdf"
+      "year": 2025,
+      "pdf_url": "papers/End_Sem/Semester_5/DWM/2025.pdf"
     },
     {
       "semester": 6,
       "subject": "Soft Computing",
-      "year": 2024,
-      "pdf_url": "papers/End_Sem/Semester_6/Soft_Computing/2024.pdf"
+      "year": 2026,
+      "pdf_url": "papers/End_Sem/Semester_6/Soft_Computing/2026.pdf"
     },
     {
       "semester": 6,
       "subject": "Advanced Machine Learning",
-      "year": 2024,
-      "pdf_url": "papers/End_Sem/Semester_6/Advanced_Machine_Learning/2024.pdf"
+      "year": 2026,
+      "pdf_url": "papers/End_Sem/Semester_6/Advanced_Machine_Learning/2026.pdf"
     },
     {
       "semester": 6,
       "subject": "Compiler Design",
-      "year": 2024,
-      "pdf_url": "papers/End_Sem/Semester_6/Compiler_Design/2024.pdf"
+      "year": 2026,
+      "pdf_url": "papers/End_Sem/Semester_6/Compiler_Design/2026.pdf"
     },
     {
       "semester": 6,
       "subject": "Deep Learning",
-      "year": 2024,
-      "pdf_url": "papers/End_Sem/Semester_6/Deep_Learning/2024.pdf"
+      "year": 2026,
+      "pdf_url": "papers/End_Sem/Semester_6/Deep_Learning/2026.pdf"
     },
     {
       "semester": 6,
       "subject": "Startup & Innovation",
-      "year": 2024,
-      "pdf_url": "papers/End_Sem/Semester_6/Startup_and_Innovation/2024.pdf"
+      "year": 2026,
+      "pdf_url": "papers/End_Sem/Semester_6/Startup_and_Innovation/2026.pdf"
     },
     {
       "semester": 7,
-      "subject": "Cloud Computing",
-      "year": 2024,
-      "pdf_url": "papers/End_Sem/Semester_7/Cloud_Computing/2024.pdf"
+      "subject": "Generative AI",
+      "year": 2026,
+      "pdf_url": "papers/End_Sem/Semester_7/Generative_AI/2026.pdf"
     },
     {
       "semester": 7,
       "subject": "Natural Language Processing (NLP)",
-      "year": 2024,
-      "pdf_url": "papers/End_Sem/Semester_7/NLP/2024.pdf"
+      "year": 2026,
+      "pdf_url": "papers/End_Sem/Semester_7/NLP/2026.pdf"
+    },
+     {
+      "semester": 7,
+      "subject": "AI in Healthcare",
+      "year": 2026,
+      "pdf_url": "papers/End_Sem/Semester_7/AI_Healthcare/2026.pdf"
+    },
+     {
+      "semester": 7,
+      "subject": "Electronics for Engineers",
+      "year": 2026,
+      "pdf_url": "papers/End_Sem/Semester_7/Electronics_for_Engineers/2026.pdf"
     }
   ],
   "subject_notes": [
