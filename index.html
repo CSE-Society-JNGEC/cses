@@ -1,22 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="has-splash">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSE Society — Home</title>
+    <meta name="theme-color" content="#f8efe0">
+    <link rel="icon" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=JetBrains+Mono:wght@500;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assistant/assistant.css">
+    <script src="js/theme-manager.js"></script>
 </head>
+
 <body>
+    <a class="skip-link" href="#home">Skip to content</a>
     <!-- Splash overlay shown on page load; removed by script after animation -->
     <div id="splashOverlay" class="splash-overlay" aria-hidden="false">
+        <div class="splash-backdrop-grid" aria-hidden="true"></div>
         <div class="splash-inner">
-            <img src="logo.png" alt="CSE Society Logo" class="splash-logo">
+            <div class="splash-logo-container">
+                <div class="splash-scanline" aria-hidden="true"></div>
+                <div class="splash-scan-bracket bracket-tl" aria-hidden="true"></div>
+                <div class="splash-scan-bracket bracket-tr" aria-hidden="true"></div>
+                <div class="splash-scan-bracket bracket-bl" aria-hidden="true"></div>
+                <div class="splash-scan-bracket bracket-br" aria-hidden="true"></div>
+                <div class="splash-glow" aria-hidden="true"></div>
+                <img src="logo.png" alt="CSE Society Logo" class="splash-logo">
+            </div>
+            <div class="splash-text-wrap">
+                <div class="splash-title">CSE Society</div>
+                <div class="splash-subtitle"><span>●</span> SYSTEM BOOT · READY</div>
+            </div>
         </div>
     </div>
     <div class="bg-decor" aria-hidden="true">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
+        <div class="bg-theme bg-t1"></div>
+        <div class="bg-theme bg-t2"></div>
+        <div class="bg-theme bg-t3"></div>
+        <div class="blob blob-1" data-parallax="0.05"></div>
+        <div class="blob blob-2" data-parallax="0.09"></div>
+        <div class="blob blob-3" data-parallax="0.03"></div>
         <div class="grid-overlay"></div>
     </div>
 
@@ -37,7 +65,6 @@
                 <li><a class="nav-link" href="studentzone.html">Student Zone</a></li>
             </ul>
             <div class="nav-actions">
-                <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">☀️</button>
                 <button class="hamburger" id="hamburger" aria-label="Toggle menu">
                     <span></span><span></span><span></span>
                 </button>
@@ -53,47 +80,169 @@
         <a class="mobile-link" href="studentzone.html">Student Zone</a>
     </div>
 
-    <section class="hero">
+    <section class="hero" id="home" data-spy="Home">
         <div class="hero-content">
             <div class="hero-badge">● CODE · YOUR · FUTURE ●</div>
-            <h1>Where Code Meets <span>Innovation</span></h1>
-            <p class="hero-sub">Welcome to the central platform of the CSE Society.<br>Our one-stop platform for academic resources, technical events, student opportunities, and departmental updates. Access notes, previous year question papers, announcements, workshops, hackathons, and much more—all in one place.</p>
+            <h1>Where Code Meets <span class="hl">Innovation</span></h1>
+            <p class="hero-sub">Welcome to the central platform of the CSE Society.<br>Our one-stop platform for
+                academic resources, technical events, student opportunities, and departmental updates. Access notes,
+                previous year question papers, announcements, workshops, hackathons, and much more—all in one place.</p>
             <div class="hero-btns">
                 <a class="btn-primary" href="events.html">Explore Events →</a>
                 <a class="btn-outline" href="studentzone.html">Student Portal</a>
             </div>
             <div class="hero-stats">
-                <div class="stat"><div class="stat-num">20+</div><div class="stat-label">Active Members</div></div>
-                <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Events Hosted</div></div>
+                <div class="stat">
+                    <div class="stat-num">20+</div>
+                    <div class="stat-label">Active Members</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">10+</div>
+                    <div class="stat-label">Events Hosted</div>
+                </div>
             </div>
         </div>
 
-        <div class="hero-visual" aria-hidden="true">
+        <div class="hero-visual" data-parallax="0.04">
             <div class="hero-visual-glow"></div>
             <div class="hero-orbit-ring ring-1"></div>
             <div class="hero-orbit-ring ring-2"></div>
 
-            <div class="hero-photo-frame">
-                <div class="hero-photo-stack">
-                    <div class="hero-photo-slide"><img src="Photos/Gallery/Magazine.jpeg" alt="" width="600" height="600" loading="lazy" decoding="async"></div>
-                    <div class="hero-photo-slide"><img src="Photos/Gallery/Vision.jpeg" alt="" width="900" height="600" loading="lazy" decoding="async"></div>
-                    <div class="hero-photo-slide"><img src="Photos/Hero-Section/0.jpeg" alt="" width="900" height="600" loading="lazy" decoding="async"></div>
-                    <div class="hero-photo-slide"><img src="Photos/Hero-Section/1.jpeg" alt="" width="900" height="600" loading="lazy" decoding="async"></div>
-                    <div class="hero-photo-slide"><img src="Photos/Hero-Section/2.jpeg" alt="" width="900" height="600" loading="lazy" decoding="async"></div>
-                    <div class="hero-photo-slide"><img src="Photos/Hero-Section/3.jpeg" alt="" width="900" height="600" loading="lazy" decoding="async"></div>
-                  
+            <div class="hero-monitor" id="heroMonitor" tabindex="0" role="region"
+                aria-label="CSE Society Workstation Monitor">
+                <div class="monitor-ambient-glow" aria-hidden="true"></div>
+
+                <div class="monitor-casing">
+                    <div class="monitor-top-bezel">
+                        <div class="monitor-webcam-cluster" title="Integrated Vision Node">
+                            <span class="monitor-webcam-lens"></span>
+                            <span class="monitor-webcam-led"></span>
+                            <span class="monitor-sys-tag">CSES-STATION // DISPLAY-01</span>
+                        </div>
+                        <div class="monitor-counter" id="monitorCounter">SYS.01 / 06</div>
+                    </div>
+
+                    <div class="monitor-screen">
+                        <div class="monitor-glass-glare" aria-hidden="true"></div>
+                        <div class="monitor-scanlines" aria-hidden="true"></div>
+
+                        <!-- Boot Sequence Terminal -->
+                        <div class="monitor-boot-screen" aria-hidden="true">
+                            <span class="boot-terminal-text">> INITIALIZING CSES RUNTIME...</span>
+                            <div class="boot-terminal-bar"></div>
+                        </div>
+
+                        <!-- Standby Screen -->
+                        <div class="monitor-standby-screen" aria-hidden="true">
+                            <span class="standby-indicator"></span>
+                            <span class="standby-text">SYSTEM STANDBY · PRESS POWER TO WAKE</span>
+                        </div>
+
+                        <!-- Screen Photograph Slides -->
+                        <div class="monitor-slides">
+                            <div class="monitor-slide is-active">
+                                <img src="Photos/Gallery/Magazine.jpeg" alt="CSE Society Magazine Showcase" width="600"
+                                    height="600" loading="eager" decoding="async">
+                            </div>
+                            <div class="monitor-slide">
+                                <img src="Photos/Gallery/Vision.jpeg" alt="CSE Society Vision and Mission" width="900"
+                                    height="600" loading="lazy" decoding="async">
+                            </div>
+                            <div class="monitor-slide">
+                                <img src="Photos/Hero-Section/0.jpeg" alt="CSE Department Gathering" width="900"
+                                    height="600" loading="lazy" decoding="async">
+                            </div>
+                            <div class="monitor-slide">
+                                <img src="Photos/Hero-Section/1.jpeg" alt="Technical Innovation Session" width="900"
+                                    height="600" loading="lazy" decoding="async">
+                            </div>
+                            <div class="monitor-slide">
+                                <img src="Photos/Hero-Section/2.jpeg" alt="Students in Action" width="900" height="600"
+                                    loading="lazy" decoding="async">
+                            </div>
+                            <div class="monitor-slide">
+                                <img src="Photos/Hero-Section/3.jpeg" alt="Society Hackathon & Events" width="900"
+                                    height="600" loading="lazy" decoding="async">
+                            </div>
+                        </div>
+
+                        <!-- Screen Interactive HUD -->
+                        <div class="monitor-hud-overlay">
+                            <div class="monitor-hud-top">
+                                <div class="monitor-live-badge"><span class="monitor-live-dot"></span>CAMPUS
+                                    LIFE · LIVE</div>
+                                <div class="monitor-fps-tag">60 FPS // HD</div>
+                            </div>
+                            <div class="monitor-hud-bottom">
+                                <div class="monitor-caption-pill">
+                                    <div class="monitor-caption-text">Innoverse Society Magazine Showcase
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- On-Screen Quick Navigation Arrows -->
+                        <div class="monitor-screen-nav">
+                            <button class="monitor-nav-arrow monitor-nav-prev" type="button"
+                                aria-label="Previous photograph">
+                                &#10094;
+                            </button>
+                            <button class="monitor-nav-arrow monitor-nav-next" type="button"
+                                aria-label="Next photograph">
+                                &#10095;
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Bezel with Brand and Dots Pagination -->
+                    <div class="monitor-bottom-bezel">
+                        <div class="monitor-brand">
+                            <img src="logo.png" alt="CSE Society" class="monitor-logo-mark">
+                            <span class="monitor-brand-text">CSES WORKSTATION</span>
+                        </div>
+
+                        <div class="monitor-dots" role="tablist" aria-label="Photograph navigation">
+                            <button type="button" class="monitor-dot is-active" aria-label="Photo 1"
+                                aria-pressed="true"></button>
+                            <button type="button" class="monitor-dot" aria-label="Photo 2"
+                                aria-pressed="false"></button>
+                            <button type="button" class="monitor-dot" aria-label="Photo 3"
+                                aria-pressed="false"></button>
+                            <button type="button" class="monitor-dot" aria-label="Photo 4"
+                                aria-pressed="false"></button>
+                            <button type="button" class="monitor-dot" aria-label="Photo 5"
+                                aria-pressed="false"></button>
+                            <button type="button" class="monitor-dot" aria-label="Photo 6"
+                                aria-pressed="false"></button>
+                        </div>
+
+                        <button class="monitor-power-btn" type="button" aria-label="Toggle monitor power"
+                            title="Standby Mode">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
+                                <line x1="12" y1="2" x2="12" y2="12"></line>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
-                <div class="hero-photo-scanline"></div>
-                <div class="hero-photo-live"><span class="pulse-dot"></span>LIVE FEED</div>
+
+                <!-- Ergonomic Stand & Modern Base -->
+                <div class="monitor-stand" aria-hidden="true">
+                    <div class="monitor-neck"></div>
+                    <div class="monitor-base">
+                        <div class="monitor-base-accent"></div>
+                    </div>
+                </div>
             </div>
 
-            <div class="hero-float-card card-code">
+            <div class="hero-float-card card-code" data-parallax="0.08">
                 <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
                 <div class="code-line">const society = "CSE";</div>
                 <div class="code-line">society.<span>build()</span>;</div>
             </div>
 
-            <div class="hero-float-card card-stat">
+            <div class="hero-float-card card-stat" data-parallax="0.05">
                 <div class="card-stat-icon">🚀</div>
                 <div>
                     <div class="card-stat-num">CSES JNGEC</div>
@@ -102,7 +251,7 @@
             </div>
         </div>
     </section>
-    <section class="section" style="padding-top:0;">
+    <section class="section" id="announcements" data-spy="Updates" style="padding-top:0;">
         <div class="section-inner">
             <div class="section-tag">// NOTIFICATIONS BULLETIN</div>
             <h2 class="section-title">Latest Announcements</h2>
@@ -110,16 +259,19 @@
                 <div class="notif-card">
                     <div class="notif-date">September 5, 2026</div>
                     <h3>🎯 Teacher's Day Event 2026</h3>
-                    <p>Join us in celebrating the dedication and impact of our educators with special activities and recognition.</p>
+                    <p>Join us in celebrating the dedication and impact of our educators with special activities and
+                        recognition.</p>
                     <a class="read-more" href="events.html">Learn More →</a>
                 </div>
                 <div class="notif-card">
                     <div class="notif-date">August 25, 2026</div>
                     <h3>🤖 CSE Society Magazine - Innoverse</h3>
                     <p>Explore Innoverse, the official magazine of CSE Society — featuring
-                    innovation, technology, student achievements, ideas and highlights
-                    from our CSE community.</p>
-                    <a class="read-more" href="https://drive.google.com/file/d/18msRWkxz-2FRT6UfplJoR1PwycmsNVw4/view?usp=drivesdk">Learn More →</a>
+                        innovation, technology, student achievements, ideas and highlights
+                        from our CSE community.</p>
+                    <a class="read-more"
+                        href="https://drive.google.com/file/d/18msRWkxz-2FRT6UfplJoR1PwycmsNVw4/view?usp=drivesdk">Learn
+                        More →</a>
                 </div>
                 <div class="notif-card">
                     <div class="notif-date">August 22, 2026</div>
@@ -131,41 +283,123 @@
         </div>
     </section>
 
-    <section class="section" style="padding-top:0;">
+    <section class="section" id="gallery" data-spy="Gallery" style="padding-top:0;">
         <div class="section-inner">
-            <div class="section-tag">// SOCIETY IN ACTION</div>
-            <h2 class="section-title">Campus Life Gallery</h2>
-            <div class="gallery-track-wrap">
-                <button class="gallery-open-all" id="openFullGallery" type="button">Open full gallery</button>
-                <div class="gallery-track">
-                     <img class="gallery-img" src="Photos/Gallery/Vision.jpeg" alt="Vision of Society" width="320" height="220" loading="lazy" decoding="async">
-                    <img class="gallery-img" src="Photos/Gallery/7.jpg" alt="Batch 2022-2026" width="320" height="220" loading="lazy" decoding="async">
-                    <img class="gallery-img" src="Photos/Gallery/1.jpg" alt="Cricket" width="320" height="220" loading="lazy" decoding="async">
-                    <img class="gallery-img" src="Photos/Gallery/3.jpg" alt="CSE Department" width="320" height="220" loading="lazy" decoding="async">
-                    <img class="gallery-img" src="Photos/Events/Sports/1.jpg" alt="Cricket" width="320" height="220" loading="lazy" decoding="async">
-                    <img class="gallery-img" src="Photos/Events/Guest_Lecture/1.jpg" alt="Workshop" width="320" height="220" loading="lazy" decoding="async">
-                    <img class="gallery-img" src="Photos/Events/Graduation_Ceremony/1.jpg" alt="Graduation Ceremony" width="320" height="220" loading="lazy" decoding="async">
-                    <img class="gallery-img" src="Photos/Gallery/Magazine.jpeg" alt="Magazine" width="320" height="220" loading="lazy" decoding="async">
-                    <img class="gallery-img" src="Photos/Events/Prompt/1.jpg" alt="Prompt Engineering" width="320" height="220" loading="lazy" decoding="async">
-                    <img class="gallery-img" src="Photos/Events/Dhun/1.jpeg" alt="Dhun Event" width="320" height="220" loading="lazy" decoding="async">
-                    <img class="gallery-img" src="Photos/Events/Poster_Making/4.jpg" alt="Poster Making" width="320" height="220" loading="lazy" decoding="async">
-                    <img class="gallery-img" src="Photos/Events/Algoverse_2.0/1.jpg" alt="Algoverse" width="320" height="220" loading="lazy" decoding="async">
-                    <img class="gallery-img" src="Photos/Events/Algoverse_2.0/3.jpg" alt="Algoverse" width="320" height="220" loading="lazy" decoding="async">
-                    <img class="gallery-img" src="Photos/Gallery/8.jpg" alt="Algoverse" width="320" height="220" loading="lazy" decoding="async">
-                    <img class="gallery-img" src="Photos/Gallery/9.jpg" alt="CSE Society Team" width="320" height="220" loading="lazy" decoding="async">
-                    <img class="gallery-img" src="Photos/Gallery/Structure.jpeg" alt="CSES" width="320" height="220" loading="lazy" decoding="async">
-                    <img class="gallery-img" src="Photos/Gallery/6.jpg" alt="Dhun Event" width="320" height="220" loading="lazy" decoding="async">
-                    <img class="gallery-img" src="Photos/Gallery/5.jpg" alt="Badminton Tournament" width="320" height="220" loading="lazy" decoding="async">
-                    <img class="gallery-img" src="Photos/Events/Sports/3.jpg" alt="Chess" width="320" height="220" loading="lazy" decoding="async">
-                    <img class="gallery-img" src="Photos/Events/Poster_Making/4.jpg" alt="Poster Making" width="320" height="220" loading="lazy" decoding="async">
-                    <img class="gallery-img" src="Photos/Events/Teacher_Day/1.jpeg" alt="Teacher's Day" width="320" height="220" loading="lazy" decoding="async">
-                    <img class="gallery-img" src="Photos/Events/Teacher_Day/2.jpeg" alt="Teacher's Day" width="320" height="220" loading="lazy" decoding="async">
-                    <img class="gallery-img" src="Photos/Events/Teacher_Day/3.jpeg" alt="Teacher's Day" width="320" height="220" loading="lazy" decoding="async">
-                    <img class="gallery-img" src="Photos/Gallery/Sarvam.jpeg" alt="Team Sarvam" width="320" height="220" loading="lazy" decoding="async">
-                    <img class="gallery-img" src="Photos/Gallery/Hackathon 2026.jpeg" alt="Hackathon" width="320" height="220" loading="lazy" decoding="async">
+            <div class="gallery-head">
+                <div>
+                    <div class="section-tag">// SOCIETY IN ACTION</div>
+                    <h2 class="section-title">Campus Life Gallery</h2>
                 </div>
+                <button class="gallery-open-all" id="openFullGallery" type="button">Open full gallery</button>
             </div>
-            <p class="gallery-note">✨ Hover to pause • Swipe on mobile to scroll • Click to expand</p>
+            <div class="gallery-filters" role="group" aria-label="Filter photos by category">
+                <button type="button" class="gallery-chip is-active" data-filter="all" aria-pressed="true">All</button>
+                <button type="button" class="gallery-chip" data-filter="tech" aria-pressed="false">Technical &
+                    Academic</button>
+                <button type="button" class="gallery-chip" data-filter="cultural" aria-pressed="false">Cultural</button>
+                <button type="button" class="gallery-chip" data-filter="sports" aria-pressed="false">Sports</button>
+                <button type="button" class="gallery-chip" data-filter="society" aria-pressed="false">Society</button>
+            </div>
+            <div class="gallery-masonry">
+                <figure class="gallery-tile" data-cat="society"><img class="gallery-img"
+                        src="Photos/Gallery/Vision.jpeg" alt="Vision of Society" loading="lazy" decoding="async">
+                    <figcaption>Vision of Society</figcaption>
+                </figure>
+                <figure class="gallery-tile" data-cat="society"><img class="gallery-img" src="Photos/Gallery/7.jpg"
+                        alt="Batch 2022-2026" loading="lazy" decoding="async">
+                    <figcaption>Batch 2022-2026</figcaption>
+                </figure>
+                <figure class="gallery-tile" data-cat="sports"><img class="gallery-img" src="Photos/Gallery/1.jpg"
+                        alt="Cricket" loading="lazy" decoding="async">
+                    <figcaption>Cricket</figcaption>
+                </figure>
+                <figure class="gallery-tile" data-cat="society"><img class="gallery-img" src="Photos/Gallery/3.jpg"
+                        alt="CSE Department" loading="lazy" decoding="async">
+                    <figcaption>CSE Department</figcaption>
+                </figure>
+                <figure class="gallery-tile" data-cat="sports"><img class="gallery-img" src="Photos/Events/Sports/1.jpg"
+                        alt="Cricket" loading="lazy" decoding="async">
+                    <figcaption>Cricket</figcaption>
+                </figure>
+                <figure class="gallery-tile" data-cat="tech"><img class="gallery-img"
+                        src="Photos/Events/Guest_Lecture/1.jpg" alt="Workshop" loading="lazy" decoding="async">
+                    <figcaption>Workshop</figcaption>
+                </figure>
+                <figure class="gallery-tile" data-cat="cultural"><img class="gallery-img"
+                        src="Photos/Events/Graduation_Ceremony/1.jpg" alt="Graduation Ceremony" loading="lazy"
+                        decoding="async">
+                    <figcaption>Graduation Ceremony</figcaption>
+                </figure>
+                <figure class="gallery-tile" data-cat="society"><img class="gallery-img"
+                        src="Photos/Gallery/Magazine.jpeg" alt="Magazine" loading="lazy" decoding="async">
+                    <figcaption>Magazine</figcaption>
+                </figure>
+                <figure class="gallery-tile" data-cat="tech"><img class="gallery-img" src="Photos/Events/Prompt/1.jpg"
+                        alt="Prompt Engineering" loading="lazy" decoding="async">
+                    <figcaption>Prompt Engineering</figcaption>
+                </figure>
+                <figure class="gallery-tile" data-cat="cultural"><img class="gallery-img"
+                        src="Photos/Events/Dhun/1.jpeg" alt="Dhun Event" loading="lazy" decoding="async">
+                    <figcaption>Dhun Event</figcaption>
+                </figure>
+                <figure class="gallery-tile" data-cat="cultural"><img class="gallery-img"
+                        src="Photos/Events/Poster_Making/4.jpg" alt="Poster Making" loading="lazy" decoding="async">
+                    <figcaption>Poster Making</figcaption>
+                </figure>
+                <figure class="gallery-tile" data-cat="tech"><img class="gallery-img"
+                        src="Photos/Events/Algoverse_2.0/1.jpg" alt="Algoverse" loading="lazy" decoding="async">
+                    <figcaption>Algoverse</figcaption>
+                </figure>
+                <figure class="gallery-tile" data-cat="tech"><img class="gallery-img"
+                        src="Photos/Events/Algoverse_2.0/3.jpg" alt="Algoverse" loading="lazy" decoding="async">
+                    <figcaption>Algoverse</figcaption>
+                </figure>
+                <figure class="gallery-tile" data-cat="tech"><img class="gallery-img" src="Photos/Gallery/8.jpg"
+                        alt="Algoverse" loading="lazy" decoding="async">
+                    <figcaption>Algoverse</figcaption>
+                </figure>
+                <figure class="gallery-tile" data-cat="society"><img class="gallery-img" src="Photos/Gallery/9.jpg"
+                        alt="CSE Society Team" loading="lazy" decoding="async">
+                    <figcaption>CSE Society Team</figcaption>
+                </figure>
+                <figure class="gallery-tile" data-cat="society"><img class="gallery-img"
+                        src="Photos/Gallery/Structure.jpeg" alt="CSES" loading="lazy" decoding="async">
+                    <figcaption>CSES</figcaption>
+                </figure>
+                <figure class="gallery-tile" data-cat="cultural"><img class="gallery-img" src="Photos/Gallery/6.jpg"
+                        alt="Dhun Event" loading="lazy" decoding="async">
+                    <figcaption>Dhun Event</figcaption>
+                </figure>
+                <figure class="gallery-tile" data-cat="sports"><img class="gallery-img" src="Photos/Gallery/5.jpg"
+                        alt="Badminton Tournament" loading="lazy" decoding="async">
+                    <figcaption>Badminton Tournament</figcaption>
+                </figure>
+                <figure class="gallery-tile" data-cat="sports"><img class="gallery-img" src="Photos/Events/Sports/3.jpg"
+                        alt="Chess" loading="lazy" decoding="async">
+                    <figcaption>Chess</figcaption>
+                </figure>
+                <figure class="gallery-tile" data-cat="cultural"><img class="gallery-img"
+                        src="Photos/Events/Teacher_Day/1.jpeg" alt="Teacher's Day" loading="lazy" decoding="async">
+                    <figcaption>Teacher's Day</figcaption>
+                </figure>
+                <figure class="gallery-tile" data-cat="cultural"><img class="gallery-img"
+                        src="Photos/Events/Teacher_Day/2.jpeg" alt="Teacher's Day" loading="lazy" decoding="async">
+                    <figcaption>Teacher's Day</figcaption>
+                </figure>
+                <figure class="gallery-tile" data-cat="cultural"><img class="gallery-img"
+                        src="Photos/Events/Teacher_Day/3.jpeg" alt="Teacher's Day" loading="lazy" decoding="async">
+                    <figcaption>Teacher's Day</figcaption>
+                </figure>
+                <figure class="gallery-tile" data-cat="society"><img class="gallery-img"
+                        src="Photos/Gallery/Sarvam.jpeg" alt="Team Sarvam" loading="lazy" decoding="async">
+                    <figcaption>Team Sarvam</figcaption>
+                </figure>
+                <figure class="gallery-tile" data-cat="tech"><img class="gallery-img"
+                        src="Photos/Gallery/Hackathon 2026.jpeg" alt="Hackathon" loading="lazy" decoding="async">
+                    <figcaption>Hackathon</figcaption>
+                </figure>
+            </div>
+            <p class="gallery-note">Click any photo to expand · use ← → keys or the arrows to browse</p>
         </div>
     </section>
 
@@ -176,17 +410,21 @@
             <div class="gallery-modal-content">
                 <img id="galleryModalImg" src="" alt="Gallery image" class="gallery-modal-img">
                 <div class="gallery-modal-nav">
-                    <button class="gallery-nav-btn gallery-nav-prev" id="galleryPrevBtn" aria-label="Previous image">&#10094;</button>
-                    <button class="gallery-nav-btn gallery-nav-next" id="galleryNextBtn" aria-label="Next image">&#10095;</button>
+                    <button class="gallery-nav-btn gallery-nav-prev" id="galleryPrevBtn"
+                        aria-label="Previous image">&#10094;</button>
+                    <button class="gallery-nav-btn gallery-nav-next" id="galleryNextBtn"
+                        aria-label="Next image">&#10095;</button>
                 </div>
                 <p class="gallery-modal-caption" id="galleryModalCaption"></p>
             </div>
         </div>
     </div>
 
-    <div class="full-gallery-overlay" id="fullGalleryOverlay" role="dialog" aria-modal="true" aria-labelledby="fullGalleryTitle">
+    <div class="full-gallery-overlay" id="fullGalleryOverlay" role="dialog" aria-modal="true"
+        aria-labelledby="fullGalleryTitle">
         <div class="full-gallery-modal">
-            <button class="full-gallery-close" id="fullGalleryClose" type="button" aria-label="Close full gallery">&times;</button>
+            <button class="full-gallery-close" id="fullGalleryClose" type="button"
+                aria-label="Close full gallery">&times;</button>
             <div class="full-gallery-header">
                 <div class="section-tag">// CAMPUS LIFE</div>
                 <h2 class="full-gallery-title" id="fullGalleryTitle">Full Gallery</h2>
@@ -195,7 +433,7 @@
         </div>
     </div>
 
-    <section class="section" style="padding-top: 0;">
+    <section class="section" id="offer" data-spy="What we offer" style="padding-top: 0;">
         <div class="section-inner">
             <div class="section-tag">// OPERATIONS HUBS</div>
             <h2 class="section-title">What We Offer</h2>
@@ -203,27 +441,50 @@
                 <div class="feature-card">
                     <div class="feature-icon">🎓</div>
                     <h3>Expert Guidance</h3>
-                    <p>Expert lectures, career guidance, and industry insights to help CSE students build the right skills and make informed career decisions.</p>
+                    <p>Expert lectures, career guidance, and industry insights to help CSE students build the right
+                        skills and make informed career decisions.</p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">💻</div>
                     <h3>Technical Events</h3>
-                    <p>Technical workshops, coding activities, competitions, and hands-on events that encourage students to learn, innovate, and grow together.</p>
+                    <p>Technical workshops, coding activities, competitions, and hands-on events that encourage students
+                        to learn, innovate, and grow together.</p>
                 </div>
 
                 <div class="feature-card">
                     <div class="feature-icon">🤝</div>
                     <h3>Connect & Celebrate</h3>
-                    <p>A welcoming community through cultural and sports events, fostering interaction, teamwork, and a strong sense of belonging among CSE students.</p>
+                    <p>A welcoming community through cultural and sports events, fostering interaction, teamwork, and a
+                        strong sense of belonging among CSE students.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    
 
-    <section class="section">
+
+    <section class="section" id="opportunities" data-spy="Opportunities" style="padding-top:0;">
+        <div class="section-inner">
+            <div class="section-tag">// NEW ROLES</div>
+            <h2 class="section-title">Opportunities</h2>
+            <p class="section-sub" style="margin-bottom:28px;">Open roles and ways to get involved with the society are
+                posted here.</p>
+            <!-- To post a role, add a card inside .opp-grid; the empty-state below hides itself automatically:
+                 <article class="opp-card"><span class="opp-tag">Volunteer</span><h3>Role title</h3><p>Short description.</p></article> -->
+            <div class="opp-grid" id="oppGrid"></div>
+            <div class="opp-empty">
+                <div class="opp-empty-icon" aria-hidden="true">🌱</div>
+                <div>
+                    <h3>No open roles right now</h3>
+                    <p>New roles will appear here as soon as they are announced. Want to get involved sooner? Reach out
+                        to the team.</p>
+                    <a class="btn-outline" href="contact.html">Contact the team</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section" id="join">
         <div class="section-inner">
             <div class="cta-banner">
                 <h2>Ready to Build the Future?</h2>
@@ -234,6 +495,9 @@
     </section>
 
     <footer>
+        <div class="footer-wave" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+                <path d="M0,60 L0,26 C220,66 470,-4 720,24 C970,52 1210,0 1440,30 L1440,60 Z" />
+            </svg></div>
         <div class="footer-inner">
             <div class="footer-top">
                 <div class="footer-brand">
@@ -243,13 +507,17 @@
                             <span>CSE Society</span>
                         </div>
                     </a>
-                    <p>Congratulations! You've unlocked the footer achievement. 🏆</p>
+                    <p>The Computer Science Engineering Society of JNGEC — notes, previous year papers, events and
+                        opportunities in one place.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Navigation</h4>
                     <a href="index.html">Home Workspace</a>
                     <a href="events.html">Events Grid</a>
                     <a href="about.html">About Hub</a>
+                    <a href="index.html#gallery">Gallery</a>
+                    <a href="index.html#opportunities">Opportunities</a>
+                    <a href="contact.html">Contact</a>
                 </div>
                 <div class="footer-col">
                     <h4>Resources</h4>
@@ -264,16 +532,22 @@
                     <p> <a href="mailto:cses.jngec@gmail.com" target="_blank">cses.jngec@gmail.com</a>
                     </p>
                     <p>
-                        <a href="https://www.linkedin.com/company/computer-science-engineering-society/" target="_blank">Linked In</a>
+                        <a href="https://www.linkedin.com/company/computer-science-engineering-society/"
+                            target="_blank">Linked In</a>
                     </p>
                 </div>
             </div>
             <div class="footer-divider">
-                <p class="footer-copy">© 2026 CSE Society. All rights preserved.</p>
+                <p class="footer-copy">© 2026 CSE Society. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <script src="js/sound-effects.js"></script>
+    <script src="js/monitor.js"></script>
     <script src="script.js"></script>
+    <script src="js/motion.js" defer></script>
+    <script type="module" src="assistant/index.js"></script>
 </body>
+
 </html>

@@ -67,7 +67,7 @@
       "year": 2024,
       "pdf_url": "papers/MST/Semester_1/Applied_Maths/MST_1/2024.pdf"
     },
-     {
+    {
       "type": "MST-I",
       "semester": 1,
       "subject": "Applied Mathematics-I",
@@ -130,7 +130,7 @@
       "year": 2023,
       "pdf_url": "papers/MST/Semester_1/Applied_Physics/MST_1/2023.pdf"
     },
-     {
+    {
       "type": "MST-I",
       "semester": 1,
       "subject": "Applied Physics",
@@ -144,7 +144,7 @@
       "year": 2025,
       "pdf_url": "papers/MST/Semester_1/Applied_Physics/MST_1/2025.pdf"
     },
-     {
+    {
       "type": "MST-II",
       "semester": 1,
       "subject": "Applied Physics",
@@ -179,7 +179,7 @@
       "year": 2023,
       "pdf_url": "papers/MST/Semester_1/Energy_and_Environment/MST_2/2023.pdf"
     },
-     {
+    {
       "type": "MST-II",
       "semester": 1,
       "subject": "EVS",
@@ -200,7 +200,7 @@
       "year": 2024,
       "pdf_url": "papers/MST/Semester_1/Basic_Electrical_Engineering/MST_1/2024.pdf"
     },
-     {
+    {
       "type": "MST-I",
       "semester": 1,
       "subject": "Basic Electrical Engineering",
@@ -312,14 +312,14 @@
       "year": 2024,
       "pdf_url": "papers/MST/Semester_2/Universal_Human_Values/MST_1/2024.pdf"
     },
-     {
+    {
       "type": "MST-I",
       "semester": 2,
       "subject": "Universal Human Values",
       "year": 2025,
       "pdf_url": "papers/MST/Semester_2/Universal_Human_Values/MST_1/2025.pdf"
     },
-     {
+    {
       "type": "MST-I",
       "semester": 2,
       "subject": "Universal Human Values",
@@ -445,7 +445,7 @@
       "year": 2024,
       "pdf_url": "papers/MST/Semester_3/Mathematics-III/MST_1/2024_Reappear.pdf"
     },
-     {
+    {
       "type": "MST-I",
       "semester": 3,
       "subject": "Mathematics-III (Probability & Statistics)",
@@ -508,7 +508,7 @@
       "year": 2024,
       "pdf_url": "papers/MST/Semester_3/Python/MST_2/2024.pdf"
     },
-     {
+    {
       "type": "MST-II",
       "semester": 3,
       "subject": "Python",
@@ -564,7 +564,7 @@
       "year": 2024,
       "pdf_url": "papers/MST/Semester_3/DSD/MST_2/2024.pdf"
     },
-     {
+    {
       "type": "MST-II",
       "semester": 3,
       "subject": "Digital System Design (DSD)",
@@ -655,7 +655,7 @@
       "year": 2025,
       "pdf_url": "papers/MST/Semester_4/OS/MST_1/2025.pdf"
     },
-     {
+    {
       "type": "MST-I",
       "semester": 4,
       "subject": "Operating System (OS)",
@@ -697,7 +697,7 @@
       "year": 2025,
       "pdf_url": "papers/MST/Semester_4/DAA/MST_2/2025.pdf"
     },
-     {
+    {
       "type": "MST-II",
       "semester": 4,
       "subject": "Design & Analysis of Algorithms (DAA)",
@@ -1269,13 +1269,13 @@
       "year": 2026,
       "pdf_url": "papers/End_Sem/Semester_7/NLP/2026.pdf"
     },
-     {
+    {
       "semester": 7,
       "subject": "AI in Healthcare",
       "year": 2026,
       "pdf_url": "papers/End_Sem/Semester_7/AI_Healthcare/2026.pdf"
     },
-     {
+    {
       "semester": 7,
       "subject": "Electronics for Engineers",
       "year": 2026,
@@ -1314,9 +1314,9 @@
     {
       "semester": 1,
       "subject": "Basic Electrical Engineering",
-      "unit": "Unit 1",
-      "title": "Basic Electrical Engineering - Unit 1 Notes",
-      "pdf_url": "notes/Semester_1/Basic_Electrical_Engineering/Unit1.pdf"
+      "unit": "All Units",
+      "title": "Basic Electrical Engineering - Complete Notes",
+      "pdf_url": "https://drive.google.com/drive/folders/1KmiYmmupzAeEETVuL9-hqqvTi6e20nch?usp=sharing"
     },
     {
       "semester": 2,

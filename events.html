@@ -4,13 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events Hub — CSE Society</title>
+    <meta name="theme-color" content="#f8efe0">
+    <link rel="icon" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=JetBrains+Mono:wght@500;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assistant/assistant.css">
+    <script src="js/theme-manager.js"></script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <div class="bg-decor" aria-hidden="true">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
+        <div class="bg-theme bg-t1"></div>
+        <div class="bg-theme bg-t2"></div>
+        <div class="bg-theme bg-t3"></div>
+        <div class="blob blob-1" data-parallax="0.05"></div>
+        <div class="blob blob-2" data-parallax="0.09"></div>
+        <div class="blob blob-3" data-parallax="0.03"></div>
         <div class="grid-overlay"></div>
     </div>
 
@@ -31,7 +42,6 @@
                 <li><a class="nav-link" href="studentzone.html">Student Zone</a></li>
             </ul>
             <div class="nav-actions">
-                <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">☀️</button>
                 <button class="hamburger" id="hamburger" aria-label="Toggle menu">
                     <span></span><span></span><span></span>
                 </button>
@@ -47,7 +57,7 @@
         <a class="mobile-link" href="studentzone.html">Student Zone</a>
     </div>
 
-    <section class="page-hero">
+    <section class="page-hero" id="main" tabindex="-1">
         <h1>Society Events Hub</h1>
         <p>Explore upcoming pipelines, technical competitions, and review recorded archives.</p>
     </section>
@@ -139,6 +149,7 @@
     </div>
 
     <footer>
+        <div class="footer-wave" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,60 L0,26 C220,66 470,-4 720,24 C970,52 1210,0 1440,30 L1440,60 Z"/></svg></div>
         <div class="footer-inner">
             <div class="footer-top">
                 <div class="footer-brand">
@@ -148,13 +159,16 @@
                             <span>CSE Society</span>
                         </div>
                     </a>
-                    <p>Congratulations! You've unlocked the footer achievement. 🏆</p>
+                    <p>The Computer Science Engineering Society of JNGEC — notes, previous year papers, events and opportunities in one place.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Navigation</h4>
                     <a href="index.html">Home Workspace</a>
                     <a href="events.html">Events Grid</a>
                     <a href="about.html">About Hub</a>
+                    <a href="index.html#gallery">Gallery</a>
+                    <a href="index.html#opportunities">Opportunities</a>
+                    <a href="contact.html">Contact</a>
                 </div>
                 <div class="footer-col">
                     <h4>Resources</h4>
@@ -174,11 +188,15 @@
                 </div>
             </div>
             <div class="footer-divider">
-                <p class="footer-copy">© 2026 CSE Society. All rights preserved.</p>
+                <p class="footer-copy">© 2026 CSE Society. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <script src="data/events-data.js"></script>
+    <script src="js/sound-effects.js"></script>
     <script src="script.js"></script>
+    <script src="js/motion.js" defer></script>
+    <script type="module" src="assistant/index.js"></script>
 </body>
 </html>

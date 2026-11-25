@@ -10,41 +10,35 @@ function runSplash() {
         const overlay = document.getElementById('splashOverlay');
         if (!overlay) return resolve();
 
-        // Temporarily disable scrolling while splash is visible
-        document.documentElement.style.overflow = 'hidden';
-        document.body.style.overflow = 'hidden';
-
-        const holdMs = 700;
+        // 1.8s hold time allows the cyber scan + typewriter "CSE Society" to complete smoothly
+        const holdMs = 1750;
         setTimeout(() => {
             overlay.classList.add('splash-hide');
             // Allow CSS fade to finish before removing overlay and restoring scroll
             setTimeout(() => {
                 if (overlay && overlay.parentNode) overlay.parentNode.removeChild(overlay);
-                document.documentElement.style.overflow = '';
-                document.body.style.overflow = '';
                 resolve();
-            }, 650);
+            }, 750);
         }, holdMs);
     });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
-    initThemeEngine();
     initAccordions();
     initModalSystem();
     initGalleryModal();
     initFormHandlers();
     initStudentZone();
     initScrollReveal();
-    runSplash().then(initHeroTypingAnimation);
+    runSplash().then(() => document.documentElement.classList.add('is-ready'));
 });
 
 // 1. Navigation and Mobile Hamburger Operations
 function initNavigation() {
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
-    
+
     if (hamburger && mobileMenu) {
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
@@ -96,50 +90,9 @@ function initScrollReveal() {
     targets.forEach((el) => observer.observe(el));
 }
 
-// 1c. Hero Typing Animation for Main H1
-function initHeroTypingAnimation() {
-    const heroH1 = document.querySelector('.hero h1');
-    if (!heroH1) return;
-
-    // Prevent running animation twice
-    if (heroH1.classList.contains('typing-animation')) return;
-
-    // Store original HTML to preserve the <span> element
-    const originalHTML = heroH1.innerHTML;
-    const fullText = heroH1.textContent.trim();
-    
-    // Duration settings
-    const typingDuration = 3500; // milliseconds
-    const charsToType = fullText.length;
-    const delayPerChar = typingDuration / charsToType;
-    
-    let currentIndex = 0;
-    
-    // Add typing class to show cursor
-    heroH1.classList.add('typing-animation');
-    
-    // Clear the content temporarily
-    heroH1.textContent = '';
-    
-    // Typing animation loop
-    const typingInterval = setInterval(() => {
-        if (currentIndex <= charsToType) {
-            const displayText = fullText.substring(0, currentIndex);
-            heroH1.textContent = displayText;
-            currentIndex++;
-        } else {
-            // Animation complete
-            clearInterval(typingInterval);
-            heroH1.innerHTML = originalHTML; // Restore original HTML with span formatting
-            heroH1.classList.remove('typing-animation');
-            heroH1.classList.add('typing-complete');
-        }
-    }, delayPerChar);
-}
-
-// 1d. Gallery Lightbox Modal
+// 1d. Gallery: category filters + lightbox + full gallery overlay
 function initGalleryModal() {
-    const galleryImages = document.querySelectorAll('.gallery-img');
+    const allImages = Array.from(document.querySelectorAll('.gallery-img'));
     const modalOverlay = document.getElementById('galleryModalOverlay');
     const modalImg = document.getElementById('galleryModalImg');
     const modalCaption = document.getElementById('galleryModalCaption');
@@ -151,13 +104,35 @@ function initGalleryModal() {
     const fullGalleryGrid = document.getElementById('fullGalleryGrid');
     const fullGalleryClose = document.getElementById('fullGalleryClose');
 
-    let currentImageIndex = 0;
-    const allImages = Array.from(galleryImages);
-
     if (!modalOverlay || !modalImg || !modalCaption || !closeBtn || !prevBtn || !nextBtn || !allImages.length) {
         return;
     }
 
+    let currentImage = null;
+    let lastFocus = null;
+
+    // Category filter chips (only change which tiles are visible; nothing is removed)
+    const chips = document.querySelectorAll('.gallery-chip');
+    chips.forEach((chip) => {
+        chip.addEventListener('click', () => {
+            const filter = chip.getAttribute('data-filter');
+            chips.forEach((c) => {
+                const on = c === chip;
+                c.classList.toggle('is-active', on);
+                c.setAttribute('aria-pressed', on ? 'true' : 'false');
+            });
+            document.querySelectorAll('.gallery-tile').forEach((tile) => {
+                tile.hidden = !(filter === 'all' || tile.getAttribute('data-cat') === filter);
+            });
+        });
+    });
+
+    const visibleImages = () => allImages.filter((img) => {
+        const tile = img.closest('.gallery-tile');
+        return !tile || !tile.hidden;
+    });
+
+    // Full gallery (all images, with download links) - unchanged behaviour
     if (openFullGalleryBtn && fullGalleryOverlay && fullGalleryGrid && fullGalleryClose) {
         allImages.forEach((sourceImage) => {
             const item = document.createElement('article');
@@ -165,122 +140,94 @@ function initGalleryModal() {
             const caption = document.createElement('p');
             const download = document.createElement('a');
             const imageUrl = sourceImage.currentSrc || sourceImage.src;
+            const fileName = decodeURIComponent(new URL(imageUrl, location.href).pathname.split('/').pop());
 
             item.className = 'full-gallery-item';
             image.src = imageUrl;
             image.alt = sourceImage.alt || 'Gallery image';
             image.loading = 'lazy';
             caption.className = 'full-gallery-caption';
-            caption.textContent = sourceImage.alt || decodeURIComponent(new URL(imageUrl).pathname.split('/').pop());
+            caption.textContent = sourceImage.alt || fileName;
             download.className = 'full-gallery-download';
             download.href = imageUrl;
-            download.download = decodeURIComponent(new URL(imageUrl).pathname.split('/').pop());
+            download.download = fileName;
             download.textContent = 'Download';
 
             item.append(image, caption, download);
             fullGalleryGrid.appendChild(item);
         });
 
-        function closeFullGallery() {
+        const closeFullGallery = () => {
             fullGalleryOverlay.classList.remove('active');
-            document.body.style.overflow = '';
+            document.body.classList.remove('dialog-open');
             openFullGalleryBtn.focus();
-        }
-
+        };
         openFullGalleryBtn.addEventListener('click', () => {
             fullGalleryOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
+            document.body.classList.add('dialog-open');
             fullGalleryClose.focus();
         });
         fullGalleryClose.addEventListener('click', closeFullGallery);
         fullGalleryOverlay.addEventListener('click', (event) => {
             if (event.target === fullGalleryOverlay) closeFullGallery();
         });
-        fullGalleryOverlay.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape') closeFullGallery();
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && fullGalleryOverlay.classList.contains('active')) closeFullGallery();
         });
     }
 
-    // Open modal with image
-    function openModal(index) {
-        if (index < 0 || index >= allImages.length) return;
-        currentImageIndex = index;
-        const img = allImages[index];
-        modalImg.src = img.src;
-        modalImg.fetchPriority = 'high';
+    function openModal(img) {
+        if (!img) return;
+        currentImage = img;
+        modalImg.src = img.currentSrc || img.src;
+        modalImg.alt = img.alt || 'Gallery image';
         modalImg.decoding = 'async';
         modalCaption.textContent = img.alt || 'Gallery image';
+        if (!modalOverlay.classList.contains('active')) lastFocus = document.activeElement;
         modalOverlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
+        document.body.classList.add('dialog-open');
+        closeBtn.focus({ preventScroll: true });
     }
 
-    // Close modal
     function closeModal() {
         modalOverlay.classList.remove('active');
-        document.body.style.overflow = '';
+        document.body.classList.remove('dialog-open');
+        if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
     }
 
-    // Navigate to next image
-    function nextImage() {
-        openModal((currentImageIndex + 1) % allImages.length);
+    function step(delta) {
+        const list = visibleImages();
+        if (!list.length) return;
+        const i = Math.max(0, list.indexOf(currentImage));
+        openModal(list[(i + delta + list.length) % list.length]);
     }
 
-    // Navigate to previous image
-    function prevImage() {
-        openModal((currentImageIndex - 1 + allImages.length) % allImages.length);
-    }
-
-    // Attach click handlers to all gallery images
-    galleryImages.forEach((img, index) => {
-        img.addEventListener('click', () => openModal(index));
+    allImages.forEach((img) => {
+        img.addEventListener('click', () => openModal(img));
+        // Keyboard access: tiles are focusable buttons-in-spirit
+        const tile = img.closest('.gallery-tile');
+        if (tile) {
+            tile.tabIndex = 0;
+            tile.setAttribute('role', 'button');
+            tile.setAttribute('aria-label', 'Open photo: ' + (img.alt || 'Gallery image'));
+            tile.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(img); }
+            });
+            tile.addEventListener('click', (e) => { if (e.target === tile) openModal(img); });
+        }
     });
 
-    // Modal controls
     closeBtn.addEventListener('click', closeModal);
-    prevBtn.addEventListener('click', prevImage);
-    nextBtn.addEventListener('click', nextImage);
+    prevBtn.addEventListener('click', () => step(-1));
+    nextBtn.addEventListener('click', () => step(1));
+    modalOverlay.addEventListener('click', (e) => { if (e.target === modalOverlay) closeModal(); });
 
-    // Close modal when clicking outside the modal content
-    modalOverlay.addEventListener('click', (e) => {
-        if (e.target === modalOverlay) closeModal();
-    });
-
-    // Keyboard navigation
     document.addEventListener('keydown', (e) => {
         if (!modalOverlay.classList.contains('active')) return;
-        if (e.key === 'ArrowRight') nextImage();
-        if (e.key === 'ArrowLeft') prevImage();
+        if (e.key === 'ArrowRight') step(1);
+        if (e.key === 'ArrowLeft') step(-1);
         if (e.key === 'Escape') closeModal();
     });
-}
-
-// 2. Light / Dark Mode Engine Initialization
-function initThemeEngine() {
-    const themeToggle = document.getElementById('themeToggle');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const localThemeSetting = localStorage.getItem('siteTheme');
-
-    // Run active configuration check
-    if (localThemeSetting === 'dark' || (!localThemeSetting && systemPrefersDark)) {
-        document.body.classList.add('dark-mode');
-        updateToggleUI(true);
-    } else {
-        updateToggleUI(false);
-    }
-
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            const isDarkModeNow = document.body.classList.toggle('dark-mode');
-            localStorage.setItem('siteTheme', isDarkModeNow ? 'dark' : 'light');
-            updateToggleUI(isDarkModeNow);
-        });
-    }
-
-    function updateToggleUI(isDark) {
-        if (!themeToggle) return;
-        themeToggle.textContent = isDark ? '🌙' : '☀️';
-        themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-    }
 }
 
 // 3. Student Zone Semester Content Accordions
@@ -315,115 +262,8 @@ function initModalSystem() {
     const interactiveCards = document.querySelectorAll('.event-card.interactive');
 
     // Sample dynamic registry mapping structure
-    const eventDatabase = {
-        teachersDay: {
-            title: "Teacher's Day Celebration",
-            meta: "5 September 2026 | 12:30 PM | Cultural Event",
-            desc: "A heartfelt celebration dedicated to honoring our faculty for their guidance, dedication, and invaluable contribution, featuring performances, speeches, and engaging activities.",
-            poster: "Photos/Events/Teacher_Day/0.jpg",
-            team: "Cultural Committee | Shivangi Ranout |Sheetal Bisht |Mannat",
-            photos: [
-                "Photos/Events/Teacher_Day/1.jpeg",
-                "Photos/Events/Teacher_Day/2.jpeg",
-                "Photos/Events/Teacher_Day/3.jpeg",
-            ]
-        },
-        guestLecture: {
-            title: "Guest Lecture",
-            meta: "23 February 2026 | 2:00 PM – 4:00 PM | Academic Event",
-            desc: "An insightful session conducted by an industry expert on emerging technologies and career opportunities.",
-            poster: "Photos/Events/Guest_Lecture/3.jpg",
-            team: "Training Cell, Department Faculty",
-            photos: [
-                "Photos/Events/Guest_Lecture/1.jpg",
-                "Photos/Events/Guest_Lecture/2.jpg",
-                "Photos/Events/Guest_Lecture/3.jpg"
-            ]
-        },
-        promptEngineering: {
-            title: "Prompt Engineering Event",
-            meta: "24 February 2026 | 3:00 PM – 4:00 PM | Technical Event",
-            desc: "An interactive prompt engineering event designed to enhance students’ AI prompting skills through creative challenges and practical problem-solving.",
-            poster: "Photos/Events/Prompt/Poster.png",
-            team: "Technical Committee | Jigyasu | Saniya Dhiman | Sweta",
-            winners: "<li>Elite Promptian: Rrizul Saini & Nikhil Patiyal</li><li>Elite Promptian: Sejal Pathania & Monika</li>",
-            photos: [
-                "Photos/Events/Prompt/4.jpeg",
-                "Photos/Events/Prompt/5.jpeg",
-                "Photos/Events/Prompt/2.jpg",
-                "Photos/Events/Prompt/3.jpg",
-                "Photos/Events/Prompt/1.jpg"
-            ]
-        },
-        posterMaking: {
-            title: "Poster Making Competition",
-            meta: "22 March 2026 | 11:00 AM – 2:00 PM | Cultural Event",
-            desc: "Students showcased their creativity through theme-based poster designs.",
-            poster: "Photos/Events/Poster_Making/Poster.png",
-            team: "Cultural Committee |Shivangi Ranout |Sheetal Bisht |Mannat ",
-            winners: "<li>First Prize: Arsita</li><li>Second Prize: Dhroov</li><li>Third Prize: Purnima</li>",
-            photos: [
-                "Photos/Events/Poster_Making/1.jpg",
-                "Photos/Events/Poster_Making/2.jpg",
-                "Photos/Events/Poster_Making/1.jpeg",
-                "Photos/Events/Poster_Making/2.jpeg"
-            ]
-        },
-        algoverse: {
-            title: "Algoverse 2.0",
-            meta: "26 February 2026 | 2:00 PM – 4:00 PM | Technical Event",
-            desc: "Competitive programming and algorithmic problem-solving event for students.",
-            poster: "Photos/Events/Algoverse_2.0/1.jpg",
-            team: " Technical Committee | Jigyasu | Saniya Dhiman | Sweta",
-            winners: "<li>Champion: Complexity Crew</li><li>Runner-Up: Team CodeStorm</li>",
-            photos: [
-                "Photos/Events/Algoverse_2.0/0.jpeg",
-                "Photos/Events/Algoverse_2.0/2.jpg",
-                "Photos/Events/Algoverse_2.0/3.jpg",
-                "Photos/Events/Algoverse_2.0/4.jpg"
-            ]
-        },
-        dhun: {
-            title: "Dhun",
-            meta: "28 February 2026 | 2:00 PM – 5:00 PM | Cultural Event",
-            desc: "A musical extravaganza featuring solo and group performances by students.",
-            poster: "Photos/Events/Dhun/4.jpeg",
-            team: "Cultural Committee | Shivangi Ranout | Sheetal Bisht | Mannat",
-            photos: [
-                "Photos/Events/Dhun/0.jpeg",
-                "Photos/Events/Dhun/1.jpeg",
-                "Photos/Events/Dhun/3.jpeg",
-                "Photos/Events/Dhun/2.jpeg"
-            ]
-        },
-        sportsEvent: {
-            title: "Sports Event",
-            meta: "2-4 April 2026 | 9:00 AM – 5:00 PM | Sports Event",
-            desc: "Various indoor and outdoor sports competitions promoting teamwork and fitness.",
-            poster: "Photos/Events/Sports/Poster.jpeg",
-            team: "Sports Committee, CSES",
-            photos: [
-                "Photos/Events/Sports/1.jpg",
-                "Photos/Events/Sports/2.jpg",
-                "Photos/Events/Sports/3.jpg",
-                "Photos/Events/Sports/4.jpg",
-                "Photos/Events/Sports/5.jpg",
-                "Photos/Events/Sports/6.jpg"
-            ]
-        },
-        graduation: {
-            title: "Graduation Ceremony",
-            meta: "23 May 2026 | 11:00 AM – 2:00 PM | Cultural Event",
-            desc: "Ceremony celebrating the achievements of graduating students and their academic journey.",
-            poster: "Photos/Events/Graduation_Ceremony/Poster.png",
-            team: "CSE Society",
-            photos: [
-                "Photos/Events/Graduation_Ceremony/1.jpg",
-                "Photos/Events/Graduation_Ceremony/2.jpg",
-                "Photos/Events/Graduation_Ceremony/3.jpg"
-            ]
-        }
-    };
+    // Event registry lives in data/events-data.js (shared with the Smart Assistant)
+    const eventDatabase = window.CSES_EVENTS || {};
 
     // Build a static right-side poster for each event card.
     function setEventSlides() {
@@ -505,6 +345,21 @@ function initModalSystem() {
         modalOverlay.style.display = 'flex';
     }
 
+    // Public hooks (used by the Smart Assistant and by ?event= deep links)
+    window.CSES = window.CSES || {};
+    window.CSES.openEvent = (key) => { openEventModal(key); return !!eventDatabase[key]; };
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modalOverlay && modalOverlay.style.display === 'flex') {
+            modalOverlay.style.display = 'none';
+        }
+    });
+    const deepLinkedEvent = new URLSearchParams(location.search).get('event');
+    if (deepLinkedEvent && eventDatabase[deepLinkedEvent]) {
+        const card = document.querySelector('.event-card[data-event="' + deepLinkedEvent + '"]');
+        if (card) card.scrollIntoView({ block: 'center' });
+        openEventModal(deepLinkedEvent);
+    }
+
     detailButtons.forEach(button => {
         button.addEventListener('click', (e) => {
             const registryKey = e.target.getAttribute('data-event');
@@ -546,119 +401,119 @@ function initFormHandlers() {
 
     if (suggestionForm) {
 
-    suggestionForm.addEventListener('submit', async (e) => {
+        suggestionForm.addEventListener('submit', async (e) => {
 
-        e.preventDefault();
+            e.preventDefault();
 
-        const submitButton = suggestionForm.querySelector(
-            'button[type="submit"]'
-        );
-
-        submitButton.disabled = true;
-        submitButton.textContent = 'Submitting...';
-
-        try {
-
-            const response = await fetch(
-                'https://formspree.io/f/mljrzole',
-                {
-                    method: 'POST',
-                    body: new FormData(suggestionForm),
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                }
+            const submitButton = suggestionForm.querySelector(
+                'button[type="submit"]'
             );
 
-            if (response.ok) {
+            submitButton.disabled = true;
+            submitButton.textContent = 'Submitting...';
 
-                const successMessage = document.getElementById('suggestionSuccessMessage');
-                if (successMessage) {
-                    successMessage.textContent = '✓ Message sent successfully. Thank you for your suggestion.';
+            try {
+
+                const response = await fetch(
+                    'https://formspree.io/f/mljrzole',
+                    {
+                        method: 'POST',
+                        body: new FormData(suggestionForm),
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    }
+                );
+
+                if (response.ok) {
+
+                    const successMessage = document.getElementById('suggestionSuccessMessage');
+                    if (successMessage) {
+                        successMessage.textContent = '✓ Message sent successfully. Thank you for your suggestion.';
+                    }
+                    showSuccessAlert('suggestionSuccessMessage');
+
+                    suggestionForm.reset();
+
+                } else {
+
+                    alert('Something went wrong. Please try again.');
+
                 }
-                showSuccessAlert('suggestionSuccessMessage');
 
-                suggestionForm.reset();
+            } catch (error) {
 
-            } else {
+                console.error('Form submission error:', error);
 
-                alert('Something went wrong. Please try again.');
+                alert('Unable to submit feedback. Please check your internet connection.');
+
+            } finally {
+
+                submitButton.disabled = false;
+                submitButton.textContent = 'Submit Feedback';
 
             }
 
-        } catch (error) {
+        });
 
-            console.error('Form submission error:', error);
+    }
 
-            alert('Unable to submit feedback. Please check your internet connection.');
+    if (contactForm) {
 
-        } finally {
+        contactForm.addEventListener('submit', async (e) => {
 
-            submitButton.disabled = false;
-            submitButton.textContent = 'Submit Feedback';
+            e.preventDefault();
 
-        }
-
-    });
-
-}
-
-   if (contactForm) {
-
-    contactForm.addEventListener('submit', async (e) => {
-
-        e.preventDefault();
-
-        const submitButton = contactForm.querySelector(
-            'button[type="submit"]'
-        );
-
-        submitButton.disabled = true;
-        submitButton.textContent = 'Transmitting...';
-
-        try {
-
-            const response = await fetch(
-                contactForm.action,
-                {
-                    method: 'POST',
-                    body: new FormData(contactForm),
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                }
+            const submitButton = contactForm.querySelector(
+                'button[type="submit"]'
             );
 
-            if (response.ok) {
+            submitButton.disabled = true;
+            submitButton.textContent = 'Transmitting...';
 
-                showSuccessAlert('contactSuccessMessage');
+            try {
 
-                contactForm.reset();
+                const response = await fetch(
+                    contactForm.action,
+                    {
+                        method: 'POST',
+                        body: new FormData(contactForm),
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    }
+                );
 
-            } else {
+                if (response.ok) {
 
-                alert('Message could not be transmitted. Please try again.');
+                    showSuccessAlert('contactSuccessMessage');
+
+                    contactForm.reset();
+
+                } else {
+
+                    alert('Message could not be transmitted. Please try again.');
+
+                }
+
+            } catch (error) {
+
+                console.error('Contact form submission error:', error);
+
+                alert(
+                    'Unable to send message. Please check your internet connection.'
+                );
+
+            } finally {
+
+                submitButton.disabled = false;
+                submitButton.textContent = 'Transmit Secure Packet';
 
             }
 
-        } catch (error) {
+        });
 
-            console.error('Contact form submission error:', error);
-
-            alert(
-                'Unable to send message. Please check your internet connection.'
-            );
-
-        } finally {
-
-            submitButton.disabled = false;
-            submitButton.textContent = 'Transmit Secure Packet';
-
-        }
-
-    });
-
-}
+    }
 
     function showSuccessAlert(elementId) {
         const targetAlert = document.getElementById(elementId);
@@ -691,6 +546,8 @@ function initStudentZone() {
 
     function normalizeAssetPath(path) {
         if (!path) return path;
+        // Never modify external absolute URLs (such as Google Drive or cloud links)
+        if (/^https?:\/\//i.test(path)) return path;
         return path
             .replace(/\/Semester ([1-7])(?=\/)/g, '/Semester_$1')
             .replace(/\/Teacher Day(?=\/)/g, '/Teacher_Day')
@@ -698,6 +555,10 @@ function initStudentZone() {
             .replace(/\/Poster Making(?=\/)/g, '/Poster_Making')
             .replace(/\/Graduation Ceremony(?=\/)/g, '/Graduation_Ceremony')
             .replace(/\/Algoverse 2\.0(?=\/)/g, '/Algoverse_2.0');
+    }
+
+    function isGoogleDriveUrl(url) {
+        return typeof url === 'string' && /drive\.google\.com/i.test(url);
     }
 
     let data = { mst_papers: [], end_sem_papers: [], subject_notes: [], study_material: [], subjects_by_semester: {} };
@@ -712,6 +573,7 @@ function initStudentZone() {
             if (featureGrid) featureGrid.classList.remove('disabled');
             initFilters();
             setResourceStatus('Showing local resources.', 'success');
+            applyUrlParams();
         })
         .catch(err => {
             console.warn('Unable to load data/studentzone.json', err);
@@ -719,6 +581,27 @@ function initStudentZone() {
             initFilters();
             setResourceStatus('Local resources could not be loaded.', 'error');
         });
+
+    // Deep links from the Smart Assistant: ?sem=3&subject=Python&type=mst&run=1  or  ?open=<known resource path>
+    function applyUrlParams() {
+        const p = new URLSearchParams(location.search);
+        if (![...p.keys()].length) return;
+        if (filterSemester && p.get('sem')) { filterSemester.value = p.get('sem'); populateSubjectOptions(); }
+        if (filterSubject && p.get('subject')) filterSubject.value = p.get('subject');
+        if (filterPaperType && p.get('type')) filterPaperType.value = p.get('type');
+        const wanted = p.get('open');
+        if (wanted) {
+            // Only open files that exist in the resource index (never arbitrary URLs)
+            const all = [...(data.mst_papers || []), ...(data.end_sem_papers || []), ...(data.subject_notes || []), ...(data.study_material || [])];
+            const rec = all.find(r => (r.pdf_url || r.file_url || r.link) === wanted);
+            if (rec) {
+                const url = normalizeAssetPath(wanted);
+                showPdf(url, p.get('title') || rec.title || rec.subject, downloadUrlFor(url), rec.file_type);
+                return;
+            }
+        }
+        if (p.get('run') === '1') performSearch();
+    }
 
     function setResourceStatus(message, state) {
         if (!resourceStatus) return;
@@ -835,12 +718,30 @@ function initStudentZone() {
                     const title = item.title || item.subject || `${item.resourceType.toUpperCase()} Resource`;
                     const year = item.year ? `Year: ${item.year}` : item.unit ? item.unit : '';
                     const resourceLabel = item.resourceType === 'mst' ? item.type : item.resourceType === 'endsem' ? 'EndSem' : item.resourceType === 'notes' ? 'Notes' : 'Resource';
-                    const resourceUrl = normalizeAssetPath(item.pdf_url || item.file_url || item.link || '#');
-                    const downloadUrl = downloadUrlFor(resourceUrl);
-                    const fileName = resourceUrl.split('/').pop();
-                    card.innerHTML = `<h4>${escapeHtml(title)}</h4><p class="muted">Semester ${escapeHtml(item.semester)} · ${escapeHtml(item.subject)} · ${escapeHtml(resourceLabel)}</p><p>${escapeHtml(year)}</p><p><a href="#" class="view-link">View</a> · <a href="${escapeHtml(downloadUrl)}" class="download-link" download="${escapeHtml(fileName)}">Download</a></p>`;
-                    const view = card.querySelector('.view-link');
-                    view.addEventListener('click', (e) => { e.preventDefault(); showPdf(resourceUrl, title, downloadUrl, item.file_type); });
+                    const rawUrl = item.pdf_url || item.file_url || item.link || '#';
+                    const isDrive = isGoogleDriveUrl(rawUrl);
+                    const resourceUrl = isDrive ? rawUrl : normalizeAssetPath(rawUrl);
+                    const downloadUrl = isDrive ? rawUrl : downloadUrlFor(resourceUrl);
+                    const fileName = resourceUrl.split('/').pop().split('?')[0];
+
+                    if (isDrive) {
+                        card.innerHTML = `<h4>${escapeHtml(title)}</h4><p class="muted">Semester ${escapeHtml(item.semester)} · ${escapeHtml(item.subject)} · ${escapeHtml(resourceLabel)}</p><p>${escapeHtml(year)}</p><p><a href="${escapeHtml(rawUrl)}" target="_blank" rel="noopener noreferrer" class="view-link drive-link">Open in Google Drive ↗</a></p>`;
+                        const view = card.querySelector('.view-link');
+                        view.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            window.open(rawUrl, '_blank', 'noopener,noreferrer');
+                        });
+                        card.style.cursor = 'pointer';
+                        card.addEventListener('click', (e) => {
+                            if (e.target.tagName.toLowerCase() !== 'a') {
+                                window.open(rawUrl, '_blank', 'noopener,noreferrer');
+                            }
+                        });
+                    } else {
+                        card.innerHTML = `<h4>${escapeHtml(title)}</h4><p class="muted">Semester ${escapeHtml(item.semester)} · ${escapeHtml(item.subject)} · ${escapeHtml(resourceLabel)}</p><p>${escapeHtml(year)}</p><p><a href="#" class="view-link">View</a> · <a href="${escapeHtml(downloadUrl)}" class="download-link" download="${escapeHtml(fileName)}">Download</a></p>`;
+                        const view = card.querySelector('.view-link');
+                        view.addEventListener('click', (e) => { e.preventDefault(); showPdf(resourceUrl, title, downloadUrl, item.file_type); });
+                    }
                     gridLocal.appendChild(card);
                 });
             }
@@ -877,11 +778,11 @@ function initStudentZone() {
 
         const grid = document.createElement('div'); grid.className = 'cards-grid';
         if (subjects.length === 0) {
-            const note = document.createElement('div'); note.className='resource-card event-card'; note.innerHTML = '<p class="muted">No subjects found for this semester yet.</p>';
+            const note = document.createElement('div'); note.className = 'resource-card event-card'; note.innerHTML = '<p class="muted">No subjects found for this semester yet.</p>';
             grid.appendChild(note);
         } else {
             subjects.forEach(sub => {
-                const card = document.createElement('div'); card.className='resource-card event-card';
+                const card = document.createElement('div'); card.className = 'resource-card event-card';
                 card.innerHTML = `<h4>${escapeHtml(sub)}</h4><p class="muted">Click to view available papers</p>`;
                 card.addEventListener('click', () => renderPaperTypes(feature, semester, sub));
                 grid.appendChild(card);
@@ -897,26 +798,26 @@ function initStudentZone() {
         selectionArea.appendChild(header);
         header.querySelector('.back-btn').addEventListener('click', () => renderSubjects(feature, semester));
 
-        const grid = document.createElement('div'); grid.className='cards-grid';
+        const grid = document.createElement('div'); grid.className = 'cards-grid';
         if (feature === 'mst') {
-            ['MST-I','MST-II'].forEach(t => {
-                const card = document.createElement('div'); card.className='resource-card event-card';
+            ['MST-I', 'MST-II'].forEach(t => {
+                const card = document.createElement('div'); card.className = 'resource-card event-card';
                 card.innerHTML = `<h4>${t}</h4><p class="muted">View years for ${subject}</p>`;
                 card.addEventListener('click', () => renderYears(feature, semester, subject, t));
                 grid.appendChild(card);
             });
         } else if (feature === 'endsem') {
-            const card = document.createElement('div'); card.className='resource-card event-card';
+            const card = document.createElement('div'); card.className = 'resource-card event-card';
             card.innerHTML = `<h4>End Semester</h4><p class="muted">View years for ${subject}</p>`;
             card.addEventListener('click', () => renderYears(feature, semester, subject, 'EndSem'));
             grid.appendChild(card);
         } else if (feature === 'notes') {
-            const card = document.createElement('div'); card.className='resource-card event-card';
+            const card = document.createElement('div'); card.className = 'resource-card event-card';
             card.innerHTML = `<h4>Notes</h4><p class="muted">View notes for ${subject}</p>`;
             card.addEventListener('click', () => renderYears(feature, semester, subject, 'Notes'));
             grid.appendChild(card);
         } else if (feature === 'study') {
-            const card = document.createElement('div'); card.className='resource-card event-card';
+            const card = document.createElement('div'); card.className = 'resource-card event-card';
             card.innerHTML = `<h4>Resources</h4><p class="muted">Books & Videos for ${subject}</p>`;
             card.addEventListener('click', () => renderYears(feature, semester, subject, 'Resources'));
             grid.appendChild(card);
@@ -932,27 +833,46 @@ function initStudentZone() {
         selectionArea.appendChild(header);
         header.querySelector('.back-btn').addEventListener('click', () => renderPaperTypes(feature, semester, subject));
 
-        const grid = document.createElement('div'); grid.className='cards-grid';
+        const grid = document.createElement('div'); grid.className = 'cards-grid';
         let records = [];
-        if (feature==='mst') records = data.mst_papers.filter(r => r.semester===semester && r.subject===subject && r.type===paperType);
-        if (feature==='endsem') records = data.end_sem_papers.filter(r => r.semester===semester && r.subject===subject);
-        if (feature==='notes') records = data.subject_notes.filter(r => r.semester===semester && r.subject===subject);
-        if (feature==='study') records = data.study_material.filter(r => r.semester===semester && r.subject===subject);
+        if (feature === 'mst') records = data.mst_papers.filter(r => r.semester === semester && r.subject === subject && r.type === paperType);
+        if (feature === 'endsem') records = data.end_sem_papers.filter(r => r.semester === semester && r.subject === subject);
+        if (feature === 'notes') records = data.subject_notes.filter(r => r.semester === semester && r.subject === subject);
+        if (feature === 'study') records = data.study_material.filter(r => r.semester === semester && r.subject === subject);
 
-        if (records.length===0) {
-            const note = document.createElement('div'); note.className='resource-card event-card'; note.innerHTML = '<p class="muted">No files uploaded yet for the selected filters.</p>';
+        if (records.length === 0) {
+            const note = document.createElement('div'); note.className = 'resource-card event-card'; note.innerHTML = '<p class="muted">No files uploaded yet for the selected filters.</p>';
             grid.appendChild(note);
         } else {
             records.forEach(rec => {
-                const card = document.createElement('div'); card.className='resource-card event-card';
+                const card = document.createElement('div'); card.className = 'resource-card event-card';
                 const year = rec.year || rec.unit || '';
                 const title = rec.title || `${subject} ${paperType}`;
-                const resourceUrl = normalizeAssetPath(rec.pdf_url || rec.file_url || rec.link || '#');
-                const downloadUrl = downloadUrlFor(resourceUrl);
-                const fileName = resourceUrl.split('/').pop();
-                card.innerHTML = `<h4>${escapeHtml(title)}</h4><p class="muted">${escapeHtml(year)}</p><p><a href="#" class="view-link">View</a> · <a href="${escapeHtml(downloadUrl)}" class="download-link" download="${escapeHtml(fileName)}">Download</a></p>`;
-                const view = card.querySelector('.view-link');
-                view.addEventListener('click', (e) => { e.preventDefault(); showPdf(resourceUrl, title, downloadUrl, rec.file_type); });
+                const rawUrl = rec.pdf_url || rec.file_url || rec.link || '#';
+                const isDrive = isGoogleDriveUrl(rawUrl);
+                const resourceUrl = isDrive ? rawUrl : normalizeAssetPath(rawUrl);
+                const downloadUrl = isDrive ? rawUrl : downloadUrlFor(resourceUrl);
+                const fileName = resourceUrl.split('/').pop().split('?')[0];
+
+                if (isDrive) {
+                    card.innerHTML = `<h4>${escapeHtml(title)}</h4><p class="muted">${escapeHtml(year)}</p><p><a href="${escapeHtml(rawUrl)}" target="_blank" rel="noopener noreferrer" class="view-link drive-link">Open in Google Drive ↗</a></p>`;
+                    const view = card.querySelector('.view-link');
+                    view.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        window.open(rawUrl, '_blank', 'noopener,noreferrer');
+                    });
+                    // Clicking anywhere on the study material card directly opens the Google Drive folder or PDF
+                    card.style.cursor = 'pointer';
+                    card.addEventListener('click', (e) => {
+                        if (e.target.tagName.toLowerCase() !== 'a') {
+                            window.open(rawUrl, '_blank', 'noopener,noreferrer');
+                        }
+                    });
+                } else {
+                    card.innerHTML = `<h4>${escapeHtml(title)}</h4><p class="muted">${escapeHtml(year)}</p><p><a href="#" class="view-link">View</a> · <a href="${escapeHtml(downloadUrl)}" class="download-link" download="${escapeHtml(fileName)}">Download</a></p>`;
+                    const view = card.querySelector('.view-link');
+                    view.addEventListener('click', (e) => { e.preventDefault(); showPdf(resourceUrl, title, downloadUrl, rec.file_type); });
+                }
                 grid.appendChild(card);
             });
         }
@@ -962,6 +882,10 @@ function initStudentZone() {
 
     function showPdf(url, title, downloadUrl, contentType) {
         if (!url) { alert('No PDF available yet for this resource.'); return; }
+        if (isGoogleDriveUrl(url)) {
+            window.open(url, '_blank', 'noopener,noreferrer');
+            return;
+        }
         url = normalizeAssetPath(url);
         const isImage = (contentType || '').startsWith('image/') || /\.(jpe?g|png|webp)(?:[?#]|$)/i.test(url);
         if (pdfFrame) {
@@ -988,7 +912,7 @@ function initStudentZone() {
         header.querySelector('.back-btn').addEventListener('click', () => { clearSelection(); });
 
         const grid = document.createElement('div'); grid.className = 'cards-grid';
-        for (let s=1;s<=7;s++) {
+        for (let s = 1; s <= 7; s++) {
             const card = document.createElement('div'); card.className = 'resource-card event-card';
             const subjects = (data.subjects_by_semester && data.subjects_by_semester[s]) ? data.subjects_by_semester[s] : [];
             const subjectText = subjects.length ? subjects.join(' · ') : 'Subjects not available yet';
@@ -1032,6 +956,16 @@ function initStudentZone() {
             }
         });
     }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key !== 'Escape') return;
+        if (pdfModal && pdfModal.style.display === 'flex') closeResourcePreview();
+        else if (selectionOverlay && selectionOverlay.classList.contains('active')) {
+            selectionOverlay.classList.remove('active');
+            document.body.classList.remove('dialog-open');
+            resetStudentZoneView();
+        }
+    });
 
     if (pdfModalClose) pdfModalClose.addEventListener('click', closeResourcePreview);
     if (pdfModal) pdfModal.addEventListener('click', (e) => { if (e.target === pdfModal) closeResourcePreview(); });
